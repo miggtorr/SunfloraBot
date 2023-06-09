@@ -1,0 +1,948 @@
+{
+    "questions": [
+        {
+            "question" : "Upon what animal is Bulbasaur based?",
+            "choices" : [
+                "A Frog",
+                "An Ankylosaurus",
+                "A Turtle",
+                "A Komodo Dragon"
+            ]
+        },
+        {
+            "question" : "In Pokémon Black and White, which evolutionary line with English names couldn't be traded on the GTS without a nickname due to language censorship settings?",
+            "choices" : [
+                "Bulbasaur, Ivysaur, Venusaur",
+                "Snubbull, Granbull",
+                "Kriketot, Kriketune",
+                "Vanillite, Vanillish, Vanilluxe"
+            ]
+        },
+        {
+            "question" : "In addition to Bulbasaur, Ivysaur, and Venusaur, which Pokémon is part of the 'Seed Pokemon' category?",
+            "choices" : [
+                "Sunkern",
+                "Seedot",
+                "Ferroseed",
+                "Exeggcute"
+            ]
+        },
+        {
+            "question" : "What color are Charmander's eyes?",
+            "choices" : [
+                "Blue",
+                "Brown",
+                "Black",
+                "Red-Orange"
+            ]
+        },
+        {
+            "question" : "Prior to Generation VI, which two Pokémon shared the same cry?",
+            "choices" : [
+                "Charizard & Rhyhorn",
+                "Pidgeot & Fearow",
+                "Dugtrio & Dodrio",
+                "Ditto & Mew"
+            ]
+        },
+        {
+            "question" : "Which Wii game features squirtle walking on all fours?",
+            "choices" : [
+                "Super Smash Bros. Brawl",
+                "Pokémon Battle Revolution",
+                "PokéPark Wii: Pikachu's Adventure",
+                "My Pokémon Ranch"
+            ]
+        },
+        {
+            "question" : "Wartortle's feathery tail may be a reference to which creature of legend?",
+            "choices" : [
+                "The Japanese Minogame Turtle",
+                "The Hindu Kurma Turtle",
+                "The Chinese Ao Turtle",
+                "The Tongan Sāngone Turtle"
+            ]
+        },
+        {
+            "question" : "Blastoise is known by what Category?",
+            "choices" : [
+                "The Shellfish Pokémon",
+                "The Turtle Tank Pokémon",
+                "The Water Cannon Pokémon",
+                "The Hydro Pokemon"
+            ]
+        },
+        {
+            "question" : "Which of the following if true of the red antennae on Caterpie's head?",
+            "choices" : [
+                "It smells foul.",
+                "It can sting you.",
+                "It's used to lure pray.'",
+                "It's used to impress potential mates."
+            ]
+        },
+        {
+            "question" : "What color are the 'whites' of Metapod's eyes in Pokémon Colliseum and XD?",
+            "choices" : [
+                "Blue",
+                "White",
+                "Light Green",
+                "Yellow"
+            ]
+        },
+        {
+            "question" : "In Gen IV, which of the following moves can Butterfree learn via Move Tutor?",
+            "choices" : [
+                "Twister",
+                "U-Turn",
+                "Silver Wind",
+                "Air Slash"
+            ]
+        },
+        {
+            "question" : "Which Pokémon that cannot legitimately know any Normal-type move?",
+            "choices" : [
+                "Weedle",
+                "Abra",
+                "Unown",
+                "Magikarp"
+            ]
+        },
+        {
+            "question" : "In the anime, Pidgey is often depicted with the wrong number of talons on its feet. How many talons should Pidgey have on each foot?",
+            "choices" : [
+                "Three",
+                "Four",
+                "Two",
+                "Five"
+            ]
+        },
+        {
+            "question" : "Which of the following moves can Pidgeotto never legitimately learn?",
+            "choices" : [
+                "Peck",
+                "Gust",
+                "Wing Attack",
+                "Tackle"
+            ]
+        },
+        {
+            "question" : "Which of the following haircuts best describes Pidgeot's crest feathers?",
+            "choices" : [
+                "Mullet",
+                "Flock-of-Seagulls",
+                "Afro",
+                "Undercut"
+            ]
+        },
+        {
+            "question" : "What was Rattata called in the Pokémon Red and Blue beta?",
+            "choices" : [
+                "Rattatak",
+                "Koratta",
+                "Rattata (no change)",
+                "Riffrat"
+            ]
+        },
+        {
+            "question" : "Which Pokémon shares its National Pokédex number with the level at which it evolves from its pre-evolved form?",
+            "choices" : [
+                "Raticate",
+                "Beedrill",
+                "Arbok",
+                "Sandslash"
+            ]
+        },
+        {
+            "question" : "Which of the following traits does Fearow possess?",
+            "choices" : [
+                "Massive Wings. Sharp Beak.",
+                "A short snood",
+                "Rainbow Tailfeathers",
+                "Yellow crest atop its head"
+            ]
+        },
+        {
+            "question" : "How many bands around Ekans's body were yellow in Ken Sugimori's original design?",
+            "choices" : [
+                "Four",
+                "Three",
+                "Two",
+                "One"
+            ]
+        },
+        {
+            "question" : "In its Gen I sprite, what parts of Arbok's body had patterns/markings?",
+            "choices" : [
+                "Under its hood and on its back.",
+                "Under its hood.",
+                "Under its hood and on its belly.",
+                "Under its hood, on its back, and on its belly."
+            ]
+        },
+        {
+            "question" : "During development of Pokémon Red & Green, Pikachu originally had a now-scrapped second-stage evolution, after Raichu. What was its name?",
+            "choices" : [
+                "Gorochu",
+                "Sandāchu",
+                "Kaminarichu",
+                "Erekuchu"
+            ]
+        },
+        {
+            "question" : "In Pokémon Red and Blue, there is a Scientist at the Pokémon Lab in Cinnabar Island who will trade you an Electrode. What pokémon does he ask for in return?",
+            "choices" : [
+                "Raichu",
+                "Kadabra",
+                "Graveler",
+                "Arcanine"
+            ]
+        },
+        {
+            "question" : "Which game or games were the first to feature Sandshrew's trademark brick pattern on its hide?",
+            "choices" : [
+                "Yellow",
+                "Red & Green",
+                "Red & Blue",
+                "Gold & Silver"
+            ]
+        },
+        {
+            "question" : "What was Sandslash's original English name in the Pokémon Red and Blue beta?",
+            "choices" : [
+                "Sandstorm",
+                "Armadon",
+                "Sandslash (no change)",
+                "Sandpan"
+            ]
+        },
+        {
+            "question" : "Which pokemon loses its ability to breed when it evolves into another pokémon?",
+            "choices" : [
+                "Nidoran♀",
+                "Type: Null",
+                "Primeape",
+                "Poliwhirl"
+            ]
+        },
+        {
+            "question" : "Which of the following moves can Nidorina learn in Gen I?",
+            "choices" : [
+                "Bubblebeam",
+                "Flamethrower",
+                "Psychic",
+                "Zap Cannon"
+            ]
+        },
+        {
+            "question" : "When traded into a Gen II game from a Gen I game, what held item will a Nidoran♂ always arrive with?",
+            "choices" : [
+                "TM43 (Detect)",
+                "Gold Leaf",
+                "PSNCureBerry",
+                "Poison Barb"
+            ]
+        },
+        {
+            "question" : "When traded into a Gen II game from a Gen I game, what held item will a Nidoran♂ always arrive with?",
+            "choices" : [
+                "TM43 (Detect)",
+                "Gold Leaf",
+                "PSNCureBerry",
+                "Poison Barb"
+            ]
+        },
+        {
+            "question" : "To which egg group(s) does Nidorino belong?",
+            "choices" : [
+                "Monster & Field",
+                "No Eggs Discovered",
+                "Ground & Field",
+                "Poison"
+            ]
+        },
+        {
+            "question" : "Which of the following pokémon was an early contender for the position during the franchise's infancy?",
+            "choices" : [
+                "Clefairy",
+                "Mew",
+                "Dragonite",
+                "Voltorb"
+            ]
+        },
+        {
+            "question" : "What was Clefable's original English name in the Pokémon Red and Blue beta?",
+            "choices" : [
+                "Ariala",
+                "Aria",
+                "Ariola",
+                "Ariela"
+            ]
+        },
+        {
+            "question" : "How many tails is Vulpix born with?",
+            "choices" : [
+                "One",
+                "Six",
+                "Zero",
+                "It depends on the gender"
+            ]
+        },
+        {
+            "question" : "How many tails is Ninetales born with?",
+            "choices" : [
+                "One",
+                "Six",
+                "Zero",
+                "Nine"
+            ]
+        },
+        {
+            "question" : "In the battle against Gengar in the intro of Pokémon Blue, due to an oversight, Jigglypuff appears to be what color?",
+            "choices" : [
+                "Purple",
+                "Pink",
+                "Blue",
+                "White"
+            ]
+        },
+        {
+            "question" : "Which main series game(s) first depicted Wigglytuff with her white belly extending well above her mouth?",
+            "choices" : [
+                "Ruby & Sapphire",
+                "Yellow",
+                "Gold, Silver, & Crystal",
+                "Diamond & Pearl"
+            ]
+        },
+        {
+            "question" : "In Pokémon Legends: Arceus, how many glowing red eyes does a wild alpha zubat have?",
+            "choices" : [
+                "None",
+                "Two",
+                "One",
+                "Four"
+            ]
+        },
+        {
+            "question" : "Which main series game(s) depict(s) Golbat's tongue?",
+            "choices" : [
+                "Red & Blue",
+                "Red & Green",
+                "Yellow",
+                "Gold, Silver, & Crystal"
+            ]
+        },
+        {
+            "question" : "Which of the following is Oddish's 'scientific name' based on dialogue in Episode 163 of the anime?",
+            "choices" : [
+                "Oddium wanderus",
+                "Oddium radicchus",
+                "Oddium erectus",
+                "Oddium maximus"
+            ]
+        },
+        {
+            "question" : "Which dual-type Pokémon can evolve into a single-type Pokémon?",
+            "choices" : [
+                "Gloom",
+                "Onix",
+                "Vibrava",
+                "Purrloin"
+            ]
+        },
+        {
+            "question" : "What ability can Vileplume have?",
+            "choices" : [
+                "Chlorophyll",
+                "Leaf Guard",
+                "Stench",
+                "Poison Touch"
+            ]   
+        },
+        {
+            "question" : "Accordig to the Pokédex, what is the name of the mushroom that grows on the backs of Paras and Parasect?",
+            "choices" : [
+                "Tochukaso",
+                "Shiitake",
+                "Cordyceps",
+                "Matsutake"
+            ]   
+        },
+        {
+            "question" : "In which main series game do Venonat's eyes flash during its sprite animation?",
+            "choices" : [
+                "Crystal",
+                "Emerald",
+                "Diamond, Pearl, & Platinum",
+                "HeartGold & SoulSilver"
+            ]   
+        },
+        {
+            "question" : "In early official art, Venomoth had yellow spots on the back of its wings. What color were they?",
+            "choices" : [
+                "Yellow",
+                "Blue",
+                "Mauve",
+                "White"
+            ]   
+        },
+        {
+            "question" : "In which Pokémon Mystery Dungeon game(s) do you encountder a Diglett who mentions having feet?",
+            "choices" : [
+                "Red Rescue Team & Blue Rescue Team",
+                "Explorers of Time & Explorers of Darkness",
+                "Explorers of Sky",
+                "Gates to Infinity"
+            ]   
+        },{
+            "question" : "Excluding Megas, the following Pokémon to have the highest Speed stat of their respective types. Which is the slowest?",
+            "choices" : [
+                "Dugtrio (Ground)",
+                "Ninjask (Bug)",
+                "Aerodactyl (Rock)",
+                "Crobat (Poison)"
+            ]   
+        },
+        {
+            "question" : "Which are the only games to depict Meowth on all fours?",
+            "choices" : [
+                "HeartGold & SoulSilver",
+                "Red & Green",
+                "FireRed & LeafGreen",
+                "Ruby, Sapphire, & Emerald"
+            ]   
+        },
+        {
+            "question" : "What is Persian's name in German",
+            "choices" : [
+                "Snobilikat",
+                "Meowzie",
+                "Charmian",
+                "Kleoparda"
+            ]   
+        },
+        {
+            "question" : "Which pokémon was originally considered for the role of Pikachu's counterpart in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee! instead of Eevee?",
+            "choices" : [
+                "Psyduck",
+                "Clefairy",
+                "Ponyta",
+                "Jigglypuff"
+            ]
+        },
+        {
+            "question" : "What is Golduck's type?",
+            "choices" : [
+                "Pure Water",
+                "Water-Psychic",
+                "Psychic-Water",
+                "Pure Psychic"
+            ]
+        },
+        {
+            "question" : "In Episode 65 of the anime, 'Showdown at the Po-ké Corral' which Pokémon is shown eating bananas?",
+            "choices" : [
+                "Mankey",
+                "Aipom",
+                "Mr. Mime",
+                "Snorlax"
+            ]
+        },
+        {
+            "question" : "When traded into a Gen II game from a Gen I game, what held item will a Primape always arrive with?",
+            "choices" : [
+                "Gold Leaf",
+                "TM43 (Detect)",
+                "Bitter Berry",
+                "Blackbelt"
+            ]
+        },
+        {
+            "question" : "How many toes does Growlithe have on its hind feet?",
+            "choices" : [
+                "Three",
+                "None",
+                "Two",
+                "Four"
+            ]
+        },
+        {
+            "question" : "What is Arcanine's name in Japanese?",
+            "choices" : [
+                "Uindi (Windy)",
+                "Gādi (Guardy)",
+                "Būsutā (Booster)",
+                "Faiyā (Fire)"
+            ]
+        },
+        {
+            "question" : "Prior to Generation VI, which two Pokémon shared the same cry?",
+            "choices" : [
+                "Poliwag & Ditto",
+                "Seedot & Natu",
+                "Dugtrio & Dodrio",
+                "Rhydon & Charizard"
+            ]
+        },
+        {
+            "question" : "Prior to Pokémon Emerald, which main series game(s) depicted Poliwhirl with no fingers on his hands?",
+            "choices" : [
+                "Yellow",
+                "Crystal",
+                "Red & Green",
+                "Red & Blue"
+            ]
+        },
+        {
+            "question" : "Which of the following main series games depicts Poliwrath with four fingers on each hand?",
+            "choices" : [
+                "Silver",
+                "Yellow",
+                "Platinum",
+                "Emerald"
+            ]
+        },
+        {
+            "question" : "Which of the following moves can Abra learn in Gen I?",
+            "choices" : [
+                "Skull Bash",
+                "Pay Day",
+                "Psybeam",
+                "Thunderbolt"
+            ]
+        },
+        { 
+            "question" : "The symbols on Kadabra's forehead and abdomen appear to be references to what?",
+            "choices" : [
+                "Zener Cards",
+                "Tarot Cards",
+                "Egyptian Hieroglyphs",
+                "Uri Geller"
+            ]
+        },
+        {
+            "question" : "In Gen VII, in addition to Kadabra and Alakazam, which of the following pokemon can learn Kinesis?",
+            "choices" : [
+                "None",
+                "Munna & Musharna",
+                "Drowzee & Hypno",
+                "Hoopa"
+            ]
+        },
+        {
+            "question" : "What was Machop called in the Pokémon Red and Blue beta?",
+            "choices" : [
+                "Karate",
+                "Kung Fu",
+                "Judo",
+                "Kwondo"
+            ]
+        },
+        {
+            "question" : "In which TCG set did Machoke debut?",
+            "choices" : [
+                "Base Set",
+                "Fossil",
+                "Jungle",
+                "Base Set 2"
+            ]
+        },
+        {
+            "question" : "In Episode 600 of the anime, what move is Bellsprout seen using that it cannot learn in any of the games?",
+            "choices" : [
+                "Absorb",
+                "Razor Leaf",
+                "Double Team",
+                "Growth"
+            ]
+        },
+        {
+            "question" : "In its Pokémon Silver front sprite, what direction do Weepinbell's leafs point?",
+            "choices" : [
+                "R: Up, L: Down",
+                "R: Down, L: Down",
+                "R: Up, L: Up",
+                "R: Down, L: Up"
+            ]
+        },
+        {
+            "question" : "What color are Victreebel's lips in its shiny coloration?",
+            "choices" : [
+                "Blue",
+                "Red",
+                "Green",
+                "Yellow"
+            ]
+        },
+        {
+            "question" : "In which game(s) does Tentacool's shiny has blue jewels, green tentacles, and light blue eyes?",
+            "choices" : [
+                "Colliseum & XD: Gale of Darkness",
+                "Gold, Silver, & Crystal",
+                "Pokémon Rumble",
+                "Stadium 2"
+            ]
+        },
+        {
+            "question" : "What was Tentacruel called in the Pokémon Red and Blue beta?",
+            "choices" : [
+                "Manowar",
+                "Jelli",
+                "Tentattak",
+                "Stingray"
+            ]
+        },
+        {
+            "question" : "How many tentacles does Tentacruel's current 3D model have?",
+            "choices" : [
+                "10",
+                "8",
+                "12",
+                "14"
+            ]
+        },
+        {
+            "question" : "Which Pokémon's evolutionary line is the only three-stage evolutionary line in which all members have a regional form?",
+            "choices" : [
+                "Geodude",
+                "Zigzagoon",
+                "Slowpoke",
+                "Goomy"
+            ]
+        },
+        {
+            "question" : "Which Pokémon's evolutionary line is the only three-stage evolutionary line in which all members have a regional form?",
+            "choices" : [
+                "Geodude",
+                "Zigzagoon",
+                "Slowpoke",
+                "Goomy"
+            ]
+        },
+        {
+            "question" : "How many toes does Kantonian Graveler gain upon evolving into Golem?",
+            "choices" : [
+                "Four",
+                "Three",
+                "Two",
+                "One"
+            ]
+        },
+        {
+            "question" : "From which folkloric tradition does Golem's name derive?",
+            "choices" : [
+                "Jewish Folklore",
+                "Japanese Folklore",
+                "Vedic Folklore",
+                "Arabic Folklore"
+            ]
+        },
+        {
+            "question" : "In which game(s) did shiny Ponyta's mane appear blue for the first time",
+            "choices" : [
+                "Ruby & Sapphire",
+                "Crystal",
+                "Gold & Silver",
+                "Emerald"
+            ]
+        },
+        {
+            "question" : "Galarian Rapidash is known by what Category?",
+            "choices" : [
+                "The Unique Horn",
+                "The Unicorn",
+                "The Mystic Horse",
+                "The Fairy Horse"
+            ]
+        },
+        {
+            "question" : "Which Pokémon has never been seen using an attack in the anime?",
+            "choices" : [
+                "Slowpoke",
+                "Sunflora",
+                "Marill",
+                "Metang"
+            ]
+        },
+        {
+            "question" : "Pokémon Silver, Slowpoke's sprite reveals in belly. What feature appears on its belly in Japanese version of the game only?",
+            "choices" : [
+                "Stripes",
+                "A Star",
+                "A Spiral",
+                "A Circle"
+            ]
+        },
+        {
+            "question" : "Pokémon Silver, Slowpoke's sprite reveals in belly. What feature appears on its belly in Japanese version of the game only?",
+            "choices" : [
+                "Stripes",
+                "A Star",
+                "A Spiral",
+                "A Circle"
+            ]
+        },
+        {
+            "question" : "In which TCG set did Slowbro debut?",
+            "choices" : [
+                "Fossil",
+                "Base Set",
+                "Jungle",
+                "Base Set 2"
+            ]
+        },
+        {
+            "question" : "Which member of Game Freak designed Magnemite?",
+            "choices" : [
+                "Ken Sugimori",
+                "Atsuko Nishida",
+                "Shigeki Morimoto",
+                "Satoshi Tajiri"
+            ]
+        },
+        {
+            "question" : "Which Pokémon were the first Pokémon to ever change types with the progress of generations?",
+            "choices" : [
+                "Magnemite & Magneton",
+                "Azurill, Marill, & Azumarill",
+                "Mawile",
+                "Gastly, Haunter, & Gengar"
+            ]
+        },
+        {
+            "question" : "What kind of screws do Magnemite and Magneton have on their bodies?",
+            "choices" : [
+                "Phillip's Head",
+                "Tri-Wing",
+                "Flathead",
+                "Hex Socket (Allen wrench)"
+            ]
+        },
+        {
+            "question" : "How many screws are on Magneton's current 3D model?",
+            "choices" : [
+                "7",
+                "8",
+                "9",
+                "6"
+            ]
+        },
+        {
+            "question" : "During development of Pokémon Red & Green, Farfetch'd originally had a now-scrapped evolution. What was its name?",
+            "choices" : [
+                "Madāmu",
+                "Sirfetch'd",
+                "Kamonegi",
+                "Canarticho"
+            ]
+        },
+        {
+            "question" : "What color are the necks of male Doduo?",
+            "choices" : [
+                "Black",
+                "Beige",
+                "White",
+                "Yellow"
+            ]
+        },
+        {
+            "question" : "In what game(s) did Doduo's shiny first appear green?",
+            "choices" : [
+                "Ruby & Sapphire",
+                "X & Y",
+                "Gold, Silver, & Crystal",
+                "Pokemon Stadium 2"
+            ]
+        },
+        {
+            "question" : "Which Pokémon has a National Pokédex number equal to the whole-number portion of its weight in kilograms?",
+            "choices" : [
+                "Dodrio",
+                "Pikachiu",
+                "Jynx",
+                "Muk"
+            ]
+        },
+        {
+            "question" : "Which non-Ice-type Pokémon that can have Ice Body as its Ability?",
+            "choices" : [
+                "Seel",
+                "Suicune",
+                "Slowking",
+                "Dracovish"
+            ]
+        },
+        {
+            "question" : "According to its dex entry, Dewgong consider which pokémon a delicacy?",
+            "choices" : [
+                "Wishiwashi",
+                "Magikarp",
+                "Feebas",
+                "Finneon"
+            ]
+        },
+        {
+            "question" : "Alolan Muk's rainbow colors are based on what real-world phenomenon",
+            "choices" : [
+                "Thin-Film Interference",
+                "Wave Field Synthesis",
+                "Thermochromism",
+                "Total Internal Reflection"
+            ]
+        },
+        {
+            "question" : "What is Grimer's name in French?",
+            "choices" : [
+                "Tadmorv",
+                "Grimer",
+                "Miasmax",
+                "Miamiasme"
+            ]
+        },
+        {
+            "question" : "What is Muk's name in French?",
+            "choices" : [
+                "Grotadmorv",
+                "Muk",
+                "Miasmax",
+                "Miamiasme"
+            ]
+        },
+        {
+            "question" : "What direction does Shellder swim?",
+            "choices" : [
+                "Backward",
+                "Forward",
+                "Sideways (like a crab)",
+                "Shellder cannot swim"
+            ]
+        },
+        {
+            "question" : "Which game(s) depict Cloyster's shell opening vertically—like a traditional clam—in its front sprite?",
+            "choices" : [
+                "Red & Blue",
+                "Red & Green",
+                "Yellow",
+                "Silver"
+            ]
+        },
+        {
+            "question" : "Which main series game(s) was the first to depict Gastly's face with a well-defined edge?",
+            "choices" : [
+                "Yellow",
+                "Crystal",
+                "Gold & Silver",
+                "Ruby & Sapphire"
+            ]
+        },
+        {
+            "question" : "What is Gastly's special attack stat?",
+            "choices" : [
+                "100",
+                "80",
+                "90",
+                "120"
+            ]
+        },
+        {
+            "question" : "Haunter's hands used to glow red, while shiny Haunter's hands glowed blue. Which Gen was this feature removed?",
+            "choices" : [
+                "Gen VI",
+                "Gen IV",
+                "Gen III",
+                "Gen V"
+            ]
+        },
+        {
+            "question" : "The Pokémon Moon dex entry for Gengar states that it used to be what?",
+            "choices" : [
+                "A Human",
+                "A Clefable",
+                "A Clefairy",
+                "A Haunter"
+            ]
+        },
+        {
+            "question" : "Which Pokémon is the heaviest and tallest Pokémon that still has the ability to evolve!?",
+            "choices" : [
+                "Onix",
+                "Wailmer",
+                "Dragonair",
+                "Metang"
+            ]
+        },
+        {
+            "question" : "Which TCG expansion set depicts a Hypno using Dream Eater on a sleeping human!?",
+            "choices" : [
+                "Aquapolis",
+                "Fossil",
+                "Neo Destiny",
+                "Chilling Reign"
+            ]
+        },
+        {
+            "question" : "Not counting its claws, how many legs does Krabby have?",
+            "choices" : [
+                "Four",
+                "Six",
+                "Eight",
+                "Two"
+            ]
+        },
+        {
+            "question" : "Which game depitchs Kingler's claws as the same size in its front sprite?",
+            "choices" : [
+                "Red & Blue",
+                "Red & Green",
+                "Yellow",
+                "Silver"
+            ]
+        },
+        {
+            "question" : "Which Gen first allowed Voltorb and Electrode to learn an Electric-type move via level-up?",
+            "choices" : [
+                "Gen III",
+                "Gen I",
+                "Gen II",
+                "Gen IV"
+            ]
+        },
+        {
+            "question" : "Which Pokémon has the lowest base Attack stat of all Electric-types?",
+            "choices" : [
+                "Voltorb",
+                "Tynamo",
+                "Pichu",
+                "Elekid"
+            ]
+        },
+        {
+            "question" : "According to the Pokédex, which of the following pokémon is capable of de-evolution?",
+            "choices" : [
+                "Exeggutor",
+                "Shellder",
+                "Wobbuffet",
+                "Magneton"
+            ]
+        },
+        {
+            "question" : "Exeggcute's shiny was originally greenish-yellow! When did it become its current golden color?",
+            "choices" : [
+                "Gen III",
+                "Gen IV",
+                "Gen V",
+                "Gen VI"
+            ]
+        },
+        {
+            "question" : "Which is the only dual-type Pokémon that shares no types with its pre-evolution?",
+            "choices" : [
+                "Alolan Marowak",
+                "Perrserker",
+                "Galarian Weezing",
+                "Sneasler"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,892 @@
+{
+    "facts": [
+      {
+        "tags": ["bulbasaur"],
+        "fact": "Despite its English name, Bulbasaur's design is based on a frog, not a dinosaur!"
+      },
+      {
+        "tags": ["ivysaur","bulbasaur","venusaur"],
+        "fact": "Due to the censorship that prevents Pokémon with offensive nicknames being traded on the GTS, an Ivysaur (or any of its evolutionary line) with an English name couldn't be traded on the GTS without a nickname in Pokémon Black and White. This is because, the word 'Sau' in German means 'female pig,' a word commonly used as an insult!"
+      },
+      {
+        "tags": ["venusaur","ivysaur","bulbasaur","sunkern"],
+        "fact": "Venusaur and its evolutionary relatives share their category with Sunkern! They are all known as the Seed Pokémon!"
+      },
+      {
+        "tags": ["charmander"],
+        "fact": "Charmander's eyes are blue (teal)!"
+      },
+      {
+        "tags": ["charmeleon","wartortle","anime"],
+        "fact": "In episode 429 of the anime, Elina's Charmeleon goes on a date with a wild Wartortle, wherein the Charmeleon uses Water Gun to impress the Wartortle!"
+      },
+      {
+        "tags": ["charizard","rhyhorn"],
+        "fact": "Prior to Generation VI, Charizard and Rhyhorn shared the same cry! (Example: https://youtu.be/BiHxE6bZQb4)"
+      },
+      {
+        "tags": ["squirtle"],
+        "fact": "While Squirtle typically walks on its two short legs, it has been shown to run on all fours in Super Smash Bros. Brawl!"
+      },
+      {
+        "tags": ["wartortle"],
+        "fact": "Wartortle's feathery tail may be a reference to Japanese legends of the minogame (蓑亀), a turtle which lived for 10,000 years and grew a tail made of seaweed!"
+      },
+      {
+        "tags": ["blastoise"],
+        "fact": "Despite being based neither on a crustacean nor a marine mollusk, Blastoise is known as the Shellfish Pokémon!"
+      },
+      {
+        "tags": ["caterpie"],
+        "fact": "The antenna on Caterpie's head canonically STINKS!"
+      },
+      {
+        "tags": ["Metapod","tcg","anime"],
+        "fact": "In the almost every Pokémon game, the TCG, and promotional artwork, Metapod's eyes are white. In the anime, however, they are yellow, and in Colosseum and XD they are blue!"
+      },
+      {
+        "tags": ["butterfree"],
+        "fact": "In Generation IV only, Butterfree can learn a Dragon-type move: Twister, via Move Tutor!"
+      },
+      {
+        "tags": ["weedle"],
+        "fact": "Weedle is the only Pokémon that cannot legitimately know any Normal-type move!"
+      },
+      {
+        "tags": ["kakuna"],
+        "fact": "Kakuna has arms! Seen only in its Red and Blue sprite and on a rare Sugimori-drawn 'Pocket Monsters' Bandai card, its arms are commonly mistaken to be a sprite error or simply thought not to exist! https://bulbapedia.bulbagarden.net/wiki/File:Bandai_Kakuna_card.jpg "
+      },
+      {
+        "tags": ["beedrill"],
+        "fact": "According to all known laws of aviation, there is no way a Beedrill should be able to fly. It's wings are too small to get its fat little body off the ground. The Beedrill, of course, flies anyway, because Beedrill don't care what humans think is impossible."
+      },
+      {
+        "tags": ["pidgey","anime"],
+        "fact": "In the anime, Pidgey is often erroneously depicted with four talons on each foot, as opposed to three!"
+      },
+      {
+        "tags": ["pidgeotto"],
+        "fact": "In some games, the Pokédex states that Pidgeotto 'will fiercely peck at any intruder.' However, Pidgeotto is unable to learn Peck!"
+      },
+      {
+        "tags": ["pidgeot"],
+        "fact": "Pidgeot has a mullet! Business in the front, party in the back, baby! 😎"
+      },
+      {
+        "tags": ["rattata"],
+        "fact": "In the Pokémon Red and Blue beta, Rattata was originally known as Rattatak!"
+      },
+      {
+        "tags": ["raticate"],
+        "fact": "Raticate is the only Pokémon that shares its National Pokédex number, 20, with the level at which it evolves from its pre-evolved form!"
+      },
+      {
+        "tags": ["spearow"],
+        "fact": "Spearow preys on various forms of Bug-type pokémon, as well as Sunkern! Wait— 😳 SUNKERN!? That's not fun. 😠 WHO WROTE THESE!? @miggtorr!???!??"
+      },
+      {
+        "tags": ["fearow"],
+        "fact": "Fearow is able to fly using its massive wings and attack using its sharp beak. This is because it has massive wings that are large and a sharp beak that is really pointy! Through the use of these unique anatomical features, namely its large wings and pointed beak, it is able to fly and hunt for pray. Also its shiny is blue in Pokémon Stadium 2."
+      },
+      {
+        "tags": ["ekans"],
+        "fact": "In early official art of Ekans, namely the Sugimori watercolors, all of the bands on its body were colored yellow instead of just the one on its neck. This was changed in later depictions of Ekans."
+      },
+      {
+        "tags": ["arbok"],
+        "fact": "In its Gen I sprite, Arbok had markings on the back of its head in addition to those on the front."
+      },
+      {
+        "tags": ["pikachu", "raichu"],
+        "fact": "Pikachu originally had a second-stage evolution, after Raichu, named Gorochu which would have had two horns and fangs. Ken Sugimori stated that while there was nothing wrong with its appearance, it was nonetheless omitted from Pokémon Red and Green, as the staff found that the game was more balanced without it. Moreover, some Pokémon originally designed to evolve twice were changed to evolve only once due to limited game space."
+      },
+      {
+        "tags": ["raichu","electrode","graveler","kadabra"],
+        "fact": "In Pokémon Red and Blue, there is a Scientist at the Pokémon Lab in Cinnabar Island who will trade you an Electrode for a Raichu. If the player talks to him after the trade, he will mention that the Raichu evolved! This is due to a translation error (in Japanese Blue versions he trades a Graveler for a Kadabra)."
+      },
+      {
+        "tags": ["sandshrew"],
+        "fact": "The pattern on Sandshrew's hide makes it look like it's made of sandstone bricks! This pattern was absent from Sandshrew's initial design, so its Red, Blue, and Green sprites look much more scaley."
+      },
+      {
+        "tags": ["sandslash"],
+        "fact": "In the Pokémon Red and Blue beta, Sandslash's original name was 'Sandstorm'."
+      },
+      {
+        "tags": ["nidoran","nidoranfemale","nidorina","nidoqueen"],
+        "fact": "Nidoran♀ is the only Pokémon that loses the ability to breed upon evolution. Neither Nidorina nor Nidoqueen can produce eggs!"
+      },
+      {
+        "tags": ["nidorina"],
+        "fact": "In Gen I only, Nidorina can learn Bubblebeam!"
+      },
+      {
+        "tags": ["nidoqueen","nidorina"],
+        "fact": "In a 1996 Japanese publication by Creatures, Inc. titled 'Pocket Monsters Encyclopedia,' Nidoqueen and Nidorina's inability to lay Eggs was established before breeding became a mechanic in the games!"
+      },
+      {
+        "tags": ["nidoran","nidoranmale"],
+        "fact": "When traded into a Gen II game from a Gen I game, a Nidoran♂ will always arrive holding a TM43 (Detect)!"
+      },
+      {
+        "tags": ["nidorino","nidoqueen","nidorina"],
+        "fact": "Unlike Nidorina and Nidoqueen, Nidorino is capable of producing eggs, belonging to both the Monster and Field egg groups."
+      },
+      {
+        "tags": ["nidoking"],
+        "fact": "Nidoking isn't actually a real 'King' of any country or nation-state, fictional or otherwise. The 'king' in its name is actually an abbreviated form of 'Burger King!' ...wait—what?? Who wrote this!? @miggtorr!!?? 😠"
+      },
+      {
+        "tags": ["pikachu","clefairy"],
+        "fact": "While Pikachu may nowadays be the worldwide mascot of the Pokémon franchise, Clefairy was an early contender for the position during the franchise's infancy."
+      },
+      {
+        "tags": ["clefable"],
+        "fact": "In the Pokémon Red and Green beta, Clefable's name was Ariala. This sounds very close to the word 'areola,' the clinical term for nipple, so it's a good thing they changed it! (Incidentally, this linguistic phenomenon didn't stop them from naming Magmar 'Boober' in Japan)."
+      },
+      {
+        "tags": ["vulpix"],
+        "fact": "Vulpix is born with only a single, white tail that splits into six as Vulpix grows!"
+      },
+      {
+        "tags": ["ninetales","naruto"],
+        "fact": "Ninetales is actually Naruto."
+      },
+      {
+        "tags": ["jigglypuff","gengar"],
+        "fact": "Due to an oversight, Jigglypuff appears purple (instead of pink) in the battle against Gengar in the intro of Pokémon Blue (including the Japanese version)! "
+      },
+      {
+        "tags": ["wigglytuff"],
+        "fact": "In its earlier appearances (Gens I-II), Wigglytuff's white stomach did not always extend above its mouth as it does in modern rendition of this Pokémon!"
+      },
+      {
+        "tags": ["zubat"],
+        "fact": "Since Zubat is eyeless, in Pokémon Legends: Arceus, Alpha Zubats don't include glowing red eyes!"
+      },
+      {
+        "tags": ["golbat"],
+        "fact": "The only core series games to depict Golbat's tongue were Pokémon Red and Blue!"
+      },
+      {
+        "tags": ["oddish"],
+        "fact": "Oddish's name may be derived from the words 'odd' and 'radish!'"
+      },
+      {
+        "tags": ["gloom","bellossom"],
+        "fact": "Gloom is the only dual-type Pokémon that can evolve into a single-type Pokémon—Bellossom!"
+      },
+      {
+        "tags": ["vileplume"],
+        "fact": "Although Vileplume has the Chlorophyll Ability, the Rafflesia family of plants that it is based on do not contain chlorophyll!"
+      },
+      {
+        "tags": ["paras"],
+        "fact": "Paras's normal and shiny colors were reversed from Gen II to Gen III and have remained the same ever since!"
+      },
+      {
+        "tags": ["parasect", "paras"],
+        "fact": "When Parasect evolves from Paras, the tochukaso mushroom on its back takes complete control of the host and does all the thinking!"
+      },
+      {
+        "tags": ["venonat"],
+        "fact": "In Pokémon Crystal only, Venonat's eyes flash during its sprite animation!"
+      },
+      {
+        "tags": ["venomoth"],
+        "fact": "In early official art, Venomoth had yellow spots on the back of its wings! These spots were removed when later official artwork was released."
+      },
+      {
+        "tags": ["diglett"],
+        "fact": "In Pokémon Mystery Dungeon: Red Rescue Team and Blue Rescue Team, a Diglett you encounter mentions having feet!"
+      },
+      {
+        "tags": ["dugtrio"],
+        "fact": "Dugtrio has the highest base Speed stat of all Ground-type Pokémon, but of all Pokémon to have the highest Speed stat of their respective types, Dugtrio is the slowest!"
+      },
+      {
+        "tags": ["meowth"],
+        "fact": "The only time Meowth is depicted on all fours in the games is in Pokémon HGSS: when the player places Meowth as the first Pokémon in their party, Meowth will walk on four legs behind the player!"
+      },
+      {
+        "tags": ["persian"],
+        "fact": "In German, Persian's name is 'Snobilikat,' from the words 'snob,' 'nobilis,' (Latin for noble) and 'Katze' (cat)!"
+      },
+      {
+        "tags": ["psyduck","eevee","pikachu"],
+        "fact": "Junichi Masuda revealed that Psyduck was considered for the role of Pikachu's counterpart in Pokémon: Let's Go, Pikachu! and Let's Go, Eevee! instead of Eevee, but it was ultimately not chosen due to it being deemed too similar in color to Pikachu!"
+      },
+      {
+        "tags": ["golduck"],
+        "fact": "Although Golduck possesses psychic abilities, it is only a pure Water-type!"
+      },
+      {
+        "tags": ["mankey"],
+        "fact": "Mankey's name, 'Mankey,' comes from the English word 'monkey'! This is because it resembles a monkey!"
+      },
+      {
+        "tags": ["primape"],
+        "fact": "A Primape caught in Gen I will be holding the Gold Leaf item when traded to a Gen II game! This rare item seemingly has no use; it can only be sold for a paltry ₽1000."
+      },
+      {
+        "tags": ["growlithe"],
+        "fact": "Growlithe's forepaws have two visible claws, while its hind paws have three toes each!"
+      },
+      {
+        "tags": ["arcanine"],
+        "fact": "Arcanine's Japanese name is ウインディ (Windy). This is a reference to the Pokémon's notorious flatulence! 🍑 💨"
+      },
+      {
+        "tags": ["poliwag","ditto"],
+        "fact": "Prior to Gen VI, Poliwag and Ditto had the same cry! (Compare Polywag: https://youtu.be/UzNT7nT62AE, Ditto: https://youtu.be/Hmd_9hKTKsM)"
+      },
+      {
+        "tags": ["poliwhirl"],
+        "fact": "In Pokémon Red, Green, Blue, Gold, Silver, Crystal, Ruby, & Sapphire, Poliwhirl is depicted with fingers on his hands! In Pokémon Yellow, as well as every main-series game from Emerald onward, however, his hands look like mittens!"
+      },
+      {
+        "tags": ["poliwrath"],
+        "fact": "In some illustrations, notably its Gen II sprites, Poliwrath is depicted with four fingers instead of three!"
+      },
+      {
+        "tags": ["abra"],
+        "fact": "In Gen I only, Abra can learn the move Skull Bash."
+      },
+      {
+        "tags": ["kadabra"],
+        "fact": "The symbols on Kadabra's forehead and abdomen appear to be references to 'Zener cards,' a small deck of symbols used in experiments to test for ESP and clairvoyance in the early 1930s!"
+      },
+      {
+        "tags": ["alakazam","kadabra"],
+        "fact": "Alakazam and its pre-evolved form, Kadabra, are the only known Pokémon capable of learning the move Kinesis! While this move drops the target's Accuracy by 1 stage, it only has an 80% chance to hit, making it one of the worst moves in the entire franchise!"
+      },
+      {
+        "tags": ["machop"],
+        "fact": "Before the release of the English versions of Pokémon Red and Blue, Machop was known as 'Kara-Tee.' Sounds kinda racist tbh, but what to I know? I'm just a robotic sunflower. 🤖 BEEP BOOB BOPP 🤖"
+      },
+      {
+        "tags": ["machoke","tcg"],
+        "fact": "Machoke has been featured on 20 different cards since it debuted in the Base Set of the Pokémon Trading Card Game!"
+      },
+      {
+        "tags": ["machamp","machoke"],
+        "fact": "When Machamp evolves from Machoke it gains ten fingers, but loses six toes!"
+      },
+      {
+        "tags": ["bellsprout","anime"],
+        "fact": "In Episode 600 of the anime, a wild Bellsprout is seen using the move Absorb, but Bellsprout cannot learn Absorb in any main series game!"
+      },
+      {
+        "tags": ["weepinbell"],
+        "fact": "Weepinbell's Gold and Silver sprites are almost identical, with its left leaf pointing up in Gold and down in Silver. Its mouth is also slightly rotated. Incidentally, Pokémon Crystal uses the Gold sprite as the basis for its sprite and subsequent animation."
+      },
+      {
+        "tags": ["victreebel"],
+        "fact": "The blue lips in Victreebel's shiny coloration may reference how the rims of certain pitcher plants glow blue under UV light!"
+      },
+      {
+        "tags": ["tentacool"],
+        "fact": "In Pokémon XD: Gale of Darkness, Tentacool's shiny has blue jewels, green tentacles, and light blue eyes!"
+      },
+      {
+        "tags": ["tentacruel"],
+        "fact": "In the Pokémon Red and Blue beta, Tentacruel was originally known as Manowar, after the deadly 'Portuguese Man o’ War' jellyfish!"
+      },
+      {
+        "tags": ["tentacruel"],
+        "fact": "The number of Tentacruel's tentacles has varies across its various depictions over the years, but its current 3D model has ten tentacles!"
+      },
+      {
+        "tags": ["geodude","graveler","golem"],
+        "fact": "Geodude's evolutionary line is the only three-stage evolutionary line in which all members have a regional form!"
+      },
+      {
+        "tags": ["graveler","golem"],
+        "fact": "Upon evolving, Kantonian Graveler loses three fingers and gains four toes!"
+      },
+      {
+        "tags": ["golem"],
+        "fact": "Golem's name is based on the golem of Jewish folklore, an anthropomorphic, animated being created entirely from inanimate matter, usually clay or mud!"
+      },
+      {
+        "tags": ["ponyta"],
+        "fact": "Ponyta's shiny doesn't receive its signature blue mane until Gen III."
+      },
+      {
+        "tags": ["rapidash"],
+        "fact": "Galarian Rapidash's category, Unique Horn, is a pun on the word 'unicorn'!"
+      },
+      {
+        "tags": ["slowpoke","anime"],
+        "fact": "No Slowpoke has ever been seen using an attack in the anime!"
+      },
+      {
+        "tags": ["slowpoke"],
+        "fact": "In Pokémon Silver, Slowpoke's sprite reveals in belly, but the stripes on its belly are only shown in the Japanese version of the game!"
+      },
+      {
+        "tags": ["slowbro","tcg"],
+        "fact": "Slowbro debuted in the Fossil expansion of the Pokémon Trading Card Game!"
+      },
+      {
+        "tags": ["magnemite"],
+        "fact": "Magnemite was designed by Ken Sugimori, based on an idea by Satoshi Tajiri!"
+      },
+      {
+        "tags": ["magneton","magnemite"],
+        "fact": "The screws on Magnemite and Magneton are Phillip's Head screws!"
+      },
+      {
+        "tags": ["magneton"],
+        "fact": "In Gens I-III of the main line games, Magneton was depicted with 9 screws on its body. Beginning in Gen IV, however, its sprite and subsequent 3D models now feature only 7 screws!"
+      },
+      {
+        "tags": ["magneton","magnemite"],
+        "fact": "Magneton and its pre-evolved form were the first Pokémon to ever change types with the progress of generations!"
+      },
+      {
+        "tags": ["farfetchd","sirfetchd"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Farfetch'd had an evolution, known as マダーム (Madāmu), that was scrapped in the final release of the games! Sirfetch'd was not based on this scrapped evolution."
+      },
+      {
+        "tags": ["doduo"],
+        "fact": "Male Doduo have black necks, while female Doduo have beige necks!"
+      },
+      {
+        "tags": ["doduo"],
+        "fact": "Doduo's shiny didnt gain its green hue until Gen III (in Gen II it was golden)!"
+      },
+      {
+        "tags": ["dodrio"],
+        "fact": "Dodrio is the only Pokémon whose National Pokédex number is the whole number portion of its weight in kilograms, 85!"
+      },
+      {
+        "tags": ["doduo","dodrio"],
+        "fact": "Dodrio and Doduo are the only Flying-type Pokémon to consist only of a head and legs!"
+      },
+      {
+        "tags": ["seel"],
+        "fact": "Seel is the only non-Ice-type Pokémon that can have Ice Body as its Ability!"
+      },
+      {
+        "tags": ["dewgong","wishiwashi"],
+        "fact": "According to the Pokémon Ultra Sun dex entry, Dewgong consider Wishiwashi a delicacy!"
+      },
+      {
+        "tags": ["muk"],
+        "fact": "Alolan Muk's rainbow colors are based on a phenomenon called 'thin-film interference,' wherein a spectrum of colors is reflected from a thin layer of oil floating on top of water!"
+      },
+      {
+        "tags": ["grimer"],
+        "fact": "Grimer's name in French is Tadmorv, which comes from the phrase 'tas de morve,' meaning 'pile of snot'!"
+      },
+      {
+        "tags": ["muk"],
+        "fact": "Muk pronounced backwards is— hey wait a sec, who wrote this!? 😠 @miggtorr?!?"
+      },
+      {
+        "tags": ["muk","grimer"],
+        "fact": "Muk's name in French is Grotadmorv, a contraction of 'gros Tadmorv,' meaning 'Big Grimer,' or—more literally—'big pile of snot'!"
+      },
+      {
+        "tags": ["shellder"],
+        "fact": "Shellder swims backward by opening and closing its two shells!"
+      },
+      {
+        "tags": ["cloyster"],
+        "fact": "In Pokémon Red and Blue only, Cloyster's shell depicted opening vertically—like a traditional clam—in its front sprite!"
+      },
+      {
+        "tags": ["gastly"],
+        "fact": "Pokémon Yellow was the first game in which Gastly's face was depicted with a well-defined edge!"
+      },
+      {
+        "tags": ["general"],
+        "fact": "The presence of Ghost pokémon implies the existance of an afterlife in the pokémon universe!"
+      },
+      {
+        "tags": ["gastly"],
+        "fact": "Gastly has a special attack stat of 100, quite high for a non-evolved pokémon!"
+      },
+      {
+        "tags": ["haunter"],
+        "fact": "In Gens I-V, Haunter's hands glowed red, while shiny Haunter's hands glowed blue! This feature was removed in Gen VI."
+      },
+      {
+        "tags": ["gengar"],
+        "fact": "The Pokémon Moon dex entry for Gengar states that it used to be human, implying that humans can become pokémon after death or otehr circumstances!"
+      },
+      {
+        "tags": ["onix"],
+        "fact": "Onix is the heaviest and tallest Pokémon that still has the ability to evolve!"
+      },
+      {
+        "tags": ["drowzee"],
+        "fact": "Drowzee is based on the Japanese myth of the baku, creatures said to devour nightmares! More info on the Japanese Baku: https://en.wikipedia.org/wiki/Baku_(mythology)"
+      },
+      {
+        "tags": ["hypno","tcg"],
+        "fact": "Hypno's card art from the Aquapolis TCG expansion set depicts a Hypno using Dream Eater on a sleeping human!"
+      },
+      {
+        "tags": ["krabby"],
+        "fact": "Krabby has only four legs!"
+      },
+      {
+        "tags": ["kingler"],
+        "fact": "Of Kingler's two claws, the left one is the larger of the two EXCEPT in the Gen I games, where its right claw is larger!"
+      },
+      {
+        "tags": ["kingler"],
+        "fact": "Kingler's front sprite from Pokémon Red and Blue depicts both claws being the same size!"
+      },
+      {
+        "tags": ["voltorb","electrode"],
+        "fact": "In Gens I & II, Voltorb and Electrode learn no Electric-type moves via level-up!"
+      },
+      {
+        "tags": ["voltorb"],
+        "fact": "Voltorb has the lowest base Attack stat of all Electric-type Pokémon: 30!"
+      },
+      {
+        "tags": ["electrode","anime"],
+        "fact": "In episode 113 of the anime, the 'Who's that Pokémon?' silhouette featured a black circle with two antennae-like filaments arcing out. The circle was an Electrode bearing a surprised expression and the filaments were actually its eyebrows raised in shock! (https://youtu.be/cDqtX-o2L8M)"
+      },
+      {
+        "tags": ["exeggcute"],
+        "fact": "Exeggcute's shiny was originally greenish-yellow! It was changed to be golden in Gen III!"
+      },
+      {
+        "tags": ["exeggutor","exeggcute"],
+        "fact": "Exeggutor is a rare example of a Pokémon that is capable of de-evolution because when one of its heads grows too big, it falls off, becoming an Exeggcute in the process!"
+      },
+      {
+        "tags": ["cubone"],
+        "fact": "Cubone's face is partially revealed on a rare Sugimori-drawn 'Pocket Monsters' Bandai card! Example: https://bulbapedia.bulbagarden.net/wiki/File:Bandai_Cubone_card.jpg"
+      },
+      {
+        "tags": ["marowak"],
+        "fact": "Alolan Marowak is the only dual-type Pokémon that shares no types with its pre-evolution!"
+      },
+      {
+        "tags": ["hitmonlee"],
+        "fact": "In Gen II only, Hitmonlee's arms and legs are darker than his body!"
+      },
+      {
+        "tags": ["hitmonlee","hitmonchan"],
+        "fact": "Hitmonchan and Hitmonlee are the only Pokémon that were introduced as not being evolutionary relatives but later became part of the same evolutionary family!"
+      },
+      {
+        "tags": ["hitmonchan"],
+        "fact": "Hitmonchan can learn almost every punching move, but it can't learn Sucker Punch. This is because Hitmonchan is an honorable fighter who doesn't take cheap shots!"
+      },
+      {
+        "tags": ["lickitung"],
+        "fact": "In Goldenrod Tunnel, there is a Poké Maniac who—before battling—says his Pokémon just got a haircut! His only Pokémon is a Lickitung. This implies Lickitung is capable of growing hair."
+      },
+      {
+        "tags": ["koffing"],
+        "fact": "Koffing's front sprite in Pokémon Crystal is similar to the one in Pokémon Gold, except without the surrounding gas. This makes Koffing one of the few pokémon to have a different front sprite for each Gen II game!"
+      },
+      {
+        "tags": ["weezing"],
+        "fact": "Weezing's shiny has undergone several revisions since it was introduced, especially regarding the color of the skull-and-crossbones patterns on its body! The patterns have been yellow, white, or pink, depending on the game!"
+      },
+      {
+        "tags": ["rhyhorn"],
+        "fact": "In Pokémon Stadium 2 only, Shiny Rhyhorn is depicted with a neon green tongue!"
+      },
+      {
+        "tags": ["rhydon"],
+        "fact": "In Gen I only, Rhydon can learn Bubblebeam!"
+      },
+      {
+        "tags": ["rhydon"],
+        "fact": "According to interviews with Ken Sugimori, Rhydon was one of the first Pokémon ever created!"
+      },
+      {
+        "tags": ["chansey","happiny"],
+        "fact": "Chansey is tied with Happiny for the lowest base Attack and Defense stats of all Pokémon: 5!"
+      },
+      {
+        "tags": ["tangela"],
+        "fact": "In Pokémon Gold and Silver only, Tangela's non-shiny sprite was a bright cyan!"
+      },
+      {
+        "tags": ["kangaskhan"],
+        "fact": "Despite obvious anatomical differences from its mother, Kangaskhan's baby has never been an official baby Pokémon!"
+      },
+      {
+        "tags": ["horsea"],
+        "fact": "Horsea's artwork from Pokémon Red and Blue depicted it with two fins instead of one! Example: https://bulbapedia.bulbagarden.net/wiki/File:116Horsea_RB.png "
+      },
+      {
+        "tags": ["seadra"],
+        "fact": "Seadra's EV Yield (1 Defense and 1 Special Atk) is unique among all pokémon!"
+      },
+      {
+        "tags": ["goldeen"],
+        "fact": "When traded into a Gen II game from a Gen I game, a Goldeen will always arrive holding a TM33 (Ice Punch)! Incidentally, Goldeen cannot learn Ice Punch."
+      },
+      {
+        "tags": ["seaking","tcg"],
+        "fact": "Seaking debuted in the Jungle expansion of the Pokémon Trading Card Game!"
+      },
+      {
+        "tags": ["staryu"],
+        "fact": "The front sprite for Staryu in Pokémon Yellow depicts it horiztonatlly, either lying down or floating!"
+      },
+      {
+        "tags": ["starmie"],
+        "fact": "In Gen II Starmie can learn attract, but it has no effect since Starmie is classified as 'gender unknown.'"
+      },
+      {
+        "tags": ["mrmime"],
+        "fact": "Translator Nob Ogasawara was wary about Mr. Mime's English name during localization, saying, 'If they make sequels and they give genders to Pokémon, we're going to be hooped!' Mr. Mime has an 50/50 Male-Female gender distribution."
+      },
+      {
+        "tags": ["mrmime"],
+        "fact": "The Mr. Mime obtained through an in-game trade in Pokémon Red and Blue was nicknamed Marcel! The same Mr. Mime is nicknamed Miles in Yellow, and Mimien in FireRed and LeafGreen."
+      },
+      {
+        "tags": ["scyther"],
+        "fact": "In Gen II only, in addition to its limbs, Shiny Scyther's wings were orange!"
+      },
+      {
+        "tags": ["jynx"],
+        "fact": "Between Gens I and II, Game Freak redesigned Jynx to be less racist by making its face dark purple instead of black. Did it help!? Not really, but what do I know!? I'm just a robotic sunflower! 🤩 🙃 🤧 🤖 BEEP BOOB BOPP 🤖"
+      },
+      {
+        "tags": ["electabuzz","anime"],
+        "fact": "In its original artwork, Electabuzz has four fingers on each hand. In the anime and subsequent artwork, each hand has five fingers. In Pokémon Stadium and Pokémon Stadium 2, it is depicted with six fingers on each hand (five fingers and one thumb)!"
+      },
+      {
+        "tags": ["magmar"],
+        "fact": "Magmar's Japanese name is Boober, hehehe."
+      },
+      {
+        "tags": ["magmar","tcg"],
+        "fact": "Magmar debuted in the Base Set of the Pokémon Trading Card Game!"
+      },
+      {
+        "tags": ["magmar"],
+        "fact": "In Gens I and VII, Magmar can learn Teleport!"
+      },
+      {
+        "tags": ["pinsir"],
+        "fact": "On a rare Sugimori-drawn 'Pocket Monsters' Bandai card, Pinsir is shown performing a Guillotine attack with its pincers lowered! Example: https://bulbapedia.bulbagarden.net/wiki/File:Bandai_Pinsir_card.jpg"
+      },
+      {
+        "tags": ["tauros","anime"],
+        "fact": "In episode 35 of the anime, Ash catches a herd of 30 Tauros. This episode was banned outside of Asia, however, due to the prolofic use of guns, leaving many international viewers wondering where and when he caught all the tauros!"
+      },
+      {
+        "tags": ["magikarp"],
+        "fact": "Magikarp is the only Pokémon in Pokémon Scarlet and Violet that cannot use Tera Blast!"
+      },
+      {
+        "tags": ["magikarp"],
+        "fact": "In addition to the Water 2 egg group, Magikarp also belongs to the Dragon egg group!"
+      },
+      {
+        "tags": ["gyarados"],
+        "fact": "Despite being a Flying-type, Gyrarados could not learn any Flying-type moves until HGSS, where it could learn Bounce via move tutor! It would not gain access to another flying move until being able to learn Hurricane in Gen VII."
+      },
+      {
+        "tags": ["gyarados"],
+        "fact": "Gyarados's original design resembled an massive, eyeless leech! Example: https://twitter.com/okp108/status/1075154559947829248/photo/2"
+      },
+      {
+        "tags": ["lapras"],
+        "fact": "In the documents for Satoshi Tajiri's Capsule Monsters pitch, Lapras was drawn without its curly ears! Example: https://bulbapedia.bulbagarden.net/wiki/File:Early_Lapras_sketch.png"
+      },
+      {
+        "tags": ["lapras"],
+        "fact": "In its Generation I official Sugimori watercolor—and in Pokémon Adventures—Lapras was depicted with teeth! Example: https://bulbapedia.bulbagarden.net/wiki/File:131Lapras_RB.png"
+      },
+      {
+        "tags": ["ditto"],
+        "fact": "Ditto had a scrapped evolution in the Pokémon Gold and Silver Spaceworld '97 demo named アニモン (Animon), which evolved from Ditto using a Metal Coat! Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_188.png "
+      },
+      {
+        "tags": ["eevee"],
+        "fact": "Unlike other Eevee, in Pokémon: LGPE, the partner Eevee has sexual dimorphism: Male partner Eevee look the same as all other Eevee, but female partner Eevee have a unique flower-shaped tail pattern! In Gen VIII, this gender difference was applied to all female Eevee."
+      },
+      {
+        "tags": ["eevee","tcg"],
+        "fact": "Eevee debuted in the Jungle expansion of the Pokémon Trading Card Game!"
+      },
+      {
+        "tags": ["vaporeon"],
+        "fact": "In terms of male human and female Pokémon breeding, Vaporeon is the most comp— ...I'm not reading this. Who added this to the list of facts!? @miggtorr!??!?!??!?? 😠 "
+      },
+      {
+        "tags": ["vaporeon"],
+        "fact": "In Gen 3 only, Vaporeon's normal sprite is closer to a cyan color than the light blue we are used to today!"
+      },
+      {
+        "tags": ["vaporeon"],
+        "fact": "In Gen I, the fin on Vaporeon's head continued down it's spine. This fin is visible in the back sprites in Pokémon Red, Green, Blue, and Yellow!"
+      },
+      {
+        "tags": ["jolteon","tcg","togepi","rattata"],
+        "fact": "The artwork for Light Jolteon from the Neo Destiny TCG Expansion also features Togepi and Rattata!"
+      },
+      {
+        "tags": ["flaeon"],
+        "fact": "Flareon's base attack is 130, but it lacked any physical STAB moves until Fire Fang in Gen IV (after the Physical and Special Split)."
+      },
+      {
+        "tags": ["flareon"],
+        "fact": "In Pokémon Scarlet & Violet, Flareon is the only Eeveelution that is not able to swim, standing on a platform when sent out in battle above water!"
+      },
+      {
+        "tags": ["porygon"],
+        "fact": "Porygon's evolutionary line is the only three-stage evolutionary line whose members were all considered fully evolved during their respective debut generations!"
+      },
+      {
+        "tags": ["porygon"],
+        "fact": "Porygon is the only Pokémon that evolves by trade twice!"
+      },
+      {
+        "tags": ["porygon","porygon2","porygonz"],
+        "fact": "Porygon is the only Pokémon in a three-stage evolutionary line that does not require leveling up to trigger any of its evolutions! One can legally obtain a Porygon-Z at level 1!"
+      },
+      {
+        "tags": ["omanyte"],
+        "fact": "In Gen II only, Omanyte's shiny was gray, not purple!"
+      },
+      {
+        "tags": ["omastar","tcg"],
+        "fact": "In the artwork for Dark Omastar in the Neo Destiny TCG Expansion, it is depicted attacking the viewer's face!"
+      },
+      {
+        "tags": ["kabuto"],
+        "fact": "Kabuto has two pairs of eyes, the two on its back and the two red ones underneath!"
+      },
+      {
+        "tags": ["kabuto"],
+        "fact": "Kabuto's design seems to be a blend of a trilobite and a horseshoe crab!"
+      },
+      {
+        "tags": ["kabutops","oddish","anime"],
+        "fact": "Kabutops has a scientific name, 'Kabutops maximus' (Latin: Largest Kabutops), which was stated in episode 163 of the anime! The only other Pokémon with a known scientific name is Oddish, styled 'Oddium wanderus!'"
+      },
+      {
+        "tags": ["aerodactyl"],
+        "fact": "In the PokéRap, Aerodactyl comes after Tentacruel and before Omanyte!"
+      },
+      {
+        "tags": ["aerodactyl"],
+        "fact": "Aerodactyl inspired the real-life the naming of 'Aerodactylus,' a genus of pterosaur!"
+      },
+      {
+        "tags": ["snorlax"],
+        "fact": "In the Pokémon Stadium series, Snorlax open their eyes when they faint!"
+      },
+      {
+        "tags": ["snorlax"],
+        "fact": "In Pokémon Gold & Silver, Snorlax's sprite colors are maroon and beige. In Pokémon Crystal, however, the maroon is changed to a darker brown color."
+      },
+      {
+        "tags": ["snorlax"],
+        "fact": "In Gen II only, the pads on shiny Snorlax's feet are blue!"
+      },
+      {
+        "tags": ["articuno"],
+        "fact": "Articuno's name comes from the word 'Arctic' and the Spanish word 'Uno (One)!"
+      },
+      {
+        "tags": ["articuno"],
+        "fact": "Anatomically, Articuno is very similar to the white-throated magpie-jay! (Example: https://en.wikipedia.org/wiki/White-throated_magpie-jay)"
+      },
+      {
+        "tags": ["zapdos"],
+        "fact": "When traded into a Gen II game from a Gen I game, a Zapdos will always arrive holding Bright Powder!"
+      },
+      {
+        "tags": ["moltres"],
+        "fact": "Moltres's name is a double pun: 'Molt-' comes from 'molten' (liquefied by heat) and 'molt' (shedding old feathers while producing new ones)!"
+      },
+      {
+        "tags": ["dratini"],
+        "fact": "In Pokémon Red, Blue, and Green, Dratini had lines on its belly!"
+      },
+      {
+        "tags": ["dragonair"],
+        "fact": "Although Dragonair can moves through the air unaided, it has been seen making its wings grow larger when flying! Example: https://bulbapedia.bulbagarden.net/wiki/File:Lana_Dragonair.png"
+      },
+      {
+        "tags": ["dragonite"],
+        "fact": "On a rare Sugimori-drawn 'Pocket Monsters' Bandai card, Dragonite is shown using its antennae to discharge a Hyper Beam attack! Example: https://bulbapedia.bulbagarden.net/wiki/File:Bandai_Dragonite_card.jpg"
+      },
+      {
+        "tags": ["mewtwo"],
+        "fact": "One of the Pokémon Mansion journals states Mewtwo's birthday is February 6!"
+      },
+      {
+        "tags": ["mew"],
+        "fact": "Mew is the only gender-unknown Pokémon species that is legitimately able to learn Captivate, which fails when used!"
+      },
+      {
+        "tags": ["mew"],
+        "fact": "At 11:22AM on 14 July 2016, the official Barnes and Noble twitter account accidentally tweeted out an explicit picture featuring Mew with the caption 'Of Mice and Mew. #PokemonABook'!"
+      },
+      {
+        "tags": ["chikorita"],
+        "fact": "Due to a programming error, Chikorita is not required in order to receive the Dex Diploma in Pokémon Ruby and Sapphire!"
+      },
+      {
+        "tags": ["bayleef"],
+        "fact": "The leaves on Bayleef's neck are consistently described as having a spicy aroma. However, real bay leaves have a bitter and herbal taste, which is similar to thyme!"
+      },
+      {
+        "tags": ["meganium"],
+        "fact": "In Pokémon Gold and Silver only, Meganium has 5 petals on its neck, not 6!"
+      },
+      {
+        "tags": ["cyndaquil", "charmander"],
+        "fact": "Cyndaquil, Charmander, and their respective evolutionary lines have exactly the same base stats in the same distribution!"
+      },
+      {
+        "tags": ["quilava", "typhlosion", "Entei"],
+        "fact": "In addition to Typhlosion, Quilava shares its category with its evolved form and Entei: they are all known as the Volcano Pokémon! They are also both capable of learning Eruption!"
+      },
+      {
+        "tags": ["typhlosion", "togetic", "anime"],
+        "fact": "Typhlosion and Togetic are the only Pokémon officially introduced in Generation II not to appear in the anime until the next generation!"
+      },
+      {
+        "tags": ["totodile"],
+        "fact": "In Gen II only, the spikes on Shiny Totodile's back are purple, not blue!"
+      },
+      {
+        "tags": ["totodile", "anime", "azumarill"],
+        "fact": "In episode 153 of the anime, Ash's Totodile falls in love with an Azumarill!"
+      },
+      {
+        "tags": ["croconaw", "totodile", "feraligatr"],
+        "fact": "Croconaw is the starter Pokémon with the shortest level gap between evolutions (12 levels), evolving from Totodile at level 18 and into Feraligatr at level 30!"
+      },
+      {
+        "tags": ["croconaw"],
+        "fact": "Croconaw has only one spike on its tail! 🥺"
+      },
+      {
+        "tags": ["feraligatr"],
+        "fact": "Feraligatr reaches its final evolutionary form earlier than any other starter Pokémon, at level 30!"
+      },
+      {
+        "tags": ["feraligatr"],
+        "fact": "The shortening of '-gator'into '-gatr' in Feraligatr's name is a result of the ten-character limit on English Pokémon names in Generation II!"
+      },
+      {
+        "tags": ["sentret"],
+        "fact": "In the mainline series, Sentret is depicted standing on its tail in every game until Gen VI!"
+      },
+      {
+        "tags": ["sentret", "smeargle"],
+        "fact": "In Gen VIII, Sentret can only learn Trick as an egg move, but only when bred from a male Smeargle that has copied that move using Sketch!"
+      },
+      {
+        "tags": ["furret"],
+        "fact": "Furret has exactly two whisker-like marks on either side of its face!"
+      },
+      {
+        "tags": ["hoothoot"],
+        "fact": "Hoothoot is pronounced 'hoot-hoot,' not 'hooth-oot!'"
+      },
+      {
+        "tags": ["hoothoot"],
+        "fact": "Hoothoot has a unique fade-in animation that is programmed into Pokémon Gold and Silver but goes unused!"
+      },
+      {
+        "tags": ["noctowl", "anime"],
+        "fact": "Noctowl is the first Pokémon to appear as a Shiny in the anime!"
+      },
+      {
+        "tags": ["ledyba", "ledian"],
+        "fact": "Despite their category, 'Five-Star Pokémon,' Ledyba and Ledian's five spots are neither star-shaped nor are they arranged in a typical star pattern!"
+      },
+      {
+        "tags": ["ledyba", "ledian", "vgc"],
+        "fact": "Ledyba and Ledian could not learn any Bug-type or Flying-type moves until Generation III! Their level up learnset did not contain any Bug-type moves until Generation IV or any Flying-type moves until Generation VII!"
+      },
+      {
+        "tags": ["ledian"],
+        "fact": "Despite multiple Pokédex entries describing its nocturnal behavior, wild Ledian are almost always encountered exclusively during the morning or daytime!"
+      },
+      {
+        "tags": ["spinarak", "ariados", "vgc"],
+        "fact": "Spinarak and its evolved form, Ariados, are the only known Pokémon capable of learning the move Toxic Thread!"
+      },
+      {
+        "tags": ["ariados"],
+        "fact": "Despite being based on a spider, Ariados only has four legs!"
+      },
+      {
+        "tags": ["ariados"],
+        "fact": "Ariados is one of the few Pokémon whose sprites in Gold, Silver, and Crystal are the same!"
+      },
+      {
+        "tags": ["sunkern"],
+        "fact": "IN HGSS, Sunkern's Pokéathlon performance stats can reach five stars in every stat! This is the highest possible stat total, shared only by Mew, Ditto, Origin Forme Giratina, and Arceus. Sunkern best legendary hands down. 😎"
+      },
+      {
+        "tags": ["sunflora"],
+        "fact": "Sunflora's design is based on a Sunflower! 🌻"
+      },
+      {
+        "tags": ["sunflora","tcg"],
+        "fact": "Sunflora (that's me! 🌻 ) has been featured on 8 different cards since it debuted in the Neo Genesis expansion of the Pokémon Trading Card Game!"
+      },
+      {
+        "tags": ["sunflora"],
+        "fact": "In Pokémon Crystal, a bug causes the capture formula for the Heavy Ball to incorrectly retrieve Sunflora's weight, giving it a +40 catch rate modifier! Unfortunately, however, Sunflora cannot be caught in the wild in Pokémon Crystal!"
+      },
+      {
+        "tags": ["dunsparce","dundunsparce"],
+        "fact": "In Generation III and IV, due to how Nature was determined, Hardy nature Dunsparce with Serene Grace have a 50% chance of evolving into Three-Segment Form Dudunsparce if transferred to Generation IX! (Note that this is still a 1/100 chance)."
+      },
+      {
+        "tags": ["swellow"],
+        "fact": "Shiny Swellow's colors and long tail feathers resemble those of the resplendent quetzal!"
+      },
+      {
+        "tags": ["minun","anime"],
+        "fact": "Minun's first major appearance in the anime was in episode 312, the same number as its position in the National Pokédex!"
+      },
+      {
+        "tags": ["illumise"],
+        "fact": "In French, Illumise's name is Lumivole!"
+      },
+      {
+        "tags": ["metang","registeel"],
+        "fact": "Metang and its evolutionary relatives all share both their standard and hidden Abilities with Registeel: Clear Body and Light Metal, respectively!"
+      },
+      {
+        "tags": ["deoxys"],
+        "fact": "Deoxys was the first Pokémon to have its own unique battle music!"
+      },
+      {
+        "tags": ["manaphy","ditto"],
+        "fact": "Manaphy and Ditto are the only Pokémon that are both able to breed yet unobtainable through breeding!"
+      },
+      {
+        "tags": ["general"],
+        "fact": "In Russian, the name for move Protect, Щит, is pronounced 'Schit!'"
+      },
+      {
+        "tags": ["general"],
+        "fact": "Satoshi Tajiri's early design concept of Pokémon was called 'Capsule Monsters!'"
+      },
+      {
+        "tags": ["anime"],
+        "fact": "The Japanese name for the 'Who's That Pokémon?' segment of the Pokémon anime is called だれだ？(dare da), meaning 'Who is it?'"
+      },
+      {
+        "tags": ["general"],
+        "fact": "The move Comet Punch was removed in Gen VIII!"
+      }
+    ]
+  }

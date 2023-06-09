@@ -1,0 +1,100 @@
+{
+    "questions":[
+        {
+            "clue" : "This pokémon was the first-ever dual-type starter!",
+            "answer" : "Bulbasaur"
+        },
+        {
+            "clue" : "When the flower bud on this pokémon's back starts swelling, a sweet aroma wafts to indicate its coming bloom!",
+            "answer" : "Ivysaur"
+        },
+        {
+            "clue" : "When this pokémon Gigantamaxes, its eyes glow green and it can use G-Max Vine Lash!",
+            "answer" : "Venusaur"
+        },
+        {
+            "clue" : "This pokémon is only 2 feet tall but the flame on its tail blazes brightly when it's enraged!",
+            "answer" : "Charmander"
+        },
+        {
+            "clue" : "When this pokémon gets excited, the orange flame at the tip of its tail flares bluish white!",
+            "answer" : "Charmeleon"
+        },
+        {
+            "clue" : "This firey pokémon has TWO mega evolutions!",
+            "answer" : "Charizard"
+        },
+        {
+            "clue" : "This 'Tiny Turtle Pokémon' draws its long neck into its shell to launch Water attacks with amazing range and accuracy!",
+            "answer" : "Squirtle"
+        },
+        {
+            "clue" : "This pokémon is shaped like a turtle and has a fluffy light-blue tail that curls like seafoam!",
+            "answer" : "Wartortle"
+        },
+        {
+            "clue" : "This pokémon has guns on its back!",
+            "answer" : "Blastoise"
+        },
+        {
+            "clue" : "The signature bright red antenna on this green pokémon's head releases a stench to repel predators!",
+            "answer" : "Caterpie"
+        },
+        {
+            "clue" : "This insect Pokémon resembles a green crescent!",
+            "answer" : "Metapod"
+        },
+        {
+            "clue" : "This friendly insect pokémon was the first to be shown in the anime with an alternate color: pink!",
+            "answer" : "Butterfree"
+        },
+        {
+            "clue" : "This is the only Pokémon that cannot legitimately know any Normal-type move!",
+            "answer" : "Weedle"
+        },
+        {
+            "clue" : "This Pokémon resembles a yellow cocoon!",
+            "answer" : "Kakuna"
+        },
+        {
+            "clue" : "Prior to Gen V, this Pokémon's signature move was Twineedle!",
+            "answer" : "Beedrill"
+        },
+        {
+            "clue" : "Despite its name, this unevolved Pokémon more closely resembles a female house sparrow than it does a pigeon!",
+            "answer" : "Pidgey"
+        },
+        {
+            "clue" : "This middle-evolution pokemon sports pink crest feathers that look like a mullet!",
+            "answer" : "Pidgeotto"
+        },
+        {
+            "clue" : "When this Normal/Flying-type pokémon mega-evolves, its primary feathers gain a splash of blue!",
+            "answer" : "Pidgeot"
+        },
+        {
+            "clue" : "Besides the Kanto starters, this is the first Pokémon in the National Dex to have a gender distribution that is not 50/50 male-to-female!",
+            "answer" : "Nidoranf"
+        },
+        {
+            "clue" : "After evolving from its pre-evolution, this Poison-type Pokémon can no longer breed!",
+            "answer" : "Nidorina"
+        },
+        {
+            "clue" : "This Poison-type pokémon is only female! Its body is encased with extremely hard scales that make it queen of the savannah!",
+            "answer" : "Nidoqueen"
+        },
+        {
+            "clue" : "This small Poison-type pokémon is only male! It is pinkish purple with darker patches. It has large, spiny ears with teal insides, oversized front teeth, and red eyes!",
+            "answer" : "Nidoranm"
+        },
+        {
+            "clue" : "This pokémon is a Fairy-type, often affectionately known as 'Pika-blue'!",
+            "answer" : "Marill"
+        },
+        {
+            "clue" : "This pokemon has six giant petals around its neck!",
+            "answer" : "Meganium"
+        }
+    ]
+}

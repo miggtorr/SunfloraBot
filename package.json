@@ -1,0 +1,16 @@
+{
+  "name": "twitchbot001",
+  "version": "1.0.0",
+  "description": "Twitch bot for my channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "tiny-json-http": "^7.5.1",
+    "tmi.js": "^1.8.5"
+  }
+}
