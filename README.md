@@ -19,7 +19,7 @@ Twitch Chat Bot "SunfloraBot"
 
 1. You can use your own Twitch account for this or you can make a new one. 
 2. Log into the Twitch account from whoch you'd like SunfloraBot to post.
-3. Go to https://twitchapps.com/tmi/ and press Connect and then click Authorize.
+3. Go to https://twitchapps.com/tmi/ and press **Connect** and then click **Authorize**.
 4. Copy the entire OAuth password that is given to you and save it somewhere safe. Don't share this with anyone.
 
 #### Providing the credentials to the bot itself.
