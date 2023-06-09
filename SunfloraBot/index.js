@@ -81,7 +81,7 @@ client.on('connected', () => {
     
 }); 
 
-setInterval(writeRollerFile, 480000); //Writes rolled users to file every 8 minutes
+// setInterval(writeRollerFile, 480000); //Writes rolled users to file every 8 minutes
 setInterval(funFactInterval, 1200000); //Says a fun fact every 20 mins.
 // setInterval(whosThatPokemonGameControl, 2820000); //Plays WTP Game every 47 mins.
 
@@ -218,7 +218,7 @@ client.on('message', (channel, user, message, self) => {
     }
 
     if(command == "!quizcommands"){
-        client.say(channel, `Quiz Commands: !quiz [player] (mod only); !myscore; !myrank; !leaderboard; !quizquit (mod only); !rescore (mod only)`);
+        client.say(channel, `Quiz Commands: !quiz; !myscore; !myrank; !leaderboard; !quizquit (mod only); !rescore (mod only)`);
     }
     
     if(command == "!myscore"){
@@ -286,7 +286,7 @@ client.on('message', (channel, user, message, self) => {
     }
 
     if(command == "!tweet" && user.mod){
-        client.say(channel, "@talesoftaylor, did you remember to tweet out that you're live? 😉")
+        client.say(channel, `@${channel.substring(1,channel.length)}, did you remember to tweet out that you're live? 😉`)
     }
 
     if(command == "!reroll" && (user.mod || user.username == 'miggtorr')) {
