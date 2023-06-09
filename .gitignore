@@ -3,3 +3,5 @@
 settings.json
 SunfloraBot/.env
 SunfloraBot/settings.json
+.DS_Store
+SunfloraBot/.DS_Store
