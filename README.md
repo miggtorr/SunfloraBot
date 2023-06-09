@@ -62,57 +62,57 @@ For example:
 ### Mod-only commands
 
 #### Shiny Roll commands
-`!newrolls` : Makes a new set of shiny rolls available. Use this at the beginning of the stream.
-`!refreshrolls` : Same as `!newrolls`.
-`!resetrolls` :Same as `!newrolls`.
-`!reroll [username]` : Allows a user to reroll for any reason.
-`!save` : Writes the shiny rolls to a file so that SunfloraBot can be shut down manually using `CTRL+C` in the Terminal.
-`!resetcounter` : Resets the counter on the shinyrolls to 0. Used after someone successfully rolls for a shiny.
-`!letsavroll` : Toggles whether `atreelessplain` can use the shiny roll command, lol. 
+- `!newrolls` : Makes a new set of shiny rolls available. Use this at the beginning of the stream.
+- `!refreshrolls` : Same as `!newrolls`.
+- `!resetrolls` :Same as `!newrolls`.
+- `!reroll [username]` : Allows a user to reroll for any reason.
+- `!save` : Writes the shiny rolls to a file so that SunfloraBot can be shut down manually using `CTRL+C` in the Terminal.
+- `!resetcounter` : Resets the counter on the shinyrolls to 0. Used after someone successfully rolls for a shiny.
+- `!letsavroll` : Toggles whether `atreelessplain` can use the shiny roll command, lol. 
 
 #### Game-related commands
-`!quitquiz` : Force quits the active quiz that a user is playing.
-`!rescore` : Forces SunfloraBot to re-read the quizscores.json file. Used after manually editing the file in an IDE or text editor. 
-`!wtf` : Activates the *Who's That Pokemon!?* Game.
+- `!quitquiz` : Force quits the active quiz that a user is playing.
+- `!rescore` : Forces SunfloraBot to re-read the quizscores.json file. Used after manually editing the file in an IDE or text editor. 
+- `!wtf` : Activates the *Who's That Pokemon!?* Game.
 
 #### Miscellaneous Mod-Only Commands
 
-`!disconnect` : Safely shuts down SunfloraBot
-`!tweet` : Reminds the streamer to tweet out that they're live.
-`!nap` : "Shutting down for 30 minutes." (Doesn't actually shut down the bot)
+- `!disconnect` : Safely shuts down SunfloraBot
+- `!tweet` : Reminds the streamer to tweet out that they're live.
+- `!nap` : "Shutting down for 30 minutes." (Doesn't actually shut down the bot)
 
-`gn` : SunfloraBot will say goodnight to the mod and to the streamer.
-`ncie` : "ncie"
+- `gn` : SunfloraBot will say goodnight to the mod and to the streamer.
+- `ncie` : "ncie"
 
 ### General user commands
 
-`!shinyroll` : Rolls for a shiny.
-`!quiz` : Begins a quiz (See below for quiz commands).
+- `!shinyroll` : Rolls for a shiny.
+- `!quiz` : Begins a quiz (See below for quiz commands).
 
-`!funfunfact` : Generates a random Pokémon fact.
-`!funfunfact [tag]` : Generates a random Pokémon fact from a subset of facts that have a certain tag. Tags include the names of Pokémon as well as the words `anime`, `vgc`, `tcg`, and `general`.
-`!realfunfact` : Exactly the same as `!funfunfact`.
-`!actualfunfact` : Exactly the same as `!funfunfact`.
+- `!funfunfact` : Generates a random Pokémon fact.
+- `!funfunfact [tag]` : Generates a random Pokémon fact from a subset of facts that have a certain tag. Tags include the names of Pokémon as well as the words `anime`, `vgc`, `tcg`, and `general`.
+- `!realfunfact` : Exactly the same as `!funfunfact`.
+- `!actualfunfact` : Exactly the same as `!funfunfact`.
 
-`!bestlegendary`: SunfloraBot will tell you the best legendary.
-`!number of noses`: "Taylor has one nose. ??? Why would you ask that?"
-`!bestshiny` : SunfloraBot will tell you the best shiny.
-`!quizcommands` : SunfloraBot will list the quiz commands (see below).
+- `!bestlegendary`: SunfloraBot will tell you the best legendary.
+- `!number of noses`: "Taylor has one nose. ??? Why would you ask that?"
+- `!bestshiny` : SunfloraBot will tell you the best shiny.
+- `!quizcommands` : SunfloraBot will list the quiz commands (see below).
 
 #### Quiz commands
 
-`!myscore` : SunfloraBot will show you your lifetime quiz points.
-`!leaderboard` : SunfloraBot will show you the top 3 quiz players.
-`!myrank` : SunfloraBot will tell you your quiz rank and your score.
+- `!myscore` : SunfloraBot will show you your lifetime quiz points.
+- `!leaderboard` : SunfloraBot will show you the top 3 quiz players.
+- `!myrank` : SunfloraBot will tell you your quiz rank and your score.
 
 #### *Who's That Pokémon?* Commands
 
-`!guess [pokemon]` : Used to guess a certain Pokémon when a WTP game is active.
-`!wtpscore` : SunfloraBot will show you your lifetime WTP points.
-`!wtpleaderboard` : SunfloraBot will show you the top 3 WTP players.
+- `!guess [pokemon]` : Used to guess a certain Pokémon when a WTP game is active.
+- `!wtpscore` : SunfloraBot will show you your lifetime WTP points.
+- `!wtpleaderboard` : SunfloraBot will show you the top 3 WTP players.
 
 ### Additional Features
 
-1. SunfloraBot will say a Fun Fact every 20 mins.
+- SunfloraBot will say a Fun Fact every 20 mins.
 
-2. If `monipandas` or `atreelessplain` write a message ending with `-ussy`, SunfloraBot will echo it back, ending it with `-enis` instead.
+- If `monipandas` or `atreelessplain` write a message ending with `-ussy`, SunfloraBot will echo it back, ending it with `-enis` instead.
