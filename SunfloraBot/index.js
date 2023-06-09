@@ -46,6 +46,10 @@ var quizPlayer = 'testUser';
 var playerScore = 0;
 const numOfQs = 3;
 
+//Orre Names Global Vars
+var allOrreNamesObj = {};
+var assignedOrreNamesObj = {};
+
 //Who's That Pokemon Global Vars
 class WTPState {
     static closed = new WTPState("closed")
@@ -342,6 +346,45 @@ client.on('message', (channel, user, message, self) => {
         //set time limit
     }
     
+    if(command == "!orre"){
+        let name = user.username;
+        // console.log(name)
+        if (args != ''){
+            name = args.toString();
+        };
+
+        if (name.startsWith('@')){
+            name = name.slice(1);
+        };
+        orreNameMain(name);
+    }
+
+    if(command == "!orrenew"){
+        let name = user.username;
+        // console.log(name)
+        if (args != ''){
+            name = args.toString();
+        };
+
+        if (name.startsWith('@')){
+            name = name.slice(1);
+        };
+        renewOrreName(name);
+    }
+
+    if(command == "!orreremove"){
+        let name = user.username;
+        // console.log(name)
+        if (args != ''){
+            name = args.toString();
+        };
+
+        if (name.startsWith('@')){
+            name = name.slice(1);
+        };
+        removeOrreName(name);
+        client.say(channel,`${name} no longer has an Orre name.`)
+    }
 
 });
 
@@ -1082,6 +1125,113 @@ function whosThatPokemonLeaderboard(){
     }
 }
 
-function randHeight(){
+//Orre Names
 
+async function interpretOrreNames(){
+    //utility function to turn Orre.txt into json.
+    try {
+        const contents = await fsPromises.readFile('orreNames.txt', 'utf-8');
+    
+        names = contents.split(/\r?\n/);
+
+        allOrreNamesObj.unused.push(names);
+
+        require('fs').writeFile('orreNames2.json',
+
+        JSON.stringify(allOrreNamesObj),
+
+        function (err) {
+            if (err) {
+                console.error('Crap happens');
+            }
+            console.log('orre names json saved.')
+        });
+    
+        console.log(names.length); // 👉️ ['One', 'Two', 'Three', 'Four']
+    
+      } catch (err) {
+        console.log(err);
+      };
 };
+
+//MAKE FUCNTIONS TO READ AND WRITE ASSIGNED ORRE NAMES OBJECT
+
+async function readOrreNames() {
+    try {
+        const contents = await fsPromises.readFile('orreNames.json', 'utf-8');
+      
+        allOrreNamesObj = JSON.parse(contents);
+        // for (const [key, value] of Object.entries(JSON.parse(contents))) { 
+        // quizHighScores.push(`${key}:${value}`); 
+        // };
+
+        // console.log(`${JSON.stringify(quizHighScores)} Quiz scores read!`);
+        console.log(`Orre names read!`);
+    //   console.log(Array.from(quizQsObj.questions).length);
+    
+    } catch (err) {
+        console.log(err);
+    };
+  };
+
+function orreNameMain(username){
+    //check if user has an orre name, if yes, tell them, if no, assign one
+
+    if(username in assignedOrreNamesObj){
+        const currentName = assignedOrreNamesObj[username];
+        client.say(channel, `In the Orre region, ${username} is known as ✨ ${currentName} ✨ !`);
+    } else {
+        assignNewOrreName(username);
+        const currentName = assignedOrreNamesObj[username];
+        client.say(channel, `${username} is now known as ✨ ${currentName} ✨ in the Orre region!`);
+    };
+};
+
+function renewOrreName(username){
+    if(username in assignedOrreNamesObj){
+        removeOrreName(username);
+    };
+        assignNewOrreName(username);
+        const currentName = assignedOrreNamesObj[username];
+        client.say(channel, `${username} is now known as ✨ ${currentName} ✨ in the Orre region!`);
+};
+
+function assignNewOrreName(username){
+    const l = allOrreNamesObj.unused.length;
+    const i = Math.floor(Math.random * l);
+    const currentName = allOrreNamesObj.unused[i];
+
+    //removing the name from Unused
+    
+    var tempUnusedArray = Array.from(JSON.parse(allOrreNamesObj.unused));
+    tempUnusedArray = tempUnusedArray.splice(i,1);
+    allOrreNamesObj.unused = JSON.stringify(tempUnusedArray);
+
+    // allOrreNamesObj.unused.splice(i,1);
+
+    //adding the name to used
+    var tempUsedArray = Array.from(JSON.parse(allOrreNamesObj.used))
+    tempUsedArray = tempUsedArray.push(currentName);
+    allOrreNamesObj.used = JSON.stringify(tempUsedArray);
+
+    // allOrreNamesObj.used.splice(0,0,currentName)
+
+    //assigning name to user and recording in list of assigned names.
+    const newOrreName = {[username]:currentName};
+    assignedOrreNamesObj = {...assignedOrreNamesObj, ...newOrreName};
+};
+
+
+function removeOrreName(username){
+    
+    const currentName = assignedOrreNamesObj[username]; //Grab user's assigned name
+    var tempUsedArray = Array.from(JSON.parse(allOrreNamesObj.used)); //Create array from used names to find the index of the user's assigned name and then remove it from the used names list.
+    const index = tempUsedArray.indexOf(currentName);
+    allOrreNamesObj.used.splice(index,1);
+    allOrreNamesObj.unused.splice(0,0,currentName)//add that name to the unused list
+    
+    
+    const {[username]: _, ...assignedOrreNamesWithNameRemoved} = assignedOrreNamesObj; //remove that user from dictionary of user-orrename pairs
+    assignedOrreNamesObj = assignedOrreNamesWithNameRemoved;
+    
+  }
