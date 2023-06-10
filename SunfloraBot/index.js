@@ -78,6 +78,7 @@ readQuestions('quizgame.json');
 readPokemonList();
 readWTPQuestions();
 whosThatPokemonReadScores();
+readOrreNames();
 
 client.on('connected', () => {
     console.log('Connected.');
@@ -115,23 +116,24 @@ client.on('message', (channel, user, message, self) => {
     // console.log(command);
 
     if(command == '!test' && (user.mod || user.username == 'miggtorr')){
-    
+        assignNewOrreName(user.username);
     }
-
+    if(command == '!test2' && (user.mod || user.username == 'miggtorr')){
+        removeOrreName(user.username);
+    }
+    
     if(command == '!disconnect' && (user.mod || user.username == 'miggtorr')){
         console.log('Disconnecting...');
         client.say(channel, `🌻 💤`)
         writeRollerFile();
+        writeOrreNames();
         setTimeout(() => {
             console.log('Disconnected!');
             process.exit(0);
-        }, 2000);
+        }, 3000);
     }
 
-    if(command == '!test2' && (user.mod || user.username == 'miggtorr')){
-        // whosThatPokemonCompileGuesses();
-    }
-    
+   
 
 
     if(command == '!bestlegendary'){
@@ -1133,6 +1135,7 @@ async function interpretOrreNames(){
         const contents = await fsPromises.readFile('orreNames.txt', 'utf-8');
     
         names = contents.split(/\r?\n/);
+        console.log(names);
 
         allOrreNamesObj.unused.push(names);
 
@@ -1172,7 +1175,42 @@ async function readOrreNames() {
     } catch (err) {
         console.log(err);
     };
+
+    try {
+        const contents = await fsPromises.readFile('assignedOrreNames.json', 'utf-8');
+      
+        assignedOrreNamesObj = JSON.parse(contents);
+        // for (const [key, value] of Object.entries(JSON.parse(contents))) { 
+        // quizHighScores.push(`${key}:${value}`); 
+        // };
+
+        // console.log(`${JSON.stringify(quizHighScores)} Quiz scores read!`);
+        console.log(`Assigned Orre names read!`);
+        console.log(assignedOrreNamesObj);
+    
+    } catch (err) {
+        console.log(err);
+    };
   };
+
+function writeOrreNames(){
+    require('fs').writeFile('assignedOrreNames.json',
+    JSON.stringify(assignedOrreNamesObj),
+    function (err) {
+        if (err) {
+            console.error('Crap happens');
+        }
+        console.log('Assigned Orre names saved.')
+    });
+    require('fs').writeFile('orreNames.json',
+    JSON.stringify(allOrreNamesObj),
+    function (err) {
+        if (err) {
+            console.error('Crap happens');
+        }
+        console.log('Orre name used/unused saved.')
+    });
+}
 
 function orreNameMain(username){
     //check if user has an orre name, if yes, tell them, if no, assign one
@@ -1198,40 +1236,43 @@ function renewOrreName(username){
 
 function assignNewOrreName(username){
     const l = allOrreNamesObj.unused.length;
-    const i = Math.floor(Math.random * l);
+    // console.log(`l = ${l}`);
+    const i = Math.floor(Math.random() * l);
+    // console.log(`i = ${i}`);
     const currentName = allOrreNamesObj.unused[i];
+    // console.log(`name = ${currentName}`);
 
     //removing the name from Unused
-    
-    var tempUnusedArray = Array.from(JSON.parse(allOrreNamesObj.unused));
-    tempUnusedArray = tempUnusedArray.splice(i,1);
-    allOrreNamesObj.unused = JSON.stringify(tempUnusedArray);
-
-    // allOrreNamesObj.unused.splice(i,1);
-
-    //adding the name to used
-    var tempUsedArray = Array.from(JSON.parse(allOrreNamesObj.used))
-    tempUsedArray = tempUsedArray.push(currentName);
-    allOrreNamesObj.used = JSON.stringify(tempUsedArray);
-
-    // allOrreNamesObj.used.splice(0,0,currentName)
+    allOrreNamesObj.unused.splice(i,1);
+    //adding the name to Used
+    allOrreNamesObj.used.splice(0,0,currentName)
 
     //assigning name to user and recording in list of assigned names.
     const newOrreName = {[username]:currentName};
     assignedOrreNamesObj = {...assignedOrreNamesObj, ...newOrreName};
+    console.log(JSON.stringify(assignedOrreNamesObj));
+
 };
 
 
 function removeOrreName(username){
     
-    const currentName = assignedOrreNamesObj[username]; //Grab user's assigned name
-    var tempUsedArray = Array.from(JSON.parse(allOrreNamesObj.used)); //Create array from used names to find the index of the user's assigned name and then remove it from the used names list.
-    const index = tempUsedArray.indexOf(currentName);
-    allOrreNamesObj.used.splice(index,1);
-    allOrreNamesObj.unused.splice(0,0,currentName)//add that name to the unused list
+    if(username in assignedOrreNamesObj){
+        const currentName = assignedOrreNamesObj[username]; //Grab user's assigned name
+        console.log(allOrreNamesObj);
+        var tempUsedArray = Array.from(allOrreNamesObj.used); //Create array from used names to find the index of the user's assigned name and then remove it from the used names list.
+        const index = tempUsedArray.indexOf(currentName);
+        allOrreNamesObj.used.splice(index,1);
+        allOrreNamesObj.unused.splice(0,0,currentName)//add that name to the unused list
+        console.log(allOrreNamesObj);
+        
+        
+        const {[username]: _, ...assignedOrreNamesWithNameRemoved} = assignedOrreNamesObj; //remove that user from dictionary of user-orrename pairs
+        assignedOrreNamesObj = assignedOrreNamesWithNameRemoved;
+        console.log(assignedOrreNamesObj);
+    } else {
+        console.log(`${username} doesn't have an Orre name.`);
+    };
     
-    
-    const {[username]: _, ...assignedOrreNamesWithNameRemoved} = assignedOrreNamesObj; //remove that user from dictionary of user-orrename pairs
-    assignedOrreNamesObj = assignedOrreNamesWithNameRemoved;
-    
+
   }
