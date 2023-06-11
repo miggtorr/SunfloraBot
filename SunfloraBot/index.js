@@ -1,3 +1,4 @@
+//version 0.4
 require('dotenv').config();
 const { availableParallelism, tmpdir } = require('os');
 var tiny = require('tiny-json-http');
