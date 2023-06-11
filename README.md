@@ -6,7 +6,7 @@
 
 ## ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) Installation ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) 
 
-### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Install node.js on your machine
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Install node.js on your machine
 
 Node.js is just Javascript that runs as standalone “serverside” software—as opposed to Javascript that runs “clientside” (e.g., on a webpage in your browser). Installing node.js will allow your computer to run SunfloraBot, which is written in Javascript.
 
@@ -14,20 +14,20 @@ Node.js is just Javascript that runs as standalone “serverside” software—a
 
 2. Run the installer.
 
-### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Install SunfloraBot
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Install SunfloraBot
 
 1. Download the SunfloraBot directory and store it locally in an arbitrary location. That's it!
 
-### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Connecting SunfloraBot to a Twitch account
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Connecting SunfloraBot to a Twitch account
 
-#### Getting login credentials that the bot can use.
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Getting login credentials that the bot can use.
 
 1. You can use your own Twitch account for this or you can make a new one. 
 2. Log into the Twitch account from whoch you'd like SunfloraBot to post.
 3. Go to https://twitchapps.com/tmi/ and press **Connect** and then click **Authorize**.
 4. Copy the entire OAuth password that is given to you and save it somewhere safe. Don't share this with anyone.
 
-#### Providing the credentials to the bot itself.
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Providing the credentials to the bot itself.
 
 1. In the SunfloraBot directory, create a new file (either using an IDE like **Visual Studio Code** or a simple text editor like **TextEdit** or **Notepad**. If using **TextEdit** or **Notepad**, be sure you're writing plain text, not rich text).
 2. Open the file and paste the following code, substituting your own data for the fields as shown: 
@@ -58,15 +58,15 @@ For example:
 
 5. To deactivate SunfloraBot, you can either press `CTRL+C` in the **Terminal** or a mod can type `!disconnect` in the chat where SunfloraBot has joined. 
 
-![note](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) **NOTE**: The safest way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls and updated Orre names before it deactivates. Only use `CTRL+C` if all the shiny rolls and Orre names have already been saved. Note that a mod can manually save the shiny rolls and Orre names by using `!save`, after which, it should be safe to use `CTRL+C`
+![note](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) **NOTE**: The **SAFEST** way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls and updated Orre names before it deactivates. Only use `CTRL+C` if all the shiny rolls and Orre names have already been saved. Note that a mod can manually save the shiny rolls and Orre names by using `!save`, after which, it should be safe to use `CTRL+C`
 
 6. SunfloraBot should be deactivated **after every stream** so it can save the shiny rolls and so it won't crash if the computer on which it's running goes to sleep.
 
 ## ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) SunfloraBot Basic Usage ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) 
 
-### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Mod-only commands
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Mod-only commands
 
-#### Shiny Roll commands
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Shiny Roll commands
 - `!newrolls` : Makes a new set of shiny rolls available. Use this at the beginning of the stream.
 - `!refreshrolls` : Same as `!newrolls`.
 - `!resetrolls` :Same as `!newrolls`.
@@ -75,18 +75,18 @@ For example:
 - `!resetcounter` : Resets the counter on the shinyrolls to 0. Used after someone successfully rolls for a shiny.
 - `!letsavroll` : Toggles whether `atreelessplain` can use the shiny roll command, lol. 
 
-#### Game-related commands
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Game-related commands
 - `!quitquiz` : Force quits the active quiz that a user is playing.
 - `!rescore` : Forces SunfloraBot to re-read the quizscores.json file. Used after manually editing the file in an IDE or text editor. 
 - `!wtf` : Activates the *Who's That Pokemon!?* Game.
 
-#### Orre Name-related commands
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Orre Name-related commands
 - `!orre [username]` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to the username provided. If no username is provided, the user will assign themselves an Orre name. **NOTE**: If used by a non-mod, will only ever assign an Orre name to the user, no matter the arguments.
 - `!orrenew [username]` : Issues a user a brand new Orre name (e.g., if they hate the one they got). This is a mod-only command so users don't spam it repeatedly looking for the perfect Orre name. If no username is provided, the user will assign themselves a new Orre name.
 - `!orreremove [username]` : Removes an Orre name from a user. **NOTE**: This command is mod-only to discourage users from alternating between `!orre` and `!orreremove` just to cycle their names around.
 - `!save` : Writes the Orre names (and shiny rolls) to a file so that SunfloraBot can be shut down manually using `CTRL+C` in the Terminal.
 
-#### Miscellaneous Mod-Only Commands
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Miscellaneous Mod-Only Commands
 
 - `!disconnect` : Safely shuts down SunfloraBot
 - `!tweet` : Reminds the streamer to tweet out that they're live.
@@ -95,7 +95,7 @@ For example:
 - `gn` : SunfloraBot will say goodnight to the mod and to the streamer.
 - `ncie` : "ncie"
 
-### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)General User commands
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)General User commands
 
 - `!shinyroll` : Rolls for a shiny.
 - `!quiz` : Begins a quiz (See below for quiz commands).
@@ -111,20 +111,20 @@ For example:
 
 - `!orre` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to that user.
 
-#### Quiz commands
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Quiz commands
 
 - `!quizcommands` : SunfloraBot will list the quiz commands (see below).
 - `!myscore` : SunfloraBot will show you your lifetime quiz points.
 - `!leaderboard` : SunfloraBot will show you the top 3 quiz players.
 - `!myrank` : SunfloraBot will tell you your quiz rank and your score.
 
-#### *Who's That Pokémon?* Commands
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)*Who's That Pokémon?* Commands
 
 - `!guess [pokemon]` : Used to guess a certain Pokémon when a WTP game is active.
 - `!wtpscore` : SunfloraBot will show you your lifetime WTP points.
 - `!wtpleaderboard` : SunfloraBot will show you the top 3 WTP players.
 
-### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Additional Features
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Additional Features
 
 - SunfloraBot will say a Fun Fact every 20 mins.
 
