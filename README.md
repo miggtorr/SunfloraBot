@@ -1,21 +1,24 @@
-# SunfloraBot
+# ![Sunflora](https://archives.bulbagarden.net/media/upload/9/9b/Spr_3e_192_s.png) SunfloraBot ![Sunflora](https://archives.bulbagarden.net/media/upload/9/9b/Spr_3e_192_s.png)
 
-![Sunflora](https://archives.bulbagarden.net/media/upload/9/9b/Spr_3e_192_s.png)
-**Twitch Chat Bot "SunfloraBot"**
+**Our resident Twitch Chat Bot:** ***SunfloraBot*** **!**
 
-## Installation
+“🤖 Beep Boob Bopp 🤖” —*SunfloraBot*
 
-### Install node.js on your machine
+## ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) Installation ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) 
 
-1. Go to https://nodejs.org/en and download the installer for the most recent "LTS" version (LTS stands for "long term support" and will be the most stable version).
+### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Install node.js on your machine
+
+Node.js is just Javascript that runs as standalone “serverside” software—as opposed to Javascript that runs “clientside” (e.g., on a webpage in your browser). Installing node.js will allow your computer to run SunfloraBot, which is written in Javascript.
+
+1. Go to https://nodejs.org/en and download the installer for the most recent "LTS" version (LTS stands for “long term support” and will be the most stable version).
 
 2. Run the installer.
 
-### Install SunfloraBot
+### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Install SunfloraBot
 
-1. Download the SunfloraBot directory and store it locally in an arbitrary location.
+1. Download the SunfloraBot directory and store it locally in an arbitrary location. That's it!
 
-### Connecting SunfloraBot to a Twitch account
+### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Connecting SunfloraBot to a Twitch account
 
 #### Getting login credentials that the bot can use.
 
@@ -26,7 +29,7 @@
 
 #### Providing the credentials to the bot itself.
 
-1. In the SunfloraBot directory, create a new file (either using an IDE like VSCode or a simple text editor like TextEdit or Notepad. If using TextEdit or Notepad, be sure you're writing plain text, not rich text).
+1. In the SunfloraBot directory, create a new file (either using an IDE like **Visual Studio Code** or a simple text editor like **TextEdit** or **Notepad**. If using **TextEdit** or **Notepad**, be sure you're writing plain text, not rich text).
 2. Open the file and paste the following code, substituting your own data for the fields as shown: 
 ```
 {
@@ -45,23 +48,23 @@ For example:
 ```
 3. Save that file as a JSON file in the SunfloraBot directory. This means it needs to be plaintext and you need to use the .json extension, not .txt.
 
-## Activating SunfloraBot
+## ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) Activating SunfloraBot ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) 
 
-2. Open the Terminal or Command Line and navigate to the SunfloraBot folder by typing `cd [path]/SunfloraBot/`.
+2. Open the **Terminal** or **Command Line** and navigate to the SunfloraBot folder by typing `cd [path]/SunfloraBot/`.
 
-3. In the Terminal, activate SunfloraBot by typing `node index.js`
+3. In the **Terminal** or **Command Line**, activate SunfloraBot by typing `node index.js`
 
 4. You should then see SunfloraBot join the chat of the channel specified above.
 
-5. To deactivate SunfloraBot, you can either press `CTRL+C` in the Terminal or a mod can type `!disconnect` in the chat where SunfloraBot has joined. 
+5. To deactivate SunfloraBot, you can either press `CTRL+C` in the **Terminal** or a mod can type `!disconnect` in the chat where SunfloraBot has joined. 
 
- **NOTE**: The safest way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls and updated Orre names before it deactivates. Only use `CTRL+C` if all the shiny rolls and Orre names have already been saved. Note that a mod can manually save the shiny rolls and Orre names by using `!save`, after which, it should be safe to use `CTRL+C`
+![note](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) **NOTE**: The safest way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls and updated Orre names before it deactivates. Only use `CTRL+C` if all the shiny rolls and Orre names have already been saved. Note that a mod can manually save the shiny rolls and Orre names by using `!save`, after which, it should be safe to use `CTRL+C`
 
 6. SunfloraBot should be deactivated **after every stream** so it can save the shiny rolls and so it won't crash if the computer on which it's running goes to sleep.
 
-## SunfloraBot Basic Usage
+## ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) SunfloraBot Basic Usage ![Sunflora](https://archives.bulbagarden.net/media/upload/b/b0/Trozeiani192.png) 
 
-### Mod-only commands
+### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Mod-only commands
 
 #### Shiny Roll commands
 - `!newrolls` : Makes a new set of shiny rolls available. Use this at the beginning of the stream.
@@ -92,7 +95,7 @@ For example:
 - `gn` : SunfloraBot will say goodnight to the mod and to the streamer.
 - `ncie` : "ncie"
 
-### General User commands
+### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)General User commands
 
 - `!shinyroll` : Rolls for a shiny.
 - `!quiz` : Begins a quiz (See below for quiz commands).
@@ -121,7 +124,7 @@ For example:
 - `!wtpscore` : SunfloraBot will show you your lifetime WTP points.
 - `!wtpleaderboard` : SunfloraBot will show you the top 3 WTP players.
 
-### Additional Features
+### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Additional Features
 
 - SunfloraBot will say a Fun Fact every 20 mins.
 
