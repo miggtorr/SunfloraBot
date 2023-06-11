@@ -104,6 +104,7 @@ client.on('redeem', (channel, username, rewardType, tags, message) => {
 client.on('message', (channel, user, message, self) => {
     const args = message.split(' ');
     const command = args.shift().toLowerCase();
+    const channelname = channel.substring(1);
 
     if(self && command == '!shinyroll'){
         ShinyRoll(sunflorabot);
@@ -115,14 +116,14 @@ client.on('message', (channel, user, message, self) => {
     
     // console.log(command);
 
-    if(command == '!test' && (user.mod || user.username == 'miggtorr')){
-        assignNewOrreName(user.username);
+    if(command == '!test' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        client.say(channel, `${channelname} Success!`)
     }
-    if(command == '!test2' && (user.mod || user.username == 'miggtorr')){
-        removeOrreName(user.username);
+    if(command == '!test2' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        
     }
     
-    if(command == '!disconnect' && (user.mod || user.username == 'miggtorr')){
+    if(command == '!disconnect' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         console.log('Disconnecting...');
         client.say(channel, `🌻 💤`)
         writeRollerFile();
@@ -162,30 +163,31 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel, `@${user.username}, did you know that Sunflora is the best legendary?`);
     }
 
-    if(command == '!nap' && (user.mod || user.username == 'miggtorr')){
+    if(command == '!nap' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         client.say(channel, 'Shutting down for 30 minutes.');
     }
 
-    if(command == '!save' && (user.mod || user.username == 'miggtorr')){
+    if(command == '!save' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         // client.say(channel, 'Shutting down for 30 minutes.');
         writeRollerFile();
+        writeOrreNames();
     }
 
-    if((command == '!newrolls' || command == '!refreshrolls' || command == '!resetrolls') && (user.mod || user.username == 'miggtorr')){
+    if((command == '!newrolls' || command == '!refreshrolls' || command == '!resetrolls') && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         rolledUsers = [];
         writeRollerFile();
         client.say(channel, "New shiny rolls available for everyone!");
     }
 
-    if((command == '!resetcounter') && (user.mod || user.username == 'miggtorr')){
+    if((command == '!resetcounter') && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         shinyRollCounter = 0;
         rolledUsers = [];
         writeRollerFile();
         client.say(channel, "Shiny roll counter reset! New shiny rolls available for everyone!");
     }
 
-    if(command == 'gn' && (user.mod || user.username == 'miggtorr')){
-        client.say(channel, `Goodnight! @${user.username} Goodnight @${channel.substring(1,channel.length)} 🥰`);
+    if(command == 'gn' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        client.say(channel, `Goodnight! @${user.username} Goodnight @${channelname} 🥰`);
         writeRollerFile();
     }
 
@@ -204,7 +206,7 @@ client.on('message', (channel, user, message, self) => {
         };
     }
 
-    if(command == '!letsavroll' && (user.mod || user.username == 'miggtorr')){
+    if(command == '!letsavroll' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         if(!savCanGamble){
             client.say(channel, "...*sigh*...");
             setTimeout(() => { 
@@ -219,7 +221,7 @@ client.on('message', (channel, user, message, self) => {
         }
     }
 
-    if(command == "ncie" && user.mod){
+    if(command == "ncie"  && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         client.say(channel, 'ncie');
     }
 
@@ -260,7 +262,7 @@ client.on('message', (channel, user, message, self) => {
         QuizGameLeaderboard();
     }
 
-    if(command == "!rescore" && (user.mod || user.username == 'miggtorr')){
+    if(command == "!rescore" && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         QuizReadHighScores('quizScores.json');
         client.say(channel, `Quiz scores updated.`);
     }
@@ -287,7 +289,7 @@ client.on('message', (channel, user, message, self) => {
         
     }
 
-    if(command == '!quizquit' && (user.mod || user.username == 'miggtorr')){
+    if(command == '!quizquit' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         QuizGameQuit();
     }
 
@@ -295,7 +297,7 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel, `@${channel.substring(1,channel.length)}, did you remember to tweet out that you're live? 😉`)
     }
 
-    if(command == "!reroll" && (user.mod || user.username == 'miggtorr')) {
+    if(command == "!reroll" && (user.mod || user.username == channelname || user.username == `miggtorr`)) {
         var name = args.toString();
         
         if (name.startsWith('@')){
@@ -340,28 +342,28 @@ client.on('message', (channel, user, message, self) => {
         whosThatPokemonLeaderboard();
     }
 
-    if(command == '!wtp' && (user.mod || user.username == 'miggtorr')){
+    if(command == '!wtp' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         whosThatPokemonGameControl();
     }
 
-    if(command == '!wtptime'  && (user.mod || user.username == 'miggtorr')){
+    if(command == '!wtptime' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         //set time limit
     }
     
     if(command == "!orre"){
         let name = user.username;
         // console.log(name)
-        if (args != ''){
+        if (args != '' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
             name = args.toString();
-        };
+        }
 
-        if (name.startsWith('@')){
+        if(name.startsWith('@')){
             name = name.slice(1);
-        };
+        }
         orreNameMain(name);
     }
 
-    if(command == "!orrenew"){
+    if(command == "!orrenew" && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         let name = user.username;
         // console.log(name)
         if (args != ''){
@@ -374,7 +376,7 @@ client.on('message', (channel, user, message, self) => {
         renewOrreName(name);
     }
 
-    if(command == "!orreremove"){
+    if(command == "!orreremove" && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         let name = user.username;
         // console.log(name)
         if (args != ''){
@@ -384,6 +386,7 @@ client.on('message', (channel, user, message, self) => {
         if (name.startsWith('@')){
             name = name.slice(1);
         };
+
         removeOrreName(name);
         client.say(channel,`${name} no longer has an Orre name.`)
     }

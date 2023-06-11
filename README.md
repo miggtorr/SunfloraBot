@@ -53,7 +53,7 @@ For example:
 
 5. To deactivate SunfloraBot, you can either press `CTRL+C` in the Terminal or a mod can type `!disconnect` in the chat where SunfloraBot has joined. 
 
- **NOTE**: The safest way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls before it deactivates. Only use `CTRL+C` if all the shiny rolls have already been saved. Note that a mod can manually save the shiny rolls by using `!save`, after which, it should be safe to use `CTRL+C`
+ **NOTE**: The safest way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls and updated Orre names before it deactivates. Only use `CTRL+C` if all the shiny rolls and Orre names have already been saved. Note that a mod can manually save the shiny rolls and Orre names by using `!save`, after which, it should be safe to use `CTRL+C`
 
 6. SunfloraBot should be deactivated **after every stream** so it can save the shiny rolls and so it won't crash if the computer on which it's running goes to sleep.
 
@@ -66,7 +66,7 @@ For example:
 - `!refreshrolls` : Same as `!newrolls`.
 - `!resetrolls` :Same as `!newrolls`.
 - `!reroll [username]` : Allows a user to reroll for any reason.
-- `!save` : Writes the shiny rolls to a file so that SunfloraBot can be shut down manually using `CTRL+C` in the Terminal.
+- `!save` : Writes the shiny rolls (and Orre names) to a file so that SunfloraBot can be shut down manually using `CTRL+C` in the Terminal.
 - `!resetcounter` : Resets the counter on the shinyrolls to 0. Used after someone successfully rolls for a shiny.
 - `!letsavroll` : Toggles whether `atreelessplain` can use the shiny roll command, lol. 
 
@@ -74,6 +74,12 @@ For example:
 - `!quitquiz` : Force quits the active quiz that a user is playing.
 - `!rescore` : Forces SunfloraBot to re-read the quizscores.json file. Used after manually editing the file in an IDE or text editor. 
 - `!wtf` : Activates the *Who's That Pokemon!?* Game.
+
+#### Orre Name-related commands
+- `!orre [username]` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to the username provided. If no username is provided, the user will assign themselves an Orre name. **NOTE**: If used by a non-mod, will only ever assign an Orre name to the user, no matter the arguments.
+- `!orrenew [username]` : Issues a user a brand new Orre name (e.g., if they hate the one they got). This is a mod-only command so users don't spam it repeatedly looking for the perfect Orre name. If no username is provided, the user will assign themselves a new Orre name.
+- `!orreremove [username]` : Removes an Orre name from a user. **NOTE**: This command is mod-only to discourage users from alternating between `!orre` and `!orreremove` just to cycle their names around.
+- `!save` : Writes the Orre names (and shiny rolls) to a file so that SunfloraBot can be shut down manually using `CTRL+C` in the Terminal.
 
 #### Miscellaneous Mod-Only Commands
 
@@ -84,7 +90,7 @@ For example:
 - `gn` : SunfloraBot will say goodnight to the mod and to the streamer.
 - `ncie` : "ncie"
 
-### General user commands
+### General User commands
 
 - `!shinyroll` : Rolls for a shiny.
 - `!quiz` : Begins a quiz (See below for quiz commands).
@@ -97,10 +103,12 @@ For example:
 - `!bestlegendary`: SunfloraBot will tell you the best legendary.
 - `!number of noses`: "Taylor has one nose. ??? Why would you ask that?"
 - `!bestshiny` : SunfloraBot will tell you the best shiny.
-- `!quizcommands` : SunfloraBot will list the quiz commands (see below).
+
+- `!orre` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to that user.
 
 #### Quiz commands
 
+- `!quizcommands` : SunfloraBot will list the quiz commands (see below).
 - `!myscore` : SunfloraBot will show you your lifetime quiz points.
 - `!leaderboard` : SunfloraBot will show you the top 3 quiz players.
 - `!myrank` : SunfloraBot will tell you your quiz rank and your score.
