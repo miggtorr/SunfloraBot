@@ -1,7 +1,7 @@
 # SunfloraBot
-**Twitch Chat Bot "SunfloraBot"**
 
 ![Sunflora](https://archives.bulbagarden.net/media/upload/9/9b/Spr_3e_192_s.png)
+**Twitch Chat Bot "SunfloraBot"**
 
 ## Installation
 
