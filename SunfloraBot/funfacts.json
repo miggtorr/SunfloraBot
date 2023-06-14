@@ -845,8 +845,16 @@
         "fact": "In Pokémon Crystal, a bug causes the capture formula for the Heavy Ball to incorrectly retrieve Sunflora's weight, giving it a +40 catch rate modifier! Unfortunately, however, Sunflora cannot be caught in the wild in Pokémon Crystal!"
       },
       {
+        "tags" : ["umbreon", "espeon"],
+        "fact" : "Due to the absence of a day-night cycle in FireRed and LeafGreen, in order for an Umbreon or Espeon to be obtained and added to the Pokédex in those games, an Eevee must be traded to Pokémon Ruby, Sapphire, and Emerald, evolved there, and then traded back, or else traded from Pokémon Colosseum or Pokémon XD: Gale of Darkness."
+      },
+      {
         "tags": ["dunsparce","dundunsparce"],
         "fact": "In Generation III and IV, due to how Nature was determined, Hardy nature Dunsparce with Serene Grace have a 50% chance of evolving into Three-Segment Form Dudunsparce if transferred to Generation IX! (Note that this is still a 1/100 chance)."
+      },
+      {
+        "tags": ["stantler"],
+        "fact": "Stantler's tail is brown, except in Gen III and Pokémon Crystal! In those games, its tail is white!" 
       },
       {
         "tags": ["swellow"],
@@ -867,6 +875,10 @@
       {
         "tags": ["deoxys"],
         "fact": "Deoxys was the first Pokémon to have its own unique battle music!"
+      },
+      {
+        "tags" : ["lopunny"],
+        "fact" : "Lopunny is the only Pokémon that can learn Return by leveling up!"
       },
       {
         "tags": ["manaphy","ditto"],
