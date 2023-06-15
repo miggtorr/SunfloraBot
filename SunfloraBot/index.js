@@ -1,4 +1,4 @@
-//version 0.4
+//version 0.4.1
 require('dotenv').config();
 const { availableParallelism, tmpdir } = require('os');
 var tiny = require('tiny-json-http');
@@ -8,6 +8,7 @@ const { say, timeout } = require('tmi.js/lib/commands');
 const {promises: fsPromises} = require('fs');
 const { resolve } = require('path');
 const { removeAllListeners } = require('process');
+const readline = require('readline');
 const clientOptions = {
     options: { debug: true },
     connection: {
@@ -81,6 +82,8 @@ readWTPQuestions();
 whosThatPokemonReadScores();
 readOrreNames();
 
+let rl = readline.createInterface(process.stdin, process.stdout);
+
 client.on('connected', () => {
     console.log('Connected.');
     client.say(channel, `PowerUpL 🌻 PowerUpR`);
@@ -125,14 +128,8 @@ client.on('message', (channel, user, message, self) => {
     }
     
     if(command == '!disconnect' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        console.log('Disconnecting...');
-        client.say(channel, `🌻 💤`)
-        writeRollerFile();
-        writeOrreNames();
-        setTimeout(() => {
-            console.log('Disconnected!');
-            process.exit(0);
-        }, 3000);
+        client.say(channel, `🌻 💤`);
+        disconnectFunction();
     }
 
    
@@ -504,6 +501,17 @@ function writeRollerFile(){
         }
     );
 }
+
+function disconnectFunction(){
+    console.log('Disconnecting...');
+    writeRollerFile();
+    writeOrreNames();
+    setTimeout(() => {
+    console.log('Disconnected!');
+    process.exit(0);
+}, 3000);
+}
+
 
 function funFactInterval(){
     if(facts == []){
@@ -1260,7 +1268,6 @@ function assignNewOrreName(username){
 
 
 function removeOrreName(username){
-    
     if(username in assignedOrreNamesObj){
         const currentName = assignedOrreNamesObj[username]; //Grab user's assigned name
         console.log(allOrreNamesObj);
@@ -1277,6 +1284,40 @@ function removeOrreName(username){
     } else {
         console.log(`${username} doesn't have an Orre name.`);
     };
-    
-
   }
+//Console Commands
+
+rl.on('line', (input) => 
+{
+//   console.log(`Received: ${input}`);
+    switch(input){
+        case `!save`:  
+            writeRollerFile();
+            writeOrreNames();
+            break;
+        case `!interpret`:
+            interpretOrreNames();
+            break;
+        default:
+            break;
+    }
+}
+); 
+
+rl.on('SIGINT', () => {
+    rl.question('Are you sure you want to exit? (y/n)', (answer) => {
+      if (answer.match(/^y(es)?$/i)){
+        rl.question('Would you like to save data to file? (shinyrolls, etc.) (y/n)', (answer) => {
+            if(answer.match(/^y(es)?$/i)){
+                disconnectFunction();
+                
+            } else {
+                console.log('Disconnected!');
+                process.exit(0);
+            }
+        })
+      } else {
+        console.log(`SunfloraBot remaining active...`);
+      };
+    });
+  }); 
