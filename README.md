@@ -58,7 +58,7 @@ For example:
 
 5. To deactivate SunfloraBot, you can either press `CTRL+C` in the **Terminal** or a mod can type `!disconnect` in the chat where SunfloraBot has joined. 
 
-![note](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) **NOTE**: The **SAFEST** way to deactivate SunfloraBot is **ALWAYS** to use the `!disconnect` command. This saves all the shiny rolls and updated Orre names before it deactivates. Only use `CTRL+C` if all the shiny rolls and Orre names have already been saved. Note that a mod can manually save the shiny rolls and Orre names by using `!save`, after which, it should be safe to use `CTRL+C`
+![note](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) **NOTE**: Using the `!disconnect` command will saves all the shiny rolls and updated Orre names before it deactivates. `CTRL+C` in the terminal will prompt the user whether they want to save shiny rolls and Orre names. `!save` can also be used in the terminal to manually save shiny rolls and Orre names without notifying chat.
 
 6. SunfloraBot should be deactivated **after every stream** so it can save the shiny rolls and so it won't crash if the computer on which it's running goes to sleep.
 
