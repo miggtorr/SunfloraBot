@@ -1,4 +1,4 @@
-//version 0.4.1
+//version 0.4.2
 require('dotenv').config();
 const { availableParallelism, tmpdir } = require('os');
 var tiny = require('tiny-json-http');
@@ -1297,6 +1297,10 @@ rl.on('line', (input) =>
             break;
         case `!interpret`:
             interpretOrreNames();
+            break;
+        case `!refreshfunfacts` :
+            readFacts('funfacts.json');
+            console.log('Facts refreshed!');
             break;
         default:
             break;

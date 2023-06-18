@@ -877,12 +877,20 @@
         "fact": "Deoxys was the first Pokémon to have its own unique battle music!"
       },
       {
+        "tags" : ["combee", "tcg"],
+        "fact" : "In the Pokémon TCG, all Combee cards are female; They have to be like this or else the Combee would not be able to evolve! (submitted by @not_a_price_tag)"
+      },
+      {
         "tags" : ["lopunny"],
         "fact" : "Lopunny is the only Pokémon that can learn Return by leveling up!"
       },
       {
         "tags": ["manaphy","ditto"],
         "fact": "Manaphy and Ditto are the only Pokémon that are both able to breed yet unobtainable through breeding!"
+      },
+      {
+        "tags": ["pawmi","pawmo"],
+        "fact": "Compared to Pawmi, Pawmo is cuter and the better shiny."
       },
       {
         "tags": ["general"],
