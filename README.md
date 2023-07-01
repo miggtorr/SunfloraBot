@@ -144,7 +144,7 @@ For example:
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) Terminal Commands
 The following commands can be used directly from the terminal:
 
-- `say [arguments]` : SunfloraBot will say `[arguments] in chat.
+- `say [arguments]` : SunfloraBot will say `[arguments]` in chat.
 
 - `beep` : "🤖 BEEP BOOB BOPP 🤖"
 
