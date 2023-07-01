@@ -1,4 +1,4 @@
-//version 0.4.2
+//version 0.5
 require('dotenv').config();
 const { availableParallelism, tmpdir } = require('os');
 var tiny = require('tiny-json-http');
@@ -70,6 +70,7 @@ var WTPGuesses = {};
 var WTPWinningPlayers = '';
 var WTPWinningPlayersArr = [];
 var WTPScores = {};
+var numBones = 0;
 
 //Initialization
 QuizReadHighScores('quizScores.json');
@@ -81,6 +82,7 @@ readPokemonList();
 readWTPQuestions();
 whosThatPokemonReadScores();
 readOrreNames();
+readBones();
 
 let rl = readline.createInterface(process.stdin, process.stdout);
 
@@ -167,8 +169,7 @@ client.on('message', (channel, user, message, self) => {
 
     if(command == '!save' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         // client.say(channel, 'Shutting down for 30 minutes.');
-        writeRollerFile();
-        writeOrreNames();
+        writeAllDataToFile();
     }
 
     if((command == '!newrolls' || command == '!refreshrolls' || command == '!resetrolls') && (user.mod || user.username == channelname || user.username == `miggtorr`)){
@@ -186,7 +187,6 @@ client.on('message', (channel, user, message, self) => {
 
     if(command == 'gn' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         client.say(channel, `Goodnight! @${user.username} Goodnight @${channelname} 🥰`);
-        writeRollerFile();
     }
 
     if(command == '!shinyroll'){
@@ -389,6 +389,25 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel,`${name} no longer has an Orre name.`)
     }
 
+    if(giveBoneArray.includes(command)){
+        giveBone();
+    }
+
+    if(takeBoneArray.includes(command)){
+        takeBone();
+    }
+
+    if(sayBoneArray.includes(command)){
+        sayBoneCount();
+    }
+
+    if(command == `!shufflebones`){
+        shuffleBones();
+    }
+
+    if(command == `!resetbones` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        resetBones();
+    }
 });
 
 
@@ -430,10 +449,7 @@ function ShinyRoll(chatuser) {
         };
         
         client.say(channel, `${sayString}`); 
-    }
-
-    
-
+    } 
 };
 
 function dailyRollCheck(name){
@@ -458,7 +474,6 @@ function readRollerFile(){
         // console.log('Rolled Users: ' + rolledUsers);
         
    })  
-   
 }
 
 function readRollCounter(){
@@ -468,13 +483,10 @@ function readRollCounter(){
         if(error){
            console.log(error);
            return;
-        }
-        
+        }    
         shinyRollCounter = data;
-        console.log("Shiny Rolls: " + shinyRollCounter);
-        
+        console.log("Shiny Rolls: " + shinyRollCounter);     
    })  
-   
 }
 
 function writeRollerFile(){
@@ -502,14 +514,19 @@ function writeRollerFile(){
     );
 }
 
-function disconnectFunction(){
-    console.log('Disconnecting...');
+function writeAllDataToFile(){
     writeRollerFile();
     writeOrreNames();
+    writeBones();
+}
+
+function disconnectFunction(){
+    console.log('Disconnecting...');
+    writeAllDataToFile();
     setTimeout(() => {
-    console.log('Disconnected!');
-    process.exit(0);
-}, 3000);
+        console.log('Disconnected!');
+        process.exit(0);
+    }, 3000);
 }
 
 
@@ -532,7 +549,7 @@ async function readFacts(filename) {
     } catch (err) {
       console.log(err);
     }
-  };
+};
 
 var factnum = 0
 function funFact(tag) {
@@ -770,7 +787,7 @@ async function QuizReadHighScores(filename) {
     } catch (err) {
         console.log(err);
     }
-  };
+};
 
 function QuizGameCompileScores(){
     if(!quizHighScores[quizPlayer]){
@@ -995,8 +1012,6 @@ function whosThatPokemonCloseGuessesReveal(){
             };
             whosThatPokemonWriteScores();
         }
-        
-
       }, 2000);
 }
 
@@ -1284,23 +1299,107 @@ function removeOrreName(username){
     } else {
         console.log(`${username} doesn't have an Orre name.`);
     };
-  }
+}
+
+//Bone commands
+
+function readBones(){
+    const fs = require('fs');
+
+    var data = fs.readFile('bones.txt', 'utf8', (error, data) => {
+        if(error){
+           console.log(error);
+           return;
+        }    
+        numBones = data;
+        console.log("Taylor has " + numBones + " bones.");     
+   });
+}
+
+function writeBones(){
+    require('fs').writeFile('bones.txt',
+
+    numBones.toString(),
+
+    function (err) {
+        if (err) {
+            console.error('Crap happens');
+        }
+        console.log('Number of bones saved.')
+    });
+}
+
+function sayBoneCount(){
+    const channelname = channel.substring(0);
+    var boneword = ``;
+    var justword = ``;
+    if(numBones == 1 || numBones == -1){
+        boneword = `bone`;
+        justword = `just `;
+    } else {
+        boneword = `bones`;
+        justword = ``;
+    }
+    client.say(channel, `${channelname} has ${justword}${numBones} ${boneword}. 🦴`)
+}
+
+function takeBone(){
+    numBones--;
+    sayBoneCount();
+}
+
+const takeBoneArray = [`!takebone`,`!eatbone`,`!removebone`,`!purloinbone`,`!makeoffwithbone`,`!stealbone`,`!extractbone`,`!withdrawbone`];
+
+function giveBone(){
+    numBones++;
+    sayBoneCount()
+}
+
+const giveBoneArray = [`!givebone`,`!providebone`,`!regurgitatebone`,`!putbackbone`,`!putboneback`,`!returnbone`];
+
+function resetBones(){
+    numBones = 207;
+    sayBoneCount();
+}
+
+const sayBoneArray = [`!bonecount`,`!tradebone`,`!swapbone`,`!exchangebone`];
+
+function shuffleBones(){
+    let shuf = numBones.toString();
+    while(+shuf==numBones){
+        shuf = shuf.split('').sort(() => 0.5 - Math.random()).join('');
+        console.log(shuf);
+    };
+    console.log(`Unshuffled bones = ${numBones}`);
+    console.log(`Shuffled bones = ${+shuf}`);
+    numBones = (+shuf);
+    sayBoneCount();
+}
+
 //Console Commands
 
 rl.on('line', (input) => 
 {
+    const args = input.split(' ');
+    const command = args.shift().toLowerCase();
+
 //   console.log(`Received: ${input}`);
-    switch(input){
-        case `!save`:  
-            writeRollerFile();
-            writeOrreNames();
+    switch(command){
+        case `!save` :  
+            writeAllDataToFile();
             break;
-        case `!interpret`:
+        case `!interpret` :
             interpretOrreNames();
             break;
         case `!refreshfunfacts` :
             readFacts('funfacts.json');
             console.log('Facts refreshed!');
+            break;
+        case `say` :
+            client.say(channel, `${args}`);
+            break;
+        case `!disconnect` :
+            disconnectFunction();
             break;
         default:
             break;
