@@ -146,6 +146,8 @@ The following commands can be used directly from the terminal:
 
 - `say [arguments]` : SunfloraBot will say `[arguments] in chat.
 
+- `beep` : "🤖 BEEP BOOB BOPP 🤖"
+
 - `!save`
 
 - `!refreshfunfacts`
