@@ -95,6 +95,8 @@ For example:
 - `gn` : SunfloraBot will say goodnight to the mod and to the streamer.
 - `ncie` : "ncie"
 
+- `!resetbones` : SunfloraBot will reset the streamer's bone count to 207. 
+
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)General User commands
 
 - `!shinyroll` : Rolls for a shiny.
@@ -106,7 +108,7 @@ For example:
 - `!actualfunfact` : Exactly the same as `!funfunfact`.
 
 - `!bestlegendary`: SunfloraBot will tell you the best legendary.
-- `!number of noses`: "Taylor has one nose. ??? Why would you ask that?"
+- `!numberOfNoses`: "Taylor has one nose. ??? Why would you ask that?"
 - `!bestshiny` : SunfloraBot will tell you the best shiny.
 
 - `!orre` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to that user.
@@ -124,6 +126,15 @@ For example:
 - `!wtpscore` : SunfloraBot will show you your lifetime WTP points.
 - `!wtpleaderboard` : SunfloraBot will show you the top 3 WTP players.
 
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Bone commands
+- `!bonecount` : SunfloraBot will say the streamer's bone count.
+    - Also: `!tradebone`,`!swapbone`,`!exchangebone`.
+- `!takebone` : SunfloraBot will remove 1 bone from the streamer's bone count.
+    - Also `!eatbone`,`!removebone`,`!purloinbone`,`!makeoffwithbone`,`!stealbone`,`!extractbone`,`!withdrawbone`.
+- `!givebone`: SunfloraBot will add 1 bone to the streamer's bone count.
+    - Also `!providebone`,`!regurgitatebone`,`!putbackbone`,`!putboneback`,`!returnbone`.
+- `!shufflebones` : SunfloraBot will randomize the digits in the streamer's bone count and remove any leading 0s (e.g., `207` could become `702`, `270`, `720`, `72`, or `27`).
+
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Additional Features
 
 - SunfloraBot will say a Fun Fact every 20 mins.
@@ -133,8 +144,12 @@ For example:
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) Terminal Commands
 The following commands can be used directly from the terminal:
 
+- `say [arguments]` : SunfloraBot will say `[arguments] in chat.
+
 - `!save`
 
 - `!refreshfunfacts`
+
+- `!disconnect`
 
 In addition, `Ctrl-C` in the terminal now prompts the user to save shiny rolls, etc. before terminating the bot.
