@@ -129,3 +129,12 @@ For example:
 - SunfloraBot will say a Fun Fact every 20 mins.
 
 - If `monipandas` or `atreelessplain` write a message ending with `-ussy`, SunfloraBot will echo it back, ending it with `-enis` instead.
+
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) Terminal Commands
+The following commands can be used directly from the terminal:
+
+- `!save`
+
+- `!refreshfunfacts`
+
+In addition, `Ctrl-C` in the terminal now prompts the user to save shiny rolls, etc. before terminating the bot.
