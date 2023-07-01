@@ -1398,6 +1398,8 @@ rl.on('line', (input) =>
         case `say` :
             client.say(channel, `${args}`);
             break;
+        case `beep` :
+            client.say(channel, `🤖 BEEP BOOB BOPP 🤖`);
         case `!disconnect` :
             disconnectFunction();
             break;
