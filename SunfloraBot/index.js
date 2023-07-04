@@ -134,7 +134,13 @@ client.on('message', (channel, user, message, self) => {
         disconnectFunction();
     }
 
-   
+    if (command == `!realheight`){
+        getHeight(0);
+    }
+
+    if (command == `!fakeheight`){
+        getHeight(1);
+    }
 
 
     if(command == '!bestlegendary'){
@@ -390,11 +396,11 @@ client.on('message', (channel, user, message, self) => {
     }
 
     if(giveBoneArray.includes(command)){
-        giveBone();
+        giveBone(user.username);
     }
 
     if(takeBoneArray.includes(command)){
-        takeBone();
+        takeBone(user.username);
     }
 
     if(sayBoneArray.includes(command)){
@@ -1343,19 +1349,27 @@ function sayBoneCount(){
     client.say(channel, `${channelname} has ${justword}${numBones} ${boneword}. 🦴`)
 }
 
-function takeBone(){
+function takeBone(username){
     numBones--;
     sayBoneCount();
+
+    if (Math.floor(Math.random() * 8192) == 0){
+        client.say(channel, `${username} found a shiny bone! ✨ 🦴 ✨`)
+    };
 }
 
-const takeBoneArray = [`!takebone`,`!eatbone`,`!removebone`,`!purloinbone`,`!makeoffwithbone`,`!stealbone`,`!extractbone`,`!withdrawbone`];
+const takeBoneArray = [`!takebone`,`!eatbone`,`!removebone`,`!purloinbone`,`!makeoffwithbone`,`!stealbone`,`!extractbone`,`!withdrawbone`, `!skillfullyremovebone`, `!givenegativebone`,`!takebackmybone`, `!takebackbone`];
 
-function giveBone(){
+function giveBone(username){
     numBones++;
     sayBoneCount()
+
+    if (Math.floor(Math.random() * 8192) == 0){
+        client.say(channel, `${username} lost a shiny bone! ✨ 🦴 ✨`)
+    };
 }
 
-const giveBoneArray = [`!givebone`,`!providebone`,`!regurgitatebone`,`!putbackbone`,`!putboneback`,`!returnbone`];
+const giveBoneArray = [`!givebone`,`!providebone`,`!regurgitatebone`,`!putbackbone`,`!putboneback`,`!returnbone`, `!donatebone`, `!takenegativebone`,`!placebone`];
 
 function resetBones(){
     numBones = 207;
@@ -1374,6 +1388,33 @@ function shuffleBones(){
     console.log(`Shuffled bones = ${+shuf}`);
     numBones = (+shuf);
     sayBoneCount();
+}
+
+//Height Command
+
+function getHeight(invIn) {
+    const inv = invIn;
+    const hFeet = Math.floor(Math.random() * 10);
+    const hInches = Math.floor(Math.random() * 12);
+    var realfake = 'fake';
+
+    if (hFeet == 5) {
+        if(hInches >= 9){
+            realfake = 'real';
+        };
+    } else if (hFeet > 5) {
+        realfake = 'real';
+    };
+
+    if(inv == 1){
+        if (realfake == 'real'){
+            realfake = 'fake';
+        } else if (realfake == 'fake'){
+            realfake = 'real';
+        };
+    }
+    
+    client.say(channel, `Taylor is ${hFeet}'${hInches}" (${realfake}).`);
 }
 
 //Console Commands
@@ -1400,6 +1441,7 @@ rl.on('line', (input) =>
             break;
         case `beep` :
             client.say(channel, `🤖 BEEP BOOB BOPP 🤖`);
+            break;
         case `!disconnect` :
             disconnectFunction();
             break;
