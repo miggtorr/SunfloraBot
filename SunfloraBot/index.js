@@ -142,6 +142,10 @@ client.on('message', (channel, user, message, self) => {
         getHeight(1);
     }
 
+    if (command == `!discord`){
+        client.say(channel, `🌟 Discord 🌟 https://discord.gg/c4GmFmg`);
+    }
+
 
     if(command == '!bestlegendary'){
         client.say(channel, `@${user.username}, did you know that Sunflora is the best legendary?`);
@@ -191,7 +195,7 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel, "Shiny roll counter reset! New shiny rolls available for everyone!");
     }
 
-    if(command == 'gn' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+    if(command == '!!gn' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         client.say(channel, `Goodnight! @${user.username} Goodnight @${channelname} 🥰`);
     }
 
@@ -1423,6 +1427,7 @@ rl.on('line', (input) =>
 {
     const args = input.split(' ');
     const command = args.shift().toLowerCase();
+    const saystring = input.substring(4);
 
 //   console.log(`Received: ${input}`);
     switch(command){
@@ -1437,7 +1442,8 @@ rl.on('line', (input) =>
             console.log('Facts refreshed!');
             break;
         case `say` :
-            client.say(channel, `${args}`);
+            client.say(channel, `${saystring}`);
+            // console.log(saystring);
             break;
         case `beep` :
             client.say(channel, `🤖 BEEP BOOB BOPP 🤖`);
