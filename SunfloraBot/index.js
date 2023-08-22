@@ -199,6 +199,20 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel, `Goodnight! @${user.username} Goodnight @${channelname} 🥰`);
     }
 
+    if(command == '!hbd' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        let name = user.username;
+        // console.log(name)
+        if (args != ''){
+            name = args.toString();
+        };
+
+        if (name.startsWith('@')){
+            name = name.slice(1);
+        };
+
+        client.say(channel, `🎶 Happy Birthday to you! 🎶 Happy Birthday to you! 🎶 Happy Birthday, Dear ${name}! 🎶 Happy Birthday to you! 🎶 ❤️`);
+    }
+
     if(command == '!shinyroll'){
         if(user.username.toLowerCase() == 'atreelessplain' && !savCanGamble){
             client.say(channel, "Look, Savvy...");
@@ -306,7 +320,7 @@ client.on('message', (channel, user, message, self) => {
     }
 
     if(command == "!reroll" && (user.mod || user.username == channelname || user.username == `miggtorr`)) {
-        var name = args.toString();
+        var name = args.toString().toLowerCase();
         
         if (name.startsWith('@')){
             name = name.slice(1);
@@ -417,6 +431,10 @@ client.on('message', (channel, user, message, self) => {
 
     if(command == `!resetbones` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         resetBones();
+    }
+
+    if (command == `!bday`){
+        checkTaylorsBirthday();
     }
 });
 
@@ -1421,6 +1439,19 @@ function getHeight(invIn) {
     client.say(channel, `Taylor is ${hFeet}'${hInches}" (${realfake}).`);
 }
 
+//Birthday Commands
+
+function checkTaylorsBirthday() {
+    const birthday = new Date('April 17, 1991 00:00:00 GMT-0600');
+    const today = new Date();
+    const age = today.getFullYear() - birthday.getFullYear();
+    if((today.getMonth() == birthday.getMonth()) && (today.getDay() == birthday.getDay())){
+        client.say(channel, `Today is Taylor's Birthday! 🎉 🎊 🥳 He's turning ${age}! Congrats, Taylor! 🥰 Hope you get the best birthday shiny ever! ✨`);
+    } else {
+        client.say(channel, `Today is *NOT* Taylor's birthday (but thank you for the warm wishes)! 😌`);
+    }
+};
+
 //Console Commands
 
 rl.on('line', (input) => 
@@ -1450,6 +1481,9 @@ rl.on('line', (input) =>
             break;
         case `!disconnect` :
             disconnectFunction();
+            break;
+        case `alias` :
+            client.say(channel, `You cannot call the same command as an alias.`);
             break;
         default:
             break;
