@@ -829,6 +829,126 @@
         "fact": "Ariados is one of the few Pokémon whose sprites in Gold, Silver, and Crystal are the same!"
       },
       {
+        "tags": ["crobat", "golbat"],
+        "fact": "Crobat's color scheme is the reverse of Golbat's. This also applies to its Shiny variation!"
+      },
+      {
+        "tags": ["chinchou", "anime"],
+        "fact": "Although Chinchou is shown to have the ability to walk on land in the anime, in the games, it can only be caught in water, and it lacks a footprint!"
+      },
+      {
+        "tags": ["chinchou", "lanturn"],
+        "fact": "Chinchou and Lanturn are the only Electric-type Pokémon in the Water 2 Egg Group!"
+      },
+      {
+        "tags": ["lanturn", "ampharos"],
+        "fact": "Lanturn shares its category with Ampharos; they are both known as the Light Pokémon!"
+      },
+      {
+        "tags": ["pichu"],
+        "fact": "Pichu's famoulsy subtle shiny was much more distinctive in Gen II!"
+      },
+      {
+        "tags": ["pichu", "vgc"],
+        "fact": "Pichu has the lowest base stat total of all Electric-type Pokémon!"
+      },
+      {
+        "tags": ["pichu", "general"],
+        "fact": "Pichu is the only Generation II Pokémon to be playable in the Super Smash Bros. series (though many others appear from Poké Balls)!"
+      },
+      {
+        "tags": ["cleffa", "staryu"],
+        "fact": "Cleffa shares its category with Staryu. They are both known as Star Shape Pokémon!"
+      },
+      {
+        "tags": ["cleffa", "igglybuff", "morelull", "vgc"],
+        "fact": "Cleffa, Igglybuff, and Morelull are all tied for the lowest base Speed stat of all Fairy-type Pokémon: 15!"
+      },
+      {
+        "tags": ["cleffa"],
+        "fact": "Cleffa's Japanese name is ピィ (Py)!"
+      },
+      {
+        "tags": ["igglybuff"],
+        "fact": "Did you know that Igglybuff has a Tailed-Beast sealed inside its forehead!? (real)"
+      },
+      {
+        "tags": ["igglybuff"],
+        "fact": "Igglybuff's coloration has undergone a variety of changes. In Gen II, its shiny had green shadows and a green forehead spiral! In Gen III, its non-shiny was peach-colored!"
+      },
+      {
+        "tags": ["togepi", "ho-oh", "anime"],
+        "fact": "Togepi is the second Generation II Pokémon (after Ho-Oh) to appear in the Kanto saga of the anime."
+      },
+      {
+        "tags": ["togepi", "absol"],
+        "fact": "Togepi and Absol are the only non-Flying-type Pokémon that can have Super Luck as their Ability!"
+      },
+      {
+        "tags": ["togepi", "anime"],
+        "fact": "On the DVD scene selection screen from 'Mewtwo Strikes Back,' Togepi is listed as Pokémon #152!"
+      },
+      {
+        "tags": ["togetic", "typhlosion", "anime"],
+        "fact": "Togetic and Typhlosion are the only Pokémon officially introduced in Generation II not to appear in the anime until the next generation!"
+      },
+      {
+        "tags": ["togetic", "blissey"],
+        "fact": "Togetic and Blissey share a category; they are both known as the Happiness Pokémon! 🥰"
+      },
+      {
+        "tags": ["togetic", "togekiss"],
+        "fact": "Togetic and Togekiss are the only Fairy-type Pokémon in the Flying Egg Group!"
+      },
+      {
+        "tags": ["natu", "rookidee"],
+        "fact": "Natu and Rookidee are tied as the smallest Flying-type Pokémon, each being only 8 inches tall! 🥺"
+      },
+      {
+        "tags": ["natu", "tcg"],
+        "fact": "Natu made its TCG debut in the Neo Genesis expansion!"
+      },
+      {
+        "tags": ["xatu", "flygon"],
+        "fact": "Xatu shares its category with Flygon; they are both known as the Mystic Pokémon in English and the Spirit Pokémon in Japanese!"
+      },
+      {
+        "tags": ["xatu"],
+        "fact": "Xatu's male form features three stripes on its lower body, while its female form features two stripes!"
+      },
+      {
+        "tags": ["mareep"],
+        "fact": "In German, Mareep is known as Voltilamm (as in Volt + Lamb)!"
+      },
+      {
+        "tags": ["flaaffy"],
+        "fact": "Flaaffy's shiny didn't have a green ball on its tail until Gen III)!"
+      },
+      {
+        "tags": ["ampharos"],
+        "fact": "An early design for Ampharos depicts it with a shorter neck that only had two rings instead of three! Example: https://bulbapedia.bulbagarden.net/wiki/File:Official_Pokemon_Fanbook_1997_Ampharos_Sprite.png"
+      },
+      {
+        "tags": ["bellossom"],
+        "fact": "In its Gold and Silver artwork, Bellossom's body is colored blue instead of the usual green! This color is similar to its Shiny color in Generation II! Example: https://bulbapedia.bulbagarden.net/wiki/File:182Bellossom_GS.png"
+      },
+      {
+        "tags": ["bellossom"],
+        "fact": "Despite its apparent connection to hula dancing, Bellossom is not native to the Alola region and must be transferred in from other regions! :( "
+      },
+      {
+        "tags": ["marill"],
+        "fact": "Marill is referred to as 'Pikablu' on Topps' 'Pokémon the First Movie Trading Cards!' Example: https://bulbapedia.bulbagarden.net/wiki/File:The_first_movie_44.jpg"
+      },
+      {
+        "tags": ["marill"],
+        "fact": "In an early design for Marill, Marill had a pink body instead of blue, and lacked its jagged tail! Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_179.png"
+      },
+      {
+        "tags": ["azumarill"],
+        "fact": "According to its Pokémon Silver Dex Entry, when Azumarill plays in water, it rolls up its elongated ears to prevent their insides from getting wet!"
+      },
+      {
         "tags": ["sunkern"],
         "fact": "IN HGSS, Sunkern's Pokéathlon performance stats can reach five stars in every stat! This is the highest possible stat total, shared only by Mew, Ditto, Origin Forme Giratina, and Arceus. Sunkern best legendary hands down. 😎"
       },
