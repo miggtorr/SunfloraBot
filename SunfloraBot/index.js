@@ -1,4 +1,4 @@
-//version 0.5
+//version 0.6
 require('dotenv').config();
 const { availableParallelism, tmpdir } = require('os');
 var tiny = require('tiny-json-http');
@@ -9,6 +9,7 @@ const {promises: fsPromises} = require('fs');
 const { resolve } = require('path');
 const { removeAllListeners } = require('process');
 const readline = require('readline');
+// const { Pokedex } = require('pokedex-promise-v2');
 const clientOptions = {
     options: { debug: true },
     connection: {
@@ -28,6 +29,9 @@ client.connect().catch(console.error);
 var rolledUsers = [];
 var shinyRollCounter = 0;
 var facts = [];
+const rollchannel = "talesoftaylor";
+// const dex = new Pokedex();
+var pokeapiObj = {};
 
 // var factsJSON = {};
 var savCanGamble = true;
@@ -83,12 +87,13 @@ readWTPQuestions();
 whosThatPokemonReadScores();
 readOrreNames();
 readBones();
+// initializePokedex();
 
 let rl = readline.createInterface(process.stdin, process.stdout);
 
 client.on('connected', () => {
     console.log('Connected.');
-    client.say(channel, `PowerUpL 🌻 PowerUpR`);
+    // client.say(channel, `PowerUpL 🌻 PowerUpR`);
     
 }); 
 
@@ -223,6 +228,8 @@ client.on('message', (channel, user, message, self) => {
         } else if (user.username.toLowerCase() == 'atreelessplain' && savCanGamble) {
             dailyRollCheck(user.username);
 
+        // } else if (user.username.toLowerCase() == 'miggtorr') {
+        //     client.say(channel, "@miggtorr is not allowed to shinyroll bc he told Taylor to keep hunting for HOPPIP IN GEN 4!!!")
         } else {
             dailyRollCheck(user.username);
         };
@@ -245,6 +252,10 @@ client.on('message', (channel, user, message, self) => {
 
     if(command == "ncie"  && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         client.say(channel, 'ncie');
+    }
+
+    if(command == "!realfollowage" || command == "!myfollowage" || command == "!followage"){
+        FollowAge(user.username);
     }
 
     if(command == "!quizcommands"){
@@ -335,6 +346,10 @@ client.on('message', (channel, user, message, self) => {
             client.say(channel, `@${name} has not rolled yet.`);
         }
     }
+    
+    if(command == "!shephard" && (user.mod || user.username == channelname || user.username == `miggtorr` || user.username == `shephard922_`)){
+        client.say(channel, `do you have to cheat at pokem on 99 masterballs not possible without cheating and you did on emulator that explains a lot igood news is you can only cheat for content cant use the cheated pokemon in the real games thank god for that`)
+    }
 
     /* if(command == '!height'){
         if(user.username == 'not_a_price_tag'){
@@ -413,21 +428,21 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel,`${name} no longer has an Orre name.`)
     }
 
-    if(giveBoneArray.includes(command)){
-        giveBone(user.username);
-    }
+    // if(giveBoneArray.includes(command)){
+    //     giveBone(user.username);
+    // }
 
-    if(takeBoneArray.includes(command)){
-        takeBone(user.username);
-    }
+    // if(takeBoneArray.includes(command)){
+    //     takeBone(user.username);
+    // }
 
     if(sayBoneArray.includes(command)){
         sayBoneCount();
     }
 
-    if(command == `!shufflebones`){
-        shuffleBones();
-    }
+    // if(command == `!shufflebones`){
+    //     shuffleBones();
+    // }
 
     if(command == `!resetbones` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
         resetBones();
@@ -436,6 +451,39 @@ client.on('message', (channel, user, message, self) => {
     if (command == `!bday`){
         checkTaylorsBirthday();
     }
+
+    if(command == `!natureguess` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        natureGuess();
+    }
+
+    if(command == `!energyguess` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        energyGuess();
+    }
+
+    if(command == `!randomnumber` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+
+        // randomNumber("386");
+
+        if(args == ''){
+            client.say(channel, `Please specify a maximum value! 🌻`)
+        }
+
+        if(!isNaN(args) && args != ''){
+            randomNumber(args);
+        }
+    }
+
+    if(command == `!poketest` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        dex.getResource(['/api/v2/pokemon/36', 'api/v2/berry/8', 'https://pokeapi.co/api/v2/ability/9/'])
+  .then((response) => {
+    console.log(response); // the getResource function accepts singles or arrays of URLs/paths
+  });
+        
+    }
+
+
+    
+
 });
 
 
@@ -473,7 +521,7 @@ function ShinyRoll(chatuser) {
             case 0 :
                 sayString = `@${chatuser} rolled a ${roll}. LMAO YOU ROLLED A 0!? Incredible. No shiny this time, tho this is so sad. There have been ${shinyRollCounter} shiny rolls.`
             default :
-            sayString = `@${chatuser} rolled a ${roll}. No shiny this time, this is so sad. There have been ${shinyRollCounter} shiny rolls.`
+            sayString = `@${chatuser} rolled a ${roll}. 🌻 No shiny this time, this is so sad. There have been ${shinyRollCounter} shiny rolls. 🌻`
         };
         
         client.say(channel, `${sayString}`); 
@@ -481,11 +529,15 @@ function ShinyRoll(chatuser) {
 };
 
 function dailyRollCheck(name){
-    if(rolledUsers.includes(name)){
-        client.say(channel, `Sorry, @${name}, only one shiny roll per stream! 😘`);
+    if(channel == rollchannel){
+        if(rolledUsers.includes(name)){
+            client.say(channel, `Sorry, @${name}, only one shiny roll per stream! 😘`);
+        } else {
+            rolledUsers.push(name);
+            ShinyRoll(name);
+        }
     } else {
-        rolledUsers.push(name);
-        ShinyRoll(name);
+        client.say(channel, `Sorry, @${name}, I can only keep track of shiny rolls on one channel at a time, and right now I'm only counting them on ${rollchannel}'s channel! 🌻 But, hey, you're an 8192 in my book, kiddo! 😉`);
     }
 }
 
@@ -795,6 +847,18 @@ const QuizGameGetAnswer2 = () => {
             }
         }
     })
+}
+
+//Followage
+
+function FollowAge(player){
+    const channelname = channel.substring(0);
+    const numb = (Math.floor(Math.random() * 100) + 1);
+    const timePeriodNum = Math.floor(Math.random() * 10);
+    const timePeriod = ['days','months','years','million years','decades','centuries','eons','nanoseconds','moons','Martian years'];
+
+    // console.log(channel, `@${player} has been following ${channelname} for ${numb} ${timePeriod[timePeriodNum]}!`)
+    client.say(channel, `@${player} has been following ${channelname} for ${numb} ${timePeriod[timePeriodNum]}!`)
 }
 
 //Quiz Game Scoring
@@ -1412,6 +1476,19 @@ function shuffleBones(){
     sayBoneCount();
 }
 
+//Poké API Stuff
+
+// async function initializePokedex(){
+//         let status = await import('./say.js');
+//         status.hi(); // Hello!
+//         status.bye(); // Bye!
+//         status.default(); // Module loaded (export default)!
+// }
+
+function pokeAPICall(){
+
+}
+
 //Height Command
 
 function getHeight(invIn) {
@@ -1452,6 +1529,28 @@ function checkTaylorsBirthday() {
     }
 };
 
+//Nature Guess
+
+function natureGuess(){
+    const natures = ["Hardy", "Lonely", "Brave", "Adamant", "Naughty", "Bold", "Docile", "Relaxed", "Impish", "Lax", "Timid", "Hasty", "Serious", "Jolly", "Naive", "Modest", "Mild", "Quiet", "Bashful", "Rash", "Calm", "Gentle", "Sassy", "Careful", "Quirky"];
+    const randnumb = Math.floor(Math.random() * 25);
+    client.say(channel, `I guess ${natures[randnumb]}! 🌻`);
+}
+
+function energyGuess(){
+    const energies = ["Fire", "Grass", "Electric", "Fist", "Water", "Psychic", "Dark", "Steel", "Fairy (lol)", "V Star Card, hehehe"];
+    const randnumb = Math.floor(Math.random() * 10);
+    client.say(channel, `I guess ${energies[randnumb]}! 🌻`);
+}
+
+function randomNumber(max){
+    const numb = parseInt(max);
+    const randnumb = Math.floor(Math.random() * numb);
+    client.say(channel, `Random number: ${randnumb}! 🌻`);
+}
+
+
+
 //Console Commands
 
 rl.on('line', (input) => 
@@ -1484,6 +1583,14 @@ rl.on('line', (input) =>
             break;
         case `alias` :
             client.say(channel, `You cannot call the same command as an alias.`);
+            break;
+        case `test` :
+            FollowAge(`miggtorr`);
+            break;
+        case `newrolls` :
+            rolledUsers = [];
+            writeRollerFile();
+            client.say(channel, "New shiny rolls available for everyone! 🌻");
             break;
         default:
             break;

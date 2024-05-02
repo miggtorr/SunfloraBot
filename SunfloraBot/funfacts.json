@@ -749,7 +749,7 @@
         "fact": "Cyndaquil, Charmander, and their respective evolutionary lines have exactly the same base stats in the same distribution!"
       },
       {
-        "tags": ["quilava", "typhlosion", "Entei"],
+        "tags": ["quilava", "typhlosion", "entei"],
         "fact": "In addition to Typhlosion, Quilava shares its category with its evolved form and Entei: they are all known as the Volcano Pokémon! They are also both capable of learning Eruption!"
       },
       {
@@ -817,6 +817,10 @@
         "fact": "Despite multiple Pokédex entries describing its nocturnal behavior, wild Ledian are almost always encountered exclusively during the morning or daytime!"
       },
       {
+        "tags": ["ledian"],
+        "fact": "Ledian is the least represented Pokémon by GameFreak and The Pokémon Company, only having 2 official pieces of merchandice, 11 pokemon cards, and 5 appearances in the anime (one per episode)! (submitted by @MintKori)"
+      },
+      {
         "tags": ["spinarak", "ariados", "vgc"],
         "fact": "Spinarak and its evolved form, Ariados, are the only known Pokémon capable of learning the move Toxic Thread!"
       },
@@ -843,6 +847,10 @@
       {
         "tags": ["lanturn", "ampharos"],
         "fact": "Lanturn shares its category with Ampharos; they are both known as the Light Pokémon!"
+      },
+      {
+        "tags": ["lanturn"],
+        "fact": "Lanturn's Pokédex entry from Pokémon Gold describes it as being able to produce light visible from the surface of the ocean at some a depth of 3 miles. However, the amount of energy this would require is 10^35 times that available in the observable universe and would possibly result in a black hole many times the size of the current universe the instant it began to emit light (submitted by @15MinuteUpload)"
       },
       {
         "tags": ["pichu"],
@@ -877,7 +885,7 @@
         "fact": "Igglybuff's coloration has undergone a variety of changes. In Gen II, its shiny had green shadows and a green forehead spiral! In Gen III, its non-shiny was peach-colored!"
       },
       {
-        "tags": ["togepi", "ho-oh", "anime"],
+        "tags": ["togepi", "hooh", "anime"],
         "fact": "Togepi is the second Generation II Pokémon (after Ho-Oh) to appear in the Kanto saga of the anime."
       },
       {
@@ -949,6 +957,38 @@
         "fact": "According to its Pokémon Silver Dex Entry, when Azumarill plays in water, it rolls up its elongated ears to prevent their insides from getting wet!"
       },
       {
+        "tags": ["sudowoodo"],
+        "fact": "Sudowoodo was created by Ken Sugimori! It was created to serve as an obstacle in the overworld!"
+      },
+      {
+        "tags": ["sudowoodo"],
+        "fact": "In Pokémon Scarlet and Violet, Artazon Gym Leader Brassius terastallizes Sudowoodo into a Grass Type, allowing it to finally achieve its dream of becoming a tree! 🥺"
+      },
+      {
+        "tags": ["politoed"],
+        "fact": "In German, Politoed is called Quaxo!"
+      },
+      {
+        "tags": ["politoed"],
+        "fact": "Despite there being several frog-like Pokémon, Politoed is the only Pokémon in the “Frog” category!"
+      },
+      {
+        "tags": ["hoppip"],
+        "fact": "An early design of Hoppip had no arms and legs and was dark-colored, resembling a black cat! (Example: https://archives.bulbagarden.net/media/upload/e/e8/Beta_Hoppip.png)"
+      },
+      {
+        "tags": ["skiploom","hoppip"],
+        "fact": "Skiploom's normal color and Shiny color is the reverse of its pre-evolution, Hoppip!"
+      },
+      {
+        "tags": ["jumpluff"],
+        "fact": "At 6.6 lbs. (3 kg), Jumpluff is the lightest Pokémon that has undergone two evolutions!"
+      },
+      {
+        "tags": ["aipom"],
+        "fact": "Aipom may vaguely reference the ahuizotl, a creature of Aztec mythology with monkey hands and a fifth human hand on its tail!"
+      },
+      {
         "tags": ["sunkern"],
         "fact": "IN HGSS, Sunkern's Pokéathlon performance stats can reach five stars in every stat! This is the highest possible stat total, shared only by Mew, Ditto, Origin Forme Giratina, and Arceus. Sunkern best legendary hands down. 😎"
       },
@@ -965,20 +1005,560 @@
         "fact": "In Pokémon Crystal, a bug causes the capture formula for the Heavy Ball to incorrectly retrieve Sunflora's weight, giving it a +40 catch rate modifier! Unfortunately, however, Sunflora cannot be caught in the wild in Pokémon Crystal!"
       },
       {
+        "tags": ["yanma","yanmega"],
+        "fact": "Yanma shares the same base Speed stat with its evolved form, Yanmega!"
+      },
+      {
+        "tags": ["yanma"],
+        "fact": "In Gen VII, despite being able to learn Leech Life through breeding, Yanma cannot learn it via TM!"
+      },
+      {
+        "tags": ["wooper","vgc"],
+        "fact": "Wooper has the lowest base Special Defense stat and the lowest base stat total of all Ground-type Pokémon: 25!"
+      },
+      {
+        "tags": ["quagsire"],
+        "fact": "In Gen II only, the wavy pattern on the back of Shiny Quagsire is bright pink and the rest if its body is darker! In subsequent generations, its body is pink and the wavy pattern is dark purple!"
+      },
+      {
+        "tags":["espeon"],
+        "fact": "Espeon is the only Eeveelution without a type advantage over another!"
+      },
+      {
+        "tags":["espeon","anime"],
+        "fact": "Espeon has blue inner ears in the games, but in the anime, they are often purple!"
+      },
+      {
+        "tags":["espeon","remoraid","anime"],
+        "fact": "If one were to rearrange the Pokérap GS so all the Pokémon are in National Pokédex order, Espeon and Remoraid would remain in their respective positions in the song!"
+      },
+      {
+        "tags":["espeon","sunflora","volcarona"],
+        "fact": "Espeon, Sunflora, and Volcarona all share the same category: they are all known as the Sun Pokémon!"
+      },
+      {
+        "tags":["espeon","umbreon"],
+        "fact": "Espeon and Umbreon in Pokémon Colosseum are the only starter Pokémon that you receive already evolved!"
+      },
+      {
         "tags" : ["umbreon", "espeon"],
         "fact" : "Due to the absence of a day-night cycle in FireRed and LeafGreen, in order for an Umbreon or Espeon to be obtained and added to the Pokédex in those games, an Eevee must be traded to Pokémon Ruby, Sapphire, and Emerald, evolved there, and then traded back, or else traded from Pokémon Colosseum or Pokémon XD: Gale of Darkness."
+      },
+      {
+        "tags":["umbreon"],
+        "fact": "Umbreon was the only pure Dark-type Pokémon when it debuted in Gen II!"
+      },
+      {
+        "tags":["umbreon"],
+        "fact": "Several of Umbreon's Pokédex entries refer to “poisonous sweat,” which may be a holdover from the 1997 Nintendo Space World demo of Gold and Silver, where it was a Poison-type Pokémon!"
+      },
+      {
+        "tags":["murkrow"],
+        "fact": "In Gen II, Murkrow was not catchable until the postgame, on Routes 7 and 16 in Kanto at night!"
+      },
+      {
+        "tags":["slowking","pyroar"],
+        "fact": "Johtonian Slowking shares its category with Pyroar. They are both known as the Royal Pokémon!"
+      },
+      {
+        "tags":["slowking"],
+        "fact": "Slowpoke cannot evolve into Slowking in Pokémon FireRed and LeafGreen before the player obtains the National Pokédex; its evolution will be interrupted!"
+      },
+      {
+        "tags":["slowking","smeargle"],
+        "fact": "Galarian Slowking is the only known Pokémon capable of learning the move Eerie Spell (other than Smeargle, of course), as well as the only known Pokémon that can have Curious Medicine as its (innate) Ability!"
+      },
+      {
+        "tags":["misdreavus","anime","entei","raikou"],
+        "fact": "Misdreavus's first two anime appearances both involved members of the Legendary beasts trio: Raikou and Entei, respectively!"
+      },
+      {
+        "tags" : ["misdreavus"],
+        "fact" : "In Pokémon Colosseum, Misdreavus is the only Ghost-type Pokémon that can be snagged!"
+      },
+      {
+        "tags" : ["misdreavus"],
+        "fact" : "Misdreavus was the first pure Ghost-type Pokémon to be introduced, as well as the only one in Generation II!"
+      },
+      {
+        "tags" : ["unown","vgc"],
+        "fact" : "Unown is the only Pokémon with a base stat total of 336!"
+      },
+      {
+        "tags" : ["unown"],
+        "fact" : "Due to Unown's letter and Shininess both being determined by IVs in Generation II, Shiny Unown will always be either an I or V in these games!"
+      },
+      {
+        "tags" : ["unowna","unown"],
+        "fact" : "Unown A is shaped like the letter A!"
+      },
+      {
+        "tags" : ["unownb","unown"],
+        "fact" : "Unown B is shaped like the letter B!"
+      },
+      {
+        "tags" : ["unownc","unown"],
+        "fact" : "Unown C is shaped like the letter C!"
+      },
+      {
+        "tags" : ["unownd","unown"],
+        "fact" : "Unown D is shaped like the letter D!"
+      },
+      {
+        "tags" : ["unowne","unown"],
+        "fact" : "Unown E is shaped like the letter E!"
+      },
+      {
+        "tags" : ["unownf","unown"],
+        "fact" : "Unown F is shaped like the letter F!"
+      },
+      {
+        "tags" : ["unowng","unown"],
+        "fact" : "Unown G is shaped like the letter G!"
+      },
+      {
+        "tags" : ["unownh","unown"],
+        "fact" : "Unown H is shaped like the letter H!"
+      },
+      {
+        "tags" : ["unowni","unown"],
+        "fact" : "Unown I is shaped like the letter I!"
+      },
+      {
+        "tags" : ["unownj","unown"],
+        "fact" : "Unown J is shaped like the letter J!"
+      },
+      {
+        "tags" : ["unownk","unown"],
+        "fact" : "Unown K is shaped like the letter K!"
+      },
+      {
+        "tags" : ["unownl","unown"],
+        "fact" : "Unown L is shaped like the letter L!"
+      },
+      {
+        "tags" : ["unownm","unown"],
+        "fact" : "Unown M is shaped like the letter M!"
+      },
+      {
+        "tags" : ["unownn","unown"],
+        "fact" : "Unown N is shaped like the letter N!"
+      },
+      {
+        "tags" : ["unowno","unown"],
+        "fact" : "Unown O is shaped like the letter O!"
+      },
+      {
+        "tags" : ["unownp","unown"],
+        "fact" : "Unown P is shaped like the letter P!"
+      },
+      {
+        "tags" : ["unownq","unown"],
+        "fact" : "Unown Q is shaped like the letter Q!"
+      },
+      {
+        "tags" : ["unownr","unown"],
+        "fact" : "Unown R is shaped like the letter R!"
+      },
+      {
+        "tags" : ["unowns","unown"],
+        "fact" : "Unown S is shaped like the letter S!"
+      },
+      {
+        "tags" : ["unownt","unown"],
+        "fact" : "Unown T is shaped like the letter T!"
+      },
+      {
+        "tags" : ["unownu","unown"],
+        "fact" : "Unown U is shaped like the letter U!"
+      },
+      {
+        "tags" : ["unownv","unown"],
+        "fact" : "Unown V is shaped like the letter V!"
+      },
+      {
+        "tags" : ["unownw","unown"],
+        "fact" : "Unown W is shaped like the letter W!"
+      },
+      {
+        "tags" : ["unownx","unown"],
+        "fact" : "Unown X is shaped like the letter X!"
+      },
+      {
+        "tags" : ["unowny","unown"],
+        "fact" : "Unown Y is shaped like the letter Y!"
+      },
+      {
+        "tags" : ["unownz","unown"],
+        "fact" : "Unown Z is shaped like the letter Z!"
+      },
+      {
+        "tags" : ["unown?","unown"],
+        "fact" : "Unown ! is shaped like the an '!'!"
+      },
+      {
+        "tags" : ["unown!","unown"],
+        "fact" : "Unown ? is shaped like the a '?'!"
+      },
+      {
+        "tags" : ["wobbuffet", "vgc"],
+        "fact" : "Wobbuffet has the highest base HP stat of all Psychic-type Pokémon!"
+      },
+      {
+        "tags" : ["wobbuffet"],
+        "fact" : "Based on the design of its tail, Wobbuffet may have been originally conceived as a pre-evolution for Girafarig!"
+      },
+      {
+        "tags" : ["wobbuffet"],
+        "fact" : "Wobbuffet is one of fourteen Pokémon for which one can collect foreign Pokédex entriessay  in Pokémon Diamond and Pearl!"
+      },
+      {
+        "tags": ["girafarig"],
+        "fact": "In Gen II, the ridges on Girafarig's back are white for both its normal and shiny sprites!" 
+      },
+      {
+        "tags": ["girafarig"],
+        "fact": "An early design of Girafarig had a full-sized second head! Additionally, it was intended to be Dark/Normal-type and to have a pre-evolution, named 'Tsuinzu' (Japanese: ツインズ), which literally means 'twins!' (Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_193.png)" 
+      },
+      {
+        "tags": ["pineco"],
+        "fact": "Pineco is shaped like a pinecone!" 
+      },
+      {
+        "tags": ["pineco"],
+        "fact": "In French, Pineco is named 'Pomdepik'!" 
+      },
+      {
+        "tags": ["forretress"],
+        "fact": "Forretress is the first original Steel-type Pokémon in the National Pokédex (Magnemite and Magneton were not Steel-types in Generation I)!" 
+      },
+      {
+        "tags": ["forretress"],
+        "fact": "Forretress's Crystal still sprite is different from that of Gold and Silver, making it one of few Pokémon to have three distinctly different sprites in Generation II!" 
       },
       {
         "tags": ["dunsparce","dundunsparce"],
         "fact": "In Generation III and IV, due to how Nature was determined, Hardy nature Dunsparce with Serene Grace have a 50% chance of evolving into Three-Segment Form Dudunsparce if transferred to Generation IX! (Note that this is still a 1/100 chance)."
       },
       {
+        "tags": ["gligar"],
+        "fact": "Although Gligar could not learn Earthquake by TM in Generation II, a Gligar that knew Earthquake was a reward in Pokémon Stadium 2 for beating the rival in Round 2!" 
+      },
+      {
+        "tags": ["gligar"],
+        "fact": "Despite being a Ground/Flying Type, when Glgar was introduced in Gen II, it could learn NO Flying-type or Ground-type attack moves by level-up or TM!" 
+      },
+      {
+        "tags": ["steelix"],
+        "fact": "Steelix is shown floating above the ground in all console games, rather than, like its pre-evolved form, resting on the ground!" 
+      },
+      {
+        "tags": ["steelix"],
+        "fact": "In Gens II and III, Steelix's only available Steel-type move was Iron Tail!" 
+      },
+      {
+        "tags": ["snubbull"],
+        "fact": "The route that Snubbull swarms on in Pokémon Diamond, Pearl, and Platinum is also its National Pokédex number: 209!" 
+      },
+      {
+        "tags": ["granbull"],
+        "fact": "In Gen II, Granbull could be encountered in the wild at a 5% rate on Route Kanto Route 6, between Saffron City and Vermillion City! Granbull can only be encountered in the wild in Gens II, V, VII, and IX." 
+      },
+      {
+        "tags": ["qwilfish"],
+        "fact": "The Pokémon Gold and Silver Spaceworld '97 demo had a version of Qwilfish called プクー Pukū. It looked the same as Qwilfish but was a pure Water-type and would evolve into a Pokémon called シビレフグ Shibirefugu at level 18! (Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_171.png)" 
+      },
+      {
+        "tags": ["qwilfish"],
+        "fact": "A pre-alpha sketch of an unused Pokémon depicts a Pokémon with the same Pokédex number as Qwilfish! (Example: https://archives.bulbagarden.net/media/upload/c/c6/Capsule_Monsters_Papyo.jpg)" 
+      },
+      {
+        "tags": ["scizor","kleavor","vgc"],
+        "fact": "Scizor and Kleavor are the only Pokémon to not have their base stat total (500) changed upon evolving!" 
+      },
+      {
+        "tags": ["scizor"],
+        "fact": "Scizor could only be caught in the wild starting in Gen VIII's SwSh DLC!" 
+      },
+      {
+        "tags": ["shuckle","vgc"],
+        "fact": "Shuckle has the highest base Defense and Special Defense stats of all obtainable Pokémon!" 
+      },
+      {
+        "tags": ["shuckle","vgc"],
+        "fact": "By using Power Trick, Shuckle can temporarily reach a base Attack stat of 230, which would be the highest of all Pokémon!" 
+      },
+      {
+        "tags": ["shuckle"],
+        "fact": "In Generation II, the first Shuckle holding a Berry in the player's party has a 1/16 chance to turn it into a Berry Juice after each battle!" 
+      },
+      {
+        "tags": ["heracross"],
+        "fact": "Heracross is one of fourteen Pokémon that one could collect foreign Pokédex entries for in Pokémon Diamond and Pearl!" 
+      },
+      {
+        "tags": ["heracross"],
+        "fact": "Heracross is the only Fighting-type Pokémon in the Bug Egg Group!" 
+      },
+      {
+        "tags" : ["sneasel"],
+        "fact" : "Sneasel has the highest base Speed stat (115) of all Pokémon that are capable of evolving!"
+      },
+      {
+        "tags" : ["sneasel"],
+        "fact" : "Sneasel may be based on the kamaitachi (鎌鼬), a type of yōkai often represented as weasel demons with sickles on their front legs and sometimes understood as the cause of mysterious cuts on the skin, especially in cold weather!"
+      },
+      {
+        "tags" : ["sneasel"],
+        "fact" : "In Pokémon Gold and Silver, Sneasel had a different color scheme, where its body was brown and its feather-like appendages were a grayish-cyan!"
+      },
+      {
+        "tags" : ["sneasel"],
+        "fact" : "In Pokémon Colosseum and Pokémon XD: Gale of Darkness, shiny Sneasel's feathers were green instead of gold!"
+      },
+      {
+        "tags" : ["teddiursa"],
+        "fact" : "Despite its fondness for honey in its Pokédex entries and even dropping Dazzling Honey, Dazzling Honey is not among the list of Teddiursa's preferred foods in Pokémon Legends: Arceus!"
+      },
+      {
+        "tags" : ["teddiursa"],
+        "fact" : "In Pokémon Gold and Silver, Teddiursa was exclusive to Gold Version, except for the Japanese and Korean releases of the games, in which it was exclusive to Silver Version!"
+      },
+      {
+        "tags" : ["ursaring"],
+        "fact" : "Ursaring's number of claws has changed over time! In its original artwork, as well as from Pokémon Ruby and Sapphire up to Platinum, Ursaring has four visible claws; however, in the anime and HeartGold/SoulSilver onward, it has five claws. In the Generation II games, it has three claws!"
+      },
+      {
+        "tags" : ["slugma","magcargo"],
+        "fact" : "Slugma and its evolution are the only Fire-type Pokémon with a serpentine body!"
+      },
+      {
+        "tags" : ["slugma","vgc"],
+        "fact" : "Slugma has the lowest base stat total of all Fire-type Pokémon (250)!"
+      },
+      {
+        "tags": ["magcargo"],
+        "fact": "Magcargo is the only Rock-type Pokémon in the Amorphous Egg Group!"
+      },
+      {
+        "tags": ["magcargo"],
+        "fact": "Magcargo has its sprite changed in Crystal from Gold and Silver (its shell is edited slightly from the Gold Version sprite), making it one of few Pokémon to have three different sprites in Generation II!"
+      },
+      {
+        "tags": ["swinub","piloswine","mamoswine","vgc"],
+        "fact": "The typing of Swinub, Piloswine, and Mamoswine is the only combination weak to the types of all three starter Pokémon!"
+      },
+      {
+        "tags": ["swinub"],
+        "fact": "Swinub is one of the few Pokémon with the same sprite in both Gold and Silver!"
+      },
+      {
+        "tags": ["piloswine"],
+        "fact": "Based on its footprint entry in the Pokédex in certain games, Piloswine is known to have hoovess!"
+      },
+      {
+        "tags": ["corsola","cursola"],
+        "fact": "Galarian Corsola and its evolution are the only Ghost-type Pokémon in both Water 1 and Water 3 Egg Groups!"
+      },
+      {
+        "tags": ["corsola","tcg"],
+        "fact": "Corsola made its TCG debut in the Neo Discovery expansion!"
+      },
+      {
+        "tags": ["remoraid"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Remoraid's design resembled a revolver! (Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_209.png)"
+      },
+      {
+        "tags": ["remoraid","mantine"],
+        "fact": "In Gens II and III, Remoraid is also depicted on Mantine's front sprites!"
+      },
+      {
+        "tags": ["remoraid","mantine"],
+        "fact": "In Gens II and III, Remoraid is also depicted on Mantine's front sprites!"
+      },
+      {
+        "tags": ["octillery"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Octillery's design included a helmet and an armor that make it resemble a tank! (Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_210.png)"
+      },
+      {
+        "tags" : ["delibird"],
+        "fact" : "In gens I through VI, Delibird only learns Present by level-up. Starting in Gen VII, it can learn Drill Peck at level 25!"
+      },
+      {
+        "tags": ["mantine", "tcg"],
+        "fact": "In the EX Dragon Frontiers expansion, 'Mantine Delta Species' is a Lightning-type card!"
+      },    
+      {
+        "tags": ["mantine"],
+        "fact": "According to the Pokédex, if it builds up enough speed swimming, Mantine can fly over 300 feet out of the water from the surface of the ocean! That's one whole football-sfield high!"
+      },
+      {
+        "tags": ["skarmory","vgc"],
+        "fact": "Skarmory has the highest base Defense stat of all Flying-type Pokémon (140)!" 
+      },
+      {
+        "tags": ["skarmory"],
+        "fact": "Skarmory's number in the Johto Pokédex and New Unova Pokédex are the same: 203!" 
+      },
+      {
+        "tags": ["skarmory"],
+        "fact": "Skarmory's sprites in Gold and Silver featured a second tail above the first. (Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2g_227.png) This extra tail is not featured in any artwork, and was removed in Crystal!" 
+      },
+      {
+        "tags": ["houndour"],
+        "fact": "Despite being one of the few Dark-types introduced in Gen II, Haundour cannot be caught until the postgame on Kanto's route 7 at night!" 
+      },
+      {
+        "tags": ["houndour","vgc"],
+        "fact": "Houndour has the lowest base Defense stat of all Fire-type Pokémon (30)!" 
+      },
+      {
+        "tags": ["houndour"],
+        "fact": "The only five games so far in which Houndour can be captured by the player before viewing the end credits are Pokémon XD, Pokémon Platinum, Pokémon X, and Pokémon Scarlet and Violet!" 
+      },
+      {
+        "tags": ["houndoom"],
+        "fact": "Houndoom has three different sprites in each Gen II game and each Gen IV game!" 
+      },
+      {
+        "tags": ["kingdra"],
+        "fact": "Kingdra is the only Dragon-type Pokémon introduced in Generation II!" 
+      },
+      {
+        "tags": ["phanpy"],
+        "fact": "In Gen IV, wild Phanpy have a 5% chance of holding a Passho berry!" 
+      },
+      {
+        "tags": ["donphan","tyranitar"],
+        "fact": "Donphan shares its category with Tyranitar. They are both known as the Armor Pokémon!" 
+      },
+      {
+        "tags": ["donphan","anime"],
+        "fact": "In the anime episode 'In Date Expectations' (episode 388 of the anime), a Shiny Donphan was the center of romantic attention for multiple male Donphan. Ash and his friends eventually helped one such Donphan to succeed and mate with the Shiny Donphan!" 
+      },
+      {
+        "tags": ["porygon2"],
+        "fact": "Porygon2 is the only Pokémon with a numeral in its name!" 
+      },
+      {
+        "tags": ["porygon2"],
+        "fact": "Porygon2's beta design from the Spaceworld '97 demo featured a cat-like creature made of many spheres! (Example: https://bulbapedia.bulbagarden.net/wiki/File:Spr_2d_239.png)" 
+      },
+      {
+        "tags": ["porygon2"],
+        "fact": "In the Generation II games, it is impossible to return a nicknamed Porygon2 to its species name, because numbers are not available for nicknames!" 
+      },
+      {
+        "tags": ["porygon2"],
+        "fact": "Porygon2 is the only non-fully evolved Pokémon that evolves into and from another Pokémon by trading!" 
+      },
+      {
         "tags": ["stantler"],
         "fact": "Stantler's tail is brown, except in Gen III and Pokémon Crystal! In those games, its tail is white!" 
       },
       {
+        "tags": ["smeargle"],
+        "fact": "In Pokémon Stadium 2, Smeargle can have either blue, red, or green back and tail colors depending on its IV stats!" 
+      },
+      {
+        "tags": ["tyrogue"],
+        "fact": "Tyrogue is the only Pokémon that created a shared evolution family between two Pokémon that were previously unrelated!" 
+      },
+      {
+        "tags": ["hitmontop"],
+        "fact": "Hitmontop appears to be based on a spinning top and a capoeirista. Its idle animation from Generation VI onward depicts it performing a ginga, a basic technique in capoeira, and its name in Japanese, French, and Korean come from the word 'capoeira.' BRAZIL 🇧🇷 !" 
+      },
+      {
+        "tags": ["hitmontop"],
+        "fact": "Hitmontop can learn the most priority moves of all Pokémon, with 14 increased priority moves and two decreased priority moves!" 
+      },
+      {
+        "tags": ["smoochum"],
+        "fact": "In Pokémon Gold and Silver, Smoochum is programmed to be able to learn Lovely Kiss through breeding, but no male Pokémon in the Human-Like Group can legitimately learn it to pass down as an Egg Move in those games!" 
+      },
+      {
+        "tags": ["elekid"],
+        "fact": "The earliest that Elekid can be caught in the wild is in Pokémon Diamond and Pearl, where it can be found on Route 205 if the player has a copy of FireRed in the GBA slot of the Nintendo DS (dongle method)!" 
+      },
+      {
+        "tags": ["magby"],
+        "fact": "Magby has the lowest possible maximum Pokéathalon stats of any Pokémon, only capable of reaching 3 stars in any of its five stats!" 
+      },
+      {
+        "tags": ["miltank"],
+        "fact": "In Gen III, Miltank's shiny is extremely pale!" 
+      },
+      {
+        "tags": ["miltank","vgc"],
+        "fact": "In Gen II, Miltank learns Rollout at level 34, but Whitney's Miltank knows it at level 20! Rigged!" 
+      },
+      {
+        "tags": ["blissey"],
+        "fact": "Blissey is the only Pokémon whose base experience yield (608) is greater than its base stat total (540)!" 
+      },
+      {
+        "tags": ["blissey","vgc"],
+        "fact": "A level 100 Dynamaxed Blissey with 31 IVs in HP, 252 EVs in HP, and a Dynamax Level of 10 has the highest HP of all Pokémon at 1428 HP!" 
+      },
+      {
+        "tags": ["raikou","anime"],
+        "fact": "Raikou is the only Pokémon in the anime whose image on the Pokédex was of stylized art rather than art by the series' character designer! (Example: https://bulbapedia.bulbagarden.net/wiki/File:Raikou_dex_entry_LoT.png)" 
+      },
+      {
+        "tags": ["raikou"],
+        "fact": "Raikou's numbers in the National Pokédex and the Johto Pokédex are identical: 0243 and 243, respectively!" 
+      },
+      {
+        "tags": ["entei"],
+        "fact": "An unused event present in the data of Pokémon Gold and Silver (but removed from Crystal) allows for the player to obtain a level 40 Entei!" 
+      },
+      {
+        "tags": ["entei","suicune","raikou"],
+        "fact": "In Gold, Silver, and Crystal, playing Entei's cry in the Pokédex then switching to Suicune or Raikou before the cry ends causes a distortion in the cries of Suicune or Raikou!" 
+      },
+      {
+        "tags": ["suicune"],
+        "fact": "Suicune is the only member of a Legendary trio to also be a game mascot while its fellow members are not!" 
+      },
+      {
+        "tags": ["larvitar"],
+        "fact": "Larvitar's sprite animation changes between Pokémon Diamond and Pearl and Pokémon Platinum, but its static sprite does not change!" 
+      },
+      {
+        "tags": ["pupitar","tcg"],
+        "fact": "Pupitar made its TCG debut in the Neo Discovery expansion!" 
+      },
+      {
+        "tags": ["tyranitar"],
+        "fact": "No other Pokémon has the same type combination as Tyranitar!" 
+      },
+      {
+        "tags": ["lugia","hooh"],
+        "fact": "Ho-Oh and Lugia are the only Legendary Pokémon that are game mascots that are not version-exclusives in their representative games!" 
+      },
+      {
+        "tags": ["lugia"],
+        "fact": "Lugia's Shiny in Pokémon Stadium 2 is pale green rather than pink! (Example: https://twitter.com/KaffeineKaiju/status/1273476711292833792)" 
+      },
+      {
+        "tags": ["hooh","anime"],
+        "fact": "Ho-Oh is the first Generation II Pokémon to be shown in the anime!" 
+      },
+      {
+        "tags": ["hooh"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Ho-Oh was a pure Flying-type legendary Pokémon!" 
+      },
+      {
+        "tags": ["celebi"],
+        "fact": "Celebi's beta designs appear to draw inspiration from Kokopelli, a god of fertility and music from the cultures of some southwestern Native American peoples! (Example: https://twitter.com/DrLavaYT/status/1293193966649630720)" 
+      },
+      {
         "tags": ["swellow"],
         "fact": "Shiny Swellow's colors and long tail feathers resemble those of the resplendent quetzal!"
+      },
+      {
+        "tags": ["surskit"],
+        "fact": "Surskit is TalesofTaylor's rarest shiny! He caught it as a 1% on r!oute 117 in Pokémon Emerald! https://www.twitch.tv/talesoftaylor/clip/DoubtfulHungryBatMrDestructoid-rQyeewhg3JQ9m23W"
       },
       {
         "tags": ["minun","anime"],
@@ -997,6 +1577,22 @@
         "fact": "Metang and its evolutionary relatives all share both their standard and hidden Abilities with Registeel: Clear Body and Light Metal, respectively!"
       },
       {
+        "tags": ["jirachi"],
+        "fact": "Jirachi's Gen III front sprite depicts it with its “true eye” open!"
+      },
+      {
+        "tags": ["jirachi","smeargle"],
+        "fact": "Jirachi is the only Pokémon capable of learning Doom Desire (other than Smeargle, of course)!"
+      },
+      {
+        "tags": ["jirachi"],
+        "fact": "Only two Jirachis can be shiny hunted: the Colosseum Bonus Disc WISHMKR Jirachi and the Pokémon Channel PAL version Jirachi!"
+      },
+      {
+        "tags": ["jirachi"],
+        "fact": "Shiny odds for Wishmaker Jirachi are actually 1 in 7281! This is because out of 65,536 unique Jirachis, 9 can be shiny!"
+      },
+      {
         "tags": ["deoxys"],
         "fact": "Deoxys was the first Pokémon to have its own unique battle music!"
       },
@@ -1011,6 +1607,14 @@
       {
         "tags": ["manaphy","ditto"],
         "fact": "Manaphy and Ditto are the only Pokémon that are both able to breed yet unobtainable through breeding!"
+      },
+      {
+        "tags": ["blitzle"],
+        "fact": "Blitzle is not in Black 2 or White 2! (Submitted by @TalesofTaylor)"
+      },
+      {
+        "tags": ["sylveon"],
+        "fact": "Sylveon's name may derive from the word 'Sylph,' an elemental air spirit commonly identified with fairies!"
       },
       {
         "tags": ["pawmi","pawmo"],
@@ -1031,6 +1635,18 @@
       {
         "tags": ["general"],
         "fact": "The move Comet Punch was removed in Gen VIII!"
+      },
+      {
+        "tags": ["general"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Normal type was super-effective against Dark type!"
+      },
+      {
+        "tags": ["general"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Steel type was weak to Water and Electric-type attacks and resisted Ground and Fighting-types!"
+      },
+      {
+        "tags": ["general"],
+        "fact": "In the Pokémon Gold and Silver Spaceworld '97 demo, Steel-types were immune to Steel-type moves!"
       }
     ]
   }
