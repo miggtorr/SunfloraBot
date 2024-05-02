@@ -34,7 +34,11 @@ var shinyRollCounter = 0;
 var facts = [];
 const rollchannel = "talesoftaylor";
 const dex = new Pokedex();
+
+//Dex vars
 var pokeapiObj = {};
+var pokeMonObj = {};
+var pokeSpeciesObj = {};
 
 // var factsJSON = {};
 var savCanGamble = true;
@@ -476,14 +480,14 @@ client.on('message', (channel, user, message, self) => {
         }
     }
 
-    if(command == `!pokedex` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        switch(args[0]){
+    if(command == `!dex` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        switch(args[0].toLowerCase()){
             case "pokemon":
                 pokePokemon(args);
                 //Pokemon function (break into subfunctions later with extra args)
                 break;
             case "move":
-                //move function
+                pokeMove(args);
                 break;
             case "ability":
                 //ability function
@@ -492,7 +496,7 @@ client.on('message', (channel, user, message, self) => {
                 //Pokemon function
                 break;
             case "type":
-                //Type function
+                pokeType(args);
                 break;
             default: 
                 client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
@@ -519,20 +523,103 @@ function pokeAPICall(arg){
 function pokePokemon(args){
 
     console.log(args);
+    pokeMonObj = {};
+    pokeSpeciesObj = {};
 
-    dex.getPokemonByName(args[1])
+    if(args.length < 2){
+        client.say(channel, `Please specify a Pokemon!`);
+        return;
+    }
+
+    const getMon = dex.getPokemonByName(args[1].toLowerCase())
     .then((response) => {
-        pokeapiObj = response;
-                console.log(pokeapiObj);
-                if(args.length == 2){
-                    pokeBasic(); 
-                }
+        pokeMonObj = response;
     })
     .catch((error) => {
-        client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`)
-        console.log('There was an ERROR: ', error);
+        // client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`);
+        console.log('Could not find Mon info: ', error);
+        reject;
     });
 
+    const getSpecies = dex.getPokemonSpeciesByName(args[1].toLowerCase())
+    .then((response) => {
+        pokeSpeciesObj = response;
+    })
+    .catch((error) => {
+        // client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`);
+        console.log('Could not find Species info: ', error);
+        reject;
+    });
+
+    Promise.allSettled([getMon,getSpecies]).then((results) => {
+        const resultsList = [];
+        results.forEach((result) => resultsList.push(result.status));
+        console.log(resultsList);
+        if(resultsList[0] ==  "fulfilled" && resultsList[1] ==  "fulfilled"){
+            //Both Mon & Species OK
+            pokeapiObj = {...pokeMonObj, ...pokeSpeciesObj};
+            if(args.length == 2)
+            {
+                pokeBasic(); 
+            }
+            if(args[2] == "varieties")
+            {
+                var listOfMons = [];
+                for (let i = 0; i < pokeSpeciesObj.varieties.length; i++) {
+                listOfMons.push(' ' + pokeSpeciesObj.varieties[i].pokemon.name);
+                }
+                client.say(channel, `Here are the differnet types of ${args[1]} I can tell you about: ${listOfMons}`);
+            }
+            if(args[2] == "dexentry"){
+                client.say(channel, `/me 📇 ${pokeEngText()}`);
+            }
+
+        } else if (resultsList[0] ==  "rejected" && resultsList[1] ==  "fulfilled"){
+            //Species but not Mon
+            var listOfMons = [];
+            for (let i = 0; i < pokeSpeciesObj.varieties.length; i++) {
+                listOfMons.push(' ' + pokeSpeciesObj.varieties[i].pokemon.name);
+            }
+            client.say(channel, `Please be more specific! Which ${args[0]} would you like to know about? Options: ${listOfMons}?`);
+
+        } else if(resultsList[0] ==  "fulfilled" && resultsList[1] ==  "rejected"){
+            //Mon but not Species
+            const monName = pokeMonObj.species.name;
+            dex.getPokemonSpeciesByName(monName)
+            .then((response) => {
+                pokeSpeciesObj = response;
+                pokeapiObj = {...pokeMonObj, ...pokeSpeciesObj};
+                if(args.length == 2)
+                {
+                    pokeBasic(); 
+                }
+                if(args[2] == "varieties"){
+                    var listOfMons = [];
+                    for (let i = 0; i < pokeSpeciesObj.varieties.length; i++) {
+                    listOfMons.push(' ' + pokeSpeciesObj.varieties[i].pokemon.name);
+                    }
+                client.say(channel, `Here are the differnet types of ${pokeSpeciesObj.name} I can tell you about: ${listOfMons}`);
+                }
+                if(args[2] == "dexentry"){
+                client.say(channel, `/me 📇 ${pokeEngText()}`);
+                }
+            })
+            .catch((error) => {
+                client.say(channel,`Hmm... Something went wrong. :( Sorry!`);
+                console.log('Could not find Species info: ', error);
+            });
+
+
+        } else if(resultsList[0] ==  "rejected" && resultsList[1] ==  "rejected"){
+            //Neither mon nor species
+            client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`);
+        }
+
+        console.log(pokeapiObj);
+    }).catch((error) => {
+        // client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`);
+        console.log('There was an ERROR: ', error);
+    });
     
 }
 
@@ -552,12 +639,12 @@ function pokeBasic(){
         type1 = type1.substring(1,type1.length -1);
         type1 = type1.charAt(0).toUpperCase() + type1.slice(1);
         type2 = JSON.stringify(pokeapiObj.types[1].type.name);
-        type2 = type2.substring(1,type1.length -1);
-        type2 = type2.charAt(0).toUpperCase() + type2.slice(1);
+        type2 = type2.substring(1,type2.length -1);
+        type2 = " and " + type2.charAt(0).toUpperCase() + type2.slice(1);
     }
-    const types = `${type1} and ${type2}`;
-    const meters = (pokeapiObj.height / 0.1).toFixed(2);
-    const kg = (pokeapiObj.weight * 0.1).toFixed(2);
+    const types = `${type1}${type2}`;
+    const meters = (pokeapiObj.height / 0.1).toFixed(1);
+    const kg = (pokeapiObj.weight * 0.1).toFixed(1);
     const hp = pokeapiObj.stats[0].base_stat;
     const atk = pokeapiObj.stats[1].base_stat;
     const def = pokeapiObj.stats[2].base_stat;
@@ -565,11 +652,196 @@ function pokeBasic(){
     const spdef = pokeapiObj.stats[4].base_stat;
     const spd = pokeapiObj.stats[5].base_stat;
     const bst = hp + atk + def + spatk + spdef + spd;
-    var abilities = '';
+    var eGroup1 = '';
+    var eGroup2 = '';
+    if (pokeapiObj.egg_groups.length == 1){
+        eGroup1 = JSON.stringify(pokeapiObj.egg_groups[0].name);
+        eGroup1 = eGroup1.substring(1,eGroup1.length -1);
+        eGroup1 = eGroup1.charAt(0).toUpperCase() + eGroup1.slice(1);
+    } else {
+        eGroup1 = JSON.stringify(pokeapiObj.egg_groups[0].name);
+        eGroup1 = eGroup1.substring(1,eGroup1.length -1);
+        eGroup1 = eGroup1.charAt(0).toUpperCase() + eGroup1.slice(1);
+        eGroup2 = JSON.stringify(pokeapiObj.egg_groups[1].name);
+        eGroup2 = eGroup2.substring(1,eGroup2.length -1);
+        eGroup2 = ", " + eGroup2.charAt(0).toUpperCase() + eGroup2.slice(1);
+    }
+    const catchrate = pokeapiObj.capture_rate;
+    const eGroups = `${eGroup1}${eGroup2}`;
+    // const flavor = pokeEngText();
+    const category = pokeEngGenera();
+    var abilities = [];
+    for (let i = 0; i < pokeapiObj.abilities.length; i++) {
+        var ability = ''
+        if(pokeapiObj.abilities[i].is_hidden){
+            ability = JSON.stringify(pokeapiObj.abilities[i].ability.name);
+            ability = ability.substring(1,ability.length -1);
+            ability = ability.charAt(0).toUpperCase() + ability.slice(1);
+            ability = ` ${ability} (hidden)`;
+        } else {
+            ability = JSON.stringify(pokeapiObj.abilities[i].ability.name);
+            ability = ability.substring(1,ability.length -1);
+            ability = " " + ability.charAt(0).toUpperCase() + ability.slice(1);
+        }
+        abilities.push(ability);
+    }
 
-    client.say(channel, `Pokemon: ${name}. National Dex Number: ${dexID}. Type(s): ${types}. Height: ${meters}m. Weight: ${kg}kg. Base Stat Total: ${bst}.` );
-    console.log(JSON.stringify(pokeapiObj.types));
+    // const abilities = ``;
+
+    client.say(channel, `🐾 Pokemon: ${name}. 📇 National Dex Number: ${dexID}. 🔎 Category: The ${category}. 🌟 Type(s): ${types}. ✨ Abilities:${abilities}. 🐣 Egg Group(s): ${eGroups}. 🔒 Base Capture Rate: ${catchrate}. 📏 Height: ${meters}m. ⚖️ Weight: ${kg}kg. 🥊 Base Stat Total: ${bst}.` );
+    // client.say(channel, `/me ${flavor}`);
+    // console.log(JSON.stringify(pokeapiObj.types));
 }
+
+function pokeEngText(){
+    for (let i = pokeapiObj.flavor_text_entries.length - 1; i >= 0; i--) {
+        console.log(pokeapiObj.flavor_text_entries[i].language.name);
+        if(pokeapiObj.flavor_text_entries[i].language.name == "en"){
+            console.log('English entry found.');
+            return JSON.stringify(pokeapiObj.flavor_text_entries[i].flavor_text).replace(/\\n/g,' ').replace(/\\f/g,' ');
+        } 
+    }
+    console.log('English entry not found.');
+    return JSON.stringify(pokeapiObj.flavor_text_entries[0].flavor_text).replace(/\\n/g,' ').replace(/\\f/g,' ');
+}
+function pokeEngGenera(){
+    for (let i = pokeapiObj.genera.length - 1; i >= 0; i--) {
+        console.log(pokeapiObj.genera[i].language.name);
+        if(pokeapiObj.genera[i].language.name == "en"){
+            console.log('English entry found.');
+            var result = JSON.stringify(pokeapiObj.genera[i].genus);
+            return result.substring(1,result.length -1);
+        } 
+    }
+}
+
+function pokeType(args){
+    if(args[1]){
+        dex.getTypeByName(args[1].toLowerCase())
+        .then((response) => {
+        pokeapiObj = response;
+        if(args[2]){
+            pokeTypeRelations(args[1], args[2].toLowerCase());
+        } else {
+            client.say(channel, `${args[1]} type options: stronginto, weakinto, weakto, resists, nodamage, immunefrom.`);
+        }
+        
+        })
+        .catch((error) => {
+        client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
+        console.log('There was an ERROR: ', error);
+        });
+    } else {
+        client.say(channel, `Please specify a type and one of the following options: stronginto, weakinto, weakto, resists, nodamage, immunefrom.`);
+    }
+}
+
+function pokeTypeRelations(type, relation){
+    var stronginto = [];
+    var weakinto = [];
+    var weakto = [];
+    var resists = [];
+    var nodamage = [];
+    var immunefrom = [];
+    for (let i = 0; i < pokeapiObj.damage_relations.double_damage_to.length; i++) {
+        stronginto.push(' ' + pokeapiObj.damage_relations.double_damage_to[i].name);
+    }
+    for (let i = 0; i < pokeapiObj.damage_relations.half_damage_to.length; i++) {
+        weakinto.push(' ' + pokeapiObj.damage_relations.half_damage_to[i].name);
+    }
+    for (let i = 0; i < pokeapiObj.damage_relations.double_damage_from.length; i++) {
+        weakto.push(' ' + pokeapiObj.damage_relations.double_damage_from[i].name);
+    }
+    for (let i = 0; i < pokeapiObj.damage_relations.half_damage_from.length; i++) {
+        resists.push(' ' + pokeapiObj.damage_relations.half_damage_from[i].name);
+    }
+    for (let i = 0; i < pokeapiObj.damage_relations.no_damage_to.length; i++) {
+        nodamage.push(' ' + pokeapiObj.damage_relations.no_damage_to[i].name);
+    }
+    for (let i = 0; i < pokeapiObj.damage_relations.no_damage_from.length; i++) {
+        immunefrom.push(' ' + pokeapiObj.damage_relations.no_damage_from[i].name);
+    }
+    switch (relation){
+        case "stronginto":
+            if(stronginto.length == 0){stronginto.push("none")};
+            client.say(channel, `${type}-type moves are Super Effective against: ${stronginto}!`);
+            break;
+        case "weakinto":
+            if(weakinto.length == 0){weakinto.push("none")};
+            client.say(channel, `${type}-type moves are Not Very Effective against: ${weakinto}!`);
+            break;
+        case "weakto":
+            if(weakto.length == 0){weakto.push("none")};
+            client.say(channel, `${type}-type Pokemon are weak to: ${weakto}!`);
+            break;
+        case "resists":
+            if(resists.length == 0){resists.push("none")};
+            client.say(channel, `${type}-type Pokemon resist: ${resists}!`);
+            break;
+        case "nodamage":
+            if(nodamage.length == 0){nodamage.push("none")};
+            client.say(channel, `${type}-type moves do no damage into: ${nodamage}!`);
+            break;
+        case "immunefrom":
+            if(immunefrom.length == 0){immunefrom.push("none")};
+            client.say(channel, `${type}-type Pokemon are immune from: ${immunefrom}!`);
+            break;
+        default:
+            client.say(channel, `Try again. ${type} type options: stronginto, weakinto, weakto, resists, nodamage, immunefrom.`);
+            break;
+    }
+}
+
+function pokeMove(args){
+    if(args.length < 2){
+        client.say(channel, `Please specify a move!`);
+        return;
+    };
+
+    dex.getMoveByName(args[1].toLowerCase())
+    .then((response) => {
+        pokeapiObj = response;
+        pokeMoveDescribe();
+    })
+    .catch((error) => {
+        client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
+        console.log('There was an ERROR: ', error);
+    });
+
+}
+
+function pokeMoveDescribe(){
+    var name = JSON.stringify(pokeapiObj.name);
+    name = name.substring(1,name.length -1);
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    var category = JSON.stringify(pokeapiObj.damage_class.name);
+    category = category.substring(1,category.length -1);
+    category = category.charAt(0).toUpperCase() + category.slice(1);
+    var type = JSON.stringify(pokeapiObj.type.name);
+    type = type.substring(1,type.length -1);
+    type = type.charAt(0).toUpperCase() + type.slice(1);
+    var power
+    var accuracy
+    const pp = pokeapiObj.pp;
+    const description = pokeapiObj.effect_entries[0].effect;
+    const target = pokeapiObj.target.name;
+    const priority = pokeapiObj.priority;
+
+    if(pokeapiObj.power == null){
+        power = 'N/A';
+    } else {
+        power = pokeapiObj.power;
+    }
+    if(pokeapiObj.accuracy == null){
+        accuracy = 'Always Hits';
+    } else {
+        accuracy = pokeapiObj.accuracy;
+    }
+    
+    client.say(channel, `Move: ${name}. Type: ${type}. Category: ${category}. PP: ${pp}. Power: ${power}. Accuracy: ${accuracy}. Priority: ${priority}. Target: ${target}. Description: ${description}`);
+}
+
+//Shiny Rolls
 
 function ShinyRoll(chatuser) {
     var roll = (Math.floor(Math.random() * 8194));
