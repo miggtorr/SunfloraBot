@@ -1,9 +1,7 @@
 //version 0.6
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 require('dotenv').config();
-// const { availableParallelism, tmpdir } = require('os');
-// var tiny = require('tiny-json-http');
+const { availableParallelism, tmpdir } = require('os');
+var tiny = require('tiny-json-http');
 const tmi = require('tmi.js'),
     { channel, username, password } = require('./settings.json');
 const { say, timeout } = require('tmi.js/lib/commands');
@@ -11,7 +9,6 @@ const {promises: fsPromises} = require('fs');
 const { resolve } = require('path');
 const { removeAllListeners } = require('process');
 const readline = require('readline');
-import Pokedex from 'pokedex-promise-v2';
 // const { Pokedex } = require('pokedex-promise-v2');
 const clientOptions = {
     options: { debug: true },
@@ -33,7 +30,7 @@ var rolledUsers = [];
 var shinyRollCounter = 0;
 var facts = [];
 const rollchannel = "talesoftaylor";
-const dex = new Pokedex();
+// const dex = new Pokedex();
 var pokeapiObj = {};
 
 // var factsJSON = {};
@@ -476,28 +473,12 @@ client.on('message', (channel, user, message, self) => {
         }
     }
 
-    if(command == `!pokedex` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        switch(args[0]){
-            case "pokemon":
-                pokePokemon(args);
-                //Pokemon function (break into subfunctions later with extra args)
-                break;
-            case "move":
-                //move function
-                break;
-            case "ability":
-                //ability function
-                break;
-            case "item":
-                //Pokemon function
-                break;
-            case "type":
-                //Type function
-                break;
-            default: 
-                client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
-                break;
-        }
+    if(command == `!poketest` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        dex.getResource(['/api/v2/pokemon/36', 'api/v2/berry/8', 'https://pokeapi.co/api/v2/ability/9/'])
+  .then((response) => {
+    console.log(response); // the getResource function accepts singles or arrays of URLs/paths
+  });
+        
     }
 
 
@@ -505,71 +486,6 @@ client.on('message', (channel, user, message, self) => {
 
 });
 
-function pokeAPICall(arg){
-    dex.getPokemonByName(192, (response, error) => { // with callback
-        if(!error) {
-          console.log(response);
-        } else {
-          console.log(error)
-        }
-      });
-  
-}
-
-function pokePokemon(args){
-
-    console.log(args);
-
-    dex.getPokemonByName(args[1])
-    .then((response) => {
-        pokeapiObj = response;
-                console.log(pokeapiObj);
-                if(args.length == 2){
-                    pokeBasic(); 
-                }
-    })
-    .catch((error) => {
-        client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`)
-        console.log('There was an ERROR: ', error);
-    });
-
-    
-}
-
-function pokeBasic(){
-    var name = JSON.stringify(pokeapiObj.name);
-    name = name.substring(1,name.length -1);
-    name = name.charAt(0).toUpperCase() + name.slice(1);
-    const dexID = pokeapiObj.id;
-    var type1 = '';
-    var type2 = '';
-    if (pokeapiObj.types.length == 1){
-        type1 = JSON.stringify(pokeapiObj.types[0].type.name);
-        type1 = type1.substring(1,type1.length -1);
-        type1 = type1.charAt(0).toUpperCase() + type1.slice(1);
-    } else {
-        type1 = JSON.stringify(pokeapiObj.types[0].type.name);
-        type1 = type1.substring(1,type1.length -1);
-        type1 = type1.charAt(0).toUpperCase() + type1.slice(1);
-        type2 = JSON.stringify(pokeapiObj.types[1].type.name);
-        type2 = type2.substring(1,type1.length -1);
-        type2 = type2.charAt(0).toUpperCase() + type2.slice(1);
-    }
-    const types = `${type1} and ${type2}`;
-    const meters = (pokeapiObj.height / 0.1).toFixed(2);
-    const kg = (pokeapiObj.weight * 0.1).toFixed(2);
-    const hp = pokeapiObj.stats[0].base_stat;
-    const atk = pokeapiObj.stats[1].base_stat;
-    const def = pokeapiObj.stats[2].base_stat;
-    const spatk = pokeapiObj.stats[3].base_stat;
-    const spdef = pokeapiObj.stats[4].base_stat;
-    const spd = pokeapiObj.stats[5].base_stat;
-    const bst = hp + atk + def + spatk + spdef + spd;
-    var abilities = '';
-
-    client.say(channel, `Pokemon: ${name}. National Dex Number: ${dexID}. Type(s): ${types}. Height: ${meters}m. Weight: ${kg}kg. Base Stat Total: ${bst}.` );
-    console.log(JSON.stringify(pokeapiObj.types));
-}
 
 function ShinyRoll(chatuser) {
     var roll = (Math.floor(Math.random() * 8194));
@@ -1568,6 +1484,10 @@ function shuffleBones(){
 //         status.bye(); // Bye!
 //         status.default(); // Module loaded (export default)!
 // }
+
+function pokeAPICall(){
+
+}
 
 //Height Command
 
