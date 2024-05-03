@@ -139,6 +139,7 @@ For example:
 
 - SunfloraBot now has PokéAPI integration! You can now look up various facts using the `!dex` command.
 - Use `!dex` to look up facts about Pokémon, Moves, Abilities, Stats, Types, Shiny Palettes, Forms, and Dex Entries.
+- Argumnents are not case-sensitive, take no punctuation, and use hyphens for spaces (e.g., `rock-slide`, `Farfetchd`, `TAUROS-PALDEA-BLAZE-BREED` are all valid).
 - Right now use is limited to mods only to avoid overloading the system with API calls.
   
 #### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)PokéAPI Commands
