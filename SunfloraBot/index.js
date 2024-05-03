@@ -1,4 +1,4 @@
-//version 0.6
+//version 0.7
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 require('dotenv').config();
@@ -481,6 +481,10 @@ client.on('message', (channel, user, message, self) => {
     }
 
     if(command == `!dex` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        if(args.length < 1){
+            client.say(channel, `Available Pokédex arguments: pokemon, move, ability, type.`);
+            return;
+        }
         switch(args[0].toLowerCase()){
             case "pokemon":
                 pokePokemon(args);
@@ -491,9 +495,7 @@ client.on('message', (channel, user, message, self) => {
                 break;
             case "ability":
                 //ability function
-                break;
-            case "item":
-                //Pokemon function
+                pokeAbility(args);
                 break;
             case "type":
                 pokeType(args);
@@ -509,16 +511,6 @@ client.on('message', (channel, user, message, self) => {
 
 });
 
-function pokeAPICall(arg){
-    dex.getPokemonByName(192, (response, error) => { // with callback
-        if(!error) {
-          console.log(response);
-        } else {
-          console.log(error)
-        }
-      });
-  
-}
 
 function pokePokemon(args){
 
@@ -573,6 +565,18 @@ function pokePokemon(args){
             if(args[2] == "dexentry"){
                 client.say(channel, `/me 📇 ${pokeEngText()}`);
             }
+            if(args[2] == "stats"){
+                pokeStats();
+            }
+            if(args[2] == "normal"){
+                client.say(channel, `Here is what ${args[1].charAt(0).toUpperCase() + args[1].slice(1)}'s normal color scheme looks like: ${pokeapiObj['sprites']['other']["official-artwork"]['front_default']}`);
+            }
+            if(args[2] == "shiny"){
+                client.say(channel, `Here is what ${args[1].charAt(0).toUpperCase() + args[1].slice(1)}'s shiny color scheme looks like: ${pokeapiObj['sprites']['other']["official-artwork"]['front_shiny']}`);
+            }
+            if(args[2] == "moves"){
+                pokeMoves();
+            }
 
         } else if (resultsList[0] ==  "rejected" && resultsList[1] ==  "fulfilled"){
             //Species but not Mon
@@ -602,6 +606,18 @@ function pokePokemon(args){
                 }
                 if(args[2] == "dexentry"){
                 client.say(channel, `/me 📇 ${pokeEngText()}`);
+                }
+                if(args[2] == "stats"){
+                    pokeStats();
+                }
+                if(args[2] == "normal"){
+                    client.say(channel, `Here is what ${args[1].charAt(0).toUpperCase() + args[1].slice(1)}'s normal color scheme looks like: ${pokeapiObj['sprites']['other']["official-artwork"]['front_default']}`);
+                }
+                if(args[2] == "shiny"){
+                    client.say(channel, `Here is what ${args[1].charAt(0).toUpperCase() + args[1].slice(1)}'s shiny color scheme looks like: ${pokeapiObj['sprites']['other']["official-artwork"]['front_shiny']}`);
+                }
+                if(args[2] == "moves"){
+                    pokeMoves();
                 }
             })
             .catch((error) => {
@@ -654,7 +670,9 @@ function pokeBasic(){
     const bst = hp + atk + def + spatk + spdef + spd;
     var eGroup1 = '';
     var eGroup2 = '';
-    if (pokeapiObj.egg_groups.length == 1){
+    if (pokeapiObj.egg_groups.length == 0) {
+        eGroup1 = 'No info'
+    } else if (pokeapiObj.egg_groups.length == 1){
         eGroup1 = JSON.stringify(pokeapiObj.egg_groups[0].name);
         eGroup1 = eGroup1.substring(1,eGroup1.length -1);
         eGroup1 = eGroup1.charAt(0).toUpperCase() + eGroup1.slice(1);
@@ -704,6 +722,7 @@ function pokeEngText(){
     console.log('English entry not found.');
     return JSON.stringify(pokeapiObj.flavor_text_entries[0].flavor_text).replace(/\\n/g,' ').replace(/\\f/g,' ');
 }
+
 function pokeEngGenera(){
     for (let i = pokeapiObj.genera.length - 1; i >= 0; i--) {
         console.log(pokeapiObj.genera[i].language.name);
@@ -715,8 +734,35 @@ function pokeEngGenera(){
     }
 }
 
+function pokeStats(){
+    var name = JSON.stringify(pokeapiObj.name);
+    name = name.substring(1,name.length -1);
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    const hp = pokeapiObj.stats[0].base_stat;
+    const atk = pokeapiObj.stats[1].base_stat;
+    const def = pokeapiObj.stats[2].base_stat;
+    const spatk = pokeapiObj.stats[3].base_stat;
+    const spdef = pokeapiObj.stats[4].base_stat;
+    const spd = pokeapiObj.stats[5].base_stat;
+    const bst = hp + atk + def + spatk + spdef + spd;
+    var evYield = [];
+
+    for (let i = 0; i < pokeapiObj.stats.length; i++) {
+        if(pokeapiObj.stats[i].effort > 0){
+            evYield.push(" " + pokeapiObj.stats[i].stat.name + ": " + pokeapiObj.stats[i].effort);
+        }
+    }
+
+    client.say(channel, `${name}'s Base Stats 📊 ❤️ HP: ${hp}. 🥊 Atk: ${atk}. 🛡️ Def: ${def}. 💫 SpAtk: ${spatk}. ☔️ SpDef: ${spdef}. ⚡️ Spd: ${spd}. 🧮 Total: ${bst}. 🏋️ EV Yield:${evYield}.`)
+}
+
 function pokeType(args){
     if(args[1]){
+        if(args[1].toLowerCase() == 'chart'){
+            client.say(channel, `Here's a link to a Type Chart: ✨ https://pokemondb.net/type`);
+            return;
+        }
+
         dex.getTypeByName(args[1].toLowerCase())
         .then((response) => {
         pokeapiObj = response;
@@ -794,7 +840,7 @@ function pokeTypeRelations(type, relation){
 
 function pokeMove(args){
     if(args.length < 2){
-        client.say(channel, `Please specify a move!`);
+        client.say(channel, `Please specify a move! (e.g., rock-slide)`);
         return;
     };
 
@@ -804,7 +850,7 @@ function pokeMove(args){
         pokeMoveDescribe();
     })
     .catch((error) => {
-        client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
+        client.say(channel, `Hmm... sorry, I don't know that move. 🙏`);
         console.log('There was an ERROR: ', error);
     });
 
@@ -820,10 +866,17 @@ function pokeMoveDescribe(){
     var type = JSON.stringify(pokeapiObj.type.name);
     type = type.substring(1,type.length -1);
     type = type.charAt(0).toUpperCase() + type.slice(1);
-    var power
-    var accuracy
+    var power;
+    var accuracy;
     const pp = pokeapiObj.pp;
-    const description = pokeapiObj.effect_entries[0].effect;
+    var description;
+
+    if(pokeapiObj.effect_entries.length > 0){
+        description = pokeapiObj.effect_entries[0].effect;
+    } else {
+        description = "none available."
+    }
+    
     const target = pokeapiObj.target.name;
     const priority = pokeapiObj.priority;
 
@@ -838,7 +891,117 @@ function pokeMoveDescribe(){
         accuracy = pokeapiObj.accuracy;
     }
     
-    client.say(channel, `Move: ${name}. Type: ${type}. Category: ${category}. PP: ${pp}. Power: ${power}. Accuracy: ${accuracy}. Priority: ${priority}. Target: ${target}. Description: ${description}`);
+    client.say(channel, `🥊 Move: ${name}. 🌟 Type: ${type}. 📇 Category: ${category}. 🍆 PP: ${pp}. 💥 Power: ${power}. 🎯 Accuracy: ${accuracy}. ⏱️ Priority: ${priority}. 🔭 Target: ${target}. 📖 Description: ${description}`);
+}
+
+function pokeMoves(){
+    var speciesName = JSON.stringify(pokeapiObj.species.name);
+    speciesName = speciesName.substring(1,speciesName.length -1);
+    const modifiedSpeciesName = speciesNameCheck(speciesName);
+    speciesName = speciesName.charAt(0).toUpperCase() + speciesName.slice(1);
+    client.say(channel, `The Learnset for ${speciesName} is available here: https://bulbapedia.bulbagarden.net/wiki/${modifiedSpeciesName}_(Pok%C3%A9mon)#Learnset`)
+}
+
+function speciesNameCheck(speciesName){
+    switch(speciesName){
+        case "nidoran-m": return "Nidoran♂";
+        case "nidoran-f": return "Nidoran♀";
+        case "farfetchd": return "Farfetch'd";
+        case "mr-mime": return "Mr._Mime";
+        case "ho-oh": return "Ho-Oh";
+        case "mime-jr": return "Mime_Jr.";
+        case "porygon-z": return "Porygon-Z";
+        case "type-null": return "Type:_Null";
+        case "tapu-koko": return "Tapu_Koko";
+        case "tapu-lele": return "Tapu_Lele";
+        case "tapu-bulu": return "Tapu_Bulue";
+        case "tapu-fini": return "Tapu_Fini";
+        case "sirfetchd": return "Sirfetch'd";
+        case "mr-rime": return "Mr._Rime";
+
+        case "great-tusk": return "Great_Tusk";
+        case "scream-tail": return "Scream_Tail";
+        case "brute-bonnet": return "Brute_Bonnet";
+        case "flutter-mane": return "Flutter_Mane";
+        case "slither-wing": return "Slither_Wing";
+        case "sandy-shocks": return "Sandy_Shocks";
+
+        case "iron-bundle": return "Iron_Bundle";
+        case "iron-hands": return "Iron_Hands";
+        case "iron-jugulis": return "Iron_Jugulis";
+        case "iron-moth": return "Iron_Moth";
+        case "iron-thorns": return "Iron_Thorns";
+        case "iron-treads":  return "Iron_Treads";
+
+        case "wo-chien": return "Wo-Chien";
+        case "chien-pao": return "Chien-Pao";
+        case "ting-lu": return "Ting-Lu";
+        case "chi-yu": return "Chi-Yu";
+        
+        case "roaring-moon": return "Roaring_Moon";
+        case "iron-valiant": return "Iron_Valiant";
+        
+        case "walking-wake": return "Walking_Wake";
+        case "iron-leaves": return "Iron_Leaves";
+        case "gouging-fire": return "Gouging_Fire";
+        case "raging-bolt": return "Raging_Bolt";
+        case "iron-boulder": return "Iron_Boulder";
+        case "iron-crown":  return "Iron_Crown";
+        default: return speciesName;
+    }
+}
+
+function pokeAbility(args){
+    if(args.length < 2){
+        client.say(channel, `Please specify an ability! (e.g., solar-power)`);
+        return;
+    };
+
+    dex.getAbilityByName(args[1].toLowerCase())
+    .then((response) => {
+        pokeapiObj = response;
+        pokeAbilityDescribe();
+    })
+    .catch((error) => {
+        client.say(channel, `Hmm... sorry, I don't know that ability. 🙏`);
+        console.log('There was an ERROR: ', error);
+    });
+}
+
+function pokeAbilityDescribe(){
+    var name = JSON.stringify(pokeapiObj.name);
+    name = name.substring(1,name.length -1);
+    name = name.charAt(0).toUpperCase() + name.slice(1);
+    const description = pokeEngAbility();
+
+    client.say(channel, `✨ Ability: ${name}. 📖 Description: ${description}`);
+}
+
+function pokeEngAbility(){
+    if(pokeapiObj.effect_entries.length > 0){
+        for (let i = pokeapiObj.effect_entries.length - 1; i >= 0; i--) {
+            console.log(pokeapiObj.effect_entries[i].language.name);
+            if(pokeapiObj.effect_entries[i].language.name == "en"){
+                console.log('English entry found.');
+                var result = JSON.stringify(pokeapiObj.effect_entries[i].effect);
+                return result.substring(1,result.length -1);
+            } 
+        }
+
+    } else if (pokeapiObj.flavor_text_entries.length > 0) {
+        for (let i = pokeapiObj.flavor_text_entries.length - 1; i >= 0; i--) {
+            console.log(pokeapiObj.flavor_text_entries[i].language.name);
+            if(pokeapiObj.flavor_text_entries[i].language.name == "en"){
+                console.log('English entry found.');
+                var result = JSON.stringify(pokeapiObj.flavor_text_entries[i].flavor_text);
+                return result.substring(1,result.length -1);
+            } 
+        }
+
+    } else {
+        return 'No description found.'
+    }
+    
 }
 
 //Shiny Rolls
@@ -950,6 +1113,8 @@ function writeRollerFile(){
     );
 }
 
+//Write to file and disconnect
+
 function writeAllDataToFile(){
     writeRollerFile();
     writeOrreNames();
@@ -965,6 +1130,7 @@ function disconnectFunction(){
     }, 3000);
 }
 
+//Fun Facts
 
 function funFactInterval(){
     if(facts == []){
