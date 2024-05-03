@@ -703,10 +703,12 @@ function pokeBasic(){
         }
         abilities.push(ability);
     }
+    const eggCycles = pokeapiObj.hatch_counter;
+    const eggSteps = eggCycles * 128;
 
     // const abilities = ``;
 
-    client.say(channel, `🐾 Pokemon: ${name}. 📇 National Dex Number: ${dexID}. 🔎 Category: The ${category}. 🌟 Type(s): ${types}. ✨ Abilities:${abilities}. 🐣 Egg Group(s): ${eGroups}. 🔒 Base Capture Rate: ${catchrate}. 📏 Height: ${meters}m. ⚖️ Weight: ${kg}kg. 🥊 Base Stat Total: ${bst}.` );
+    client.say(channel, `🐾 Pokemon: ${name}. 📇 National Dex Number: ${dexID}. 🔎 Category: The ${category}. 🌟 Type(s): ${types}. ✨ Abilities:${abilities}. 🪺 Egg Group(s): ${eGroups}. 🐣 Hatch Time: ${eggCycles} cycles (${eggSteps} steps in SV). 🔒 Base Capture Rate: ${catchrate}. 📏 Height: ${meters}m. ⚖️ Weight: ${kg}kg. 🥊 Base Stat Total: ${bst}.` );
     // client.say(channel, `/me ${flavor}`);
     // console.log(JSON.stringify(pokeapiObj.types));
 }
@@ -778,7 +780,7 @@ function pokeType(args){
         console.log('There was an ERROR: ', error);
         });
     } else {
-        client.say(channel, `Please specify a type and one of the following options: stronginto, weakinto, weakto, resists, nodamage, immunefrom.`);
+        client.say(channel, `Please specify a type and one of the following options: stronginto, weakinto, weakto, resists, nodamage, immunefrom. Or use "!dex type chart" to see a type chart.`);
     }
 }
 
