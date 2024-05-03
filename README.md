@@ -135,6 +135,32 @@ For example:
     - Also `!providebone`,`!regurgitatebone`,`!putbackbone`,`!putboneback`,`!returnbone`.
 - `!shufflebones` : SunfloraBot will randomize the digits in the streamer's bone count and remove any leading 0s (e.g., `207` could become `702`, `270`, `720`, `72`, or `27`).
 
+### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)PokéAPI Integration
+
+- SunfloraBot now has PokéAPI integration! You can now look up various facts using the `!dex` command.
+- Use `!dex` to look up facts about Pokémon, Moves, Abilities, Stats, Types, Shiny Palettes, Forms, and Dex Entries.
+- Right now use is limited to mods only to avoid overloading the system with API calls.
+  
+#### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)PokéAPI Commands
+- `!dex pokemon [pokemon name or ID]` : Provides general info about a particular Pokémon.
+- `!dex pokemon [pokemon name or ID] varieties` : Provides the PokéAPI names of the various forms of a particular Pokémon.
+- `!dex pokemon [pokemon name or ID] stats` : Provides the base stats and EV yield of a particular Pokémon.
+- `!dex pokemon [pokemon name or ID] moves` : Provides a link to the a particular Pokémon's Bulbapedia Learnset page.
+- `!dex pokemon [pokemon name or ID] normal` : Provides a link to an image of a particular Pokémon's non-shiny sprite.
+- `!dex pokemon [pokemon name or ID] shiny` : Provides a link to an image of a particular Pokémon's shiny sprite.
+- `!dex pokemon [pokemon name or ID] dexentry` : Provides Pokédex flavor text for the specified Pokémon.
+
+- `!dex type chart` : Provides a link to a Pokémon type chart.
+- `!dex type [type] stronginto` : Provides a list of types to which attacks of the specified type do 2x damage.
+- `!dex type [type] weakinto` : Provides a list of types to which attacks of the specified type do 0.5x damage.
+- `!dex type [type] weakto` : Provides a list of types of attacks from which the specified type takes 2x damage.
+- `!dex type [type] resists` : Provides a list of types of attacks from which the specified type takes 0.5x damage.
+- `!dex type [type] nodamage` : Provides a list of types to which attacks of the specified type do 0x damage.
+- `!dex type [type] immunefrom` : Provides a list of types of attacks from which the specified type takes 0x damage.
+
+- `!dex ability [ability]` : Provides general info about a particular ability.
+- `!dex move [move]` : Provides general info about a particular move.
+
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Additional Features
 
 - SunfloraBot will say a Fun Fact every 20 mins.
