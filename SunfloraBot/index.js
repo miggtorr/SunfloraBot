@@ -39,6 +39,8 @@ const dex = new Pokedex();
 var pokeapiObj = {};
 var pokeMonObj = {};
 var pokeSpeciesObj = {};
+var pokeCooldown = false;
+var pokeCooldownTime = 2000;
 
 // var factsJSON = {};
 var savCanGamble = true;
@@ -480,7 +482,11 @@ client.on('message', (channel, user, message, self) => {
         }
     }
 
-    if(command == `!dex` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+    if(command == `!dex`){
+        if(pokeCooldown){
+            client.say(channel, `Sorry ${user.username}, the !dex command has a ${pokeCooldownTime/1000} second cooldown!`);
+            return;
+        }
         if(args.length < 1){
             client.say(channel, `Available Pokédex arguments: pokemon, move, ability, type.`);
             return;
@@ -522,7 +528,7 @@ function pokePokemon(args){
         client.say(channel, `Please specify a Pokemon!`);
         return;
     }
-
+    pokeCooldown = true;
     const getMon = dex.getPokemonByName(args[1].toLowerCase())
     .then((response) => {
         pokeMonObj = response;
@@ -632,9 +638,11 @@ function pokePokemon(args){
         }
 
         console.log(pokeapiObj);
+        pokeCooldownReset();
     }).catch((error) => {
         // client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`);
         console.log('There was an ERROR: ', error);
+        pokeCooldownReset();
     });
     
 }
@@ -765,6 +773,7 @@ function pokeType(args){
             return;
         }
 
+        pokeCooldown = true;
         dex.getTypeByName(args[1].toLowerCase())
         .then((response) => {
         pokeapiObj = response;
@@ -773,11 +782,13 @@ function pokeType(args){
         } else {
             client.say(channel, `${args[1]} type options: stronginto, weakinto, weakto, resists, nodamage, immunefrom.`);
         }
+        pokeCooldownReset();
         
         })
         .catch((error) => {
         client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
         console.log('There was an ERROR: ', error);
+        pokeCooldownReset();
         });
     } else {
         client.say(channel, `Please specify a type and one of the following options: stronginto, weakinto, weakto, resists, nodamage, immunefrom. Or use "!dex type chart" to see a type chart.`);
@@ -846,14 +857,17 @@ function pokeMove(args){
         return;
     };
 
+    pokeCooldown = true;
     dex.getMoveByName(args[1].toLowerCase())
     .then((response) => {
         pokeapiObj = response;
         pokeMoveDescribe();
+        pokeCooldownReset();
     })
     .catch((error) => {
         client.say(channel, `Hmm... sorry, I don't know that move. 🙏`);
         console.log('There was an ERROR: ', error);
+        pokeCooldownReset();
     });
 
 }
@@ -959,14 +973,17 @@ function pokeAbility(args){
         return;
     };
 
+    pokeCooldown = true;
     dex.getAbilityByName(args[1].toLowerCase())
     .then((response) => {
         pokeapiObj = response;
         pokeAbilityDescribe();
+        pokeCooldownReset();
     })
     .catch((error) => {
         client.say(channel, `Hmm... sorry, I don't know that ability. 🙏`);
         console.log('There was an ERROR: ', error);
+        pokeCooldownReset();
     });
 }
 
@@ -1004,6 +1021,12 @@ function pokeEngAbility(){
         return 'No description found.'
     }
     
+}
+
+function pokeCooldownReset() {
+    setTimeout(() => {
+        pokeCooldown = false;
+      }, pokeCooldownTime);      
 }
 
 //Shiny Rolls
