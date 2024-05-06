@@ -488,7 +488,7 @@ client.on('message', (channel, user, message, self) => {
             return;
         }
         if(args.length < 1){
-            client.say(channel, `Available Pokédex arguments: pokemon, move, ability, type.`);
+            client.say(channel, `Available Pokédex arguments: pokemon, move, ability, type, nature.`);
             return;
         }
         switch(args[0].toLowerCase()){
@@ -505,6 +505,9 @@ client.on('message', (channel, user, message, self) => {
                 break;
             case "type":
                 pokeType(args);
+                break;
+            case "nature":
+                pokeNature(args);
                 break;
             default: 
                 client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
@@ -583,6 +586,12 @@ function pokePokemon(args){
             if(args[2] == "moves"){
                 pokeMoves();
             }
+            if(args[2] == "location" || args[2] == "locations"){
+                pokeLocation();
+            }
+            if(args[2] == "ref"){
+                pokeRef();
+            }
 
         } else if (resultsList[0] ==  "rejected" && resultsList[1] ==  "fulfilled"){
             //Species but not Mon
@@ -624,6 +633,12 @@ function pokePokemon(args){
                 }
                 if(args[2] == "moves"){
                     pokeMoves();
+                }
+                if(args[2] == "location" || args[2] == "locations"){
+                    pokeLocation();
+                }
+                if(args[2] == "ref"){
+                    pokeRef();
                 }
             })
             .catch((error) => {
@@ -920,8 +935,8 @@ function pokeMoves(){
 
 function speciesNameCheck(speciesName){
     switch(speciesName){
-        case "nidoran-m": return "Nidoran♂";
-        case "nidoran-f": return "Nidoran♀";
+        case "nidoran-m": return "NidoranM";
+        case "nidoran-f": return "NidoranF";
         case "farfetchd": return "Farfetch'd";
         case "mr-mime": return "Mr._Mime";
         case "ho-oh": return "Ho-Oh";
@@ -930,7 +945,7 @@ function speciesNameCheck(speciesName){
         case "type-null": return "Type:_Null";
         case "tapu-koko": return "Tapu_Koko";
         case "tapu-lele": return "Tapu_Lele";
-        case "tapu-bulu": return "Tapu_Bulue";
+        case "tapu-bulu": return "Tapu_Bulu";
         case "tapu-fini": return "Tapu_Fini";
         case "sirfetchd": return "Sirfetch'd";
         case "mr-rime": return "Mr._Rime";
@@ -965,6 +980,63 @@ function speciesNameCheck(speciesName){
         case "iron-crown":  return "Iron_Crown";
         default: return speciesName;
     }
+}
+
+function speciesNameCheckSerebii(speciesName){
+    switch(speciesName){
+        case "nidoran-m": return "nidoranm";
+        case "nidoran-f": return "nidoranf";
+        case "farfetchd": return "farfetch'd";
+        case "mr-mime": return "mr.mime";
+        case "ho-oh": return "ho-oh";
+        case "mime-jr": return "mimejr.";
+        case "porygon-z": return "porygon-z";
+        case "type-null": return "type:null";
+        case "tapu-koko": return "tapukoko";
+        case "tapu-lele": return "tapulele";
+        case "tapu-bulu": return "tapubulu";
+        case "tapu-fini": return "tapufini";
+        case "sirfetchd": return "sirfetch'd";
+        case "mr-rime": return "mr.rime";
+
+        case "great-tusk": return "greattusk";
+        case "scream-tail": return "screamtail";
+        case "brute-bonnet": return "brutebonnet";
+        case "flutter-mane": return "fluttermane";
+        case "slither-wing": return "slitherwing";
+        case "sandy-shocks": return "sandyshocks";
+
+        case "iron-bundle": return "ironbundle";
+        case "iron-hands": return "ironhands";
+        case "iron-jugulis": return "ironjugulis";
+        case "iron-moth": return "ironmoth";
+        case "iron-thorns": return "ironthorns";
+        case "iron-treads":  return "irontreads";
+
+        case "wo-chien": return "wo-chien";
+        case "chien-pao": return "chien-pao";
+        case "ting-lu": return "ting-lu";
+        case "chi-yu": return "chi-yu";
+        
+        case "roaring-moon": return "roaringmoon";
+        case "iron-valiant": return "ironvaliant";
+        
+        case "walking-wake": return "walkingwake";
+        case "iron-leaves": return "ironleaves";
+        case "gouging-fire": return "gougingfire";
+        case "raging-bolt": return "ragingbolt";
+        case "iron-boulder": return "ironboulder";
+        case "iron-crown":  return "ironcrown";
+        default: return speciesName;
+    }
+}
+
+function pokeLocation(){
+    var speciesName = JSON.stringify(pokeapiObj.species.name);
+    speciesName = speciesName.substring(1,speciesName.length -1);
+    const modifiedSpeciesName = speciesNameCheck(speciesName);
+    speciesName = speciesName.charAt(0).toUpperCase() + speciesName.slice(1);
+    client.say(channel, `The Game Locations for ${speciesName} are available here: https://bulbapedia.bulbagarden.net/wiki/${modifiedSpeciesName}_(Pok%C3%A9mon)#Game_locations`)
 }
 
 function pokeAbility(args){
@@ -1003,7 +1075,7 @@ function pokeEngAbility(){
             if(pokeapiObj.effect_entries[i].language.name == "en"){
                 console.log('English entry found.');
                 var result = JSON.stringify(pokeapiObj.effect_entries[i].effect);
-                return result.substring(1,result.length -1);
+                return result.substring(1,result.length -1).replace(/\\n/g,' ').replace(/\\f/g,' ');
             } 
         }
 
@@ -1013,7 +1085,7 @@ function pokeEngAbility(){
             if(pokeapiObj.flavor_text_entries[i].language.name == "en"){
                 console.log('English entry found.');
                 var result = JSON.stringify(pokeapiObj.flavor_text_entries[i].flavor_text);
-                return result.substring(1,result.length -1);
+                return result.substring(1,result.length -1).replace(/\\n/g,' ').replace(/\\f/g,' ');
             } 
         }
 
@@ -1023,10 +1095,57 @@ function pokeEngAbility(){
     
 }
 
+function pokeNature(args){
+    if(args.length < 2){
+        client.say(channel, `Please specify a nature! (e.g., Hasty)`);
+        return;
+    };
+
+    pokeCooldown = true;
+    dex.getNatureByName(args[1].toLowerCase())
+    .then((response) => {
+        pokeapiObj = response;
+        pokeNatureDescribe();
+        pokeCooldownReset();
+    })
+    .catch((error) => {
+        client.say(channel, `Hmm... sorry, I don't know that nature. 🙏`);
+        console.log('There was an ERROR: ', error);
+        pokeCooldownReset();
+    });
+
+}
+
+function pokeNatureDescribe(){
+    const name = pokeRemoveQuotesAndCapitalize(pokeapiObj.name);
+    const raisedStat = pokeRemoveQuotesAndCapitalize(pokeapiObj.increased_stat.name);
+    const loweredStat = pokeRemoveQuotesAndCapitalize(pokeapiObj.decreased_stat.name);
+    const likesFlavor = pokeRemoveQuotesAndCapitalize(pokeapiObj.likes_flavor.name);
+    const hatesFlavor = pokeRemoveQuotesAndCapitalize(pokeapiObj.hates_flavor.name);
+
+    client.say(channel, `🧘 Nature: ${name}. ⬆️ Raised Stat: ${raisedStat}. ⬇️ Lowered Stat: ${loweredStat}. 🤤 Likes Flavor: ${likesFlavor}. 😖 Hates Flavor: ${hatesFlavor}`);
+}
+
+function pokeRef(){
+    var speciesName = JSON.stringify(pokeapiObj.species.name);
+    speciesName = speciesName.substring(1,speciesName.length -1);
+    const modifiedSpeciesName = speciesNameCheck(speciesName);
+    const serebiiSpeciesName = speciesNameCheckSerebii(speciesName);
+    speciesName = speciesName.charAt(0).toUpperCase() + speciesName.slice(1);
+    client.say(channel, `📚 Bulbapedia entry for ${speciesName}: https://bulbapedia.bulbagarden.net/wiki/${modifiedSpeciesName}_(Pok%C3%A9mon). 🧅 Serebii entry for ${speciesName}: https://serebii.net/pokemon/${serebiiSpeciesName}/`);;    
+}
+
 function pokeCooldownReset() {
     setTimeout(() => {
         pokeCooldown = false;
       }, pokeCooldownTime);      
+}
+
+function pokeRemoveQuotesAndCapitalize(args){
+    var text = JSON.stringify(args);
+    text = text.substring(1,text.length -1);
+    text = text.charAt(0).toUpperCase() + text.slice(1);
+    return text;
 }
 
 //Shiny Rolls
