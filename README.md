@@ -150,6 +150,8 @@ For example:
 - `!dex pokemon [pokemon name or ID] normal` : Provides a link to an image of a particular Pokémon's non-shiny sprite.
 - `!dex pokemon [pokemon name or ID] shiny` : Provides a link to an image of a particular Pokémon's shiny sprite.
 - `!dex pokemon [pokemon name or ID] dexentry` : Provides Pokédex flavor text for the specified Pokémon.
+- `!dex pokemon [pokemon name or ID] location` : Provides a link to the a particular Pokémon's Bulbapedia Game Locations page.
+- `!dex pokemon [pokemon name or ID] ref` : Provides a link to the Bulbapedia and Serebii entries a particular Pokémon.
 
 - `!dex type chart` : Provides a link to a Pokémon type chart.
 - `!dex type [type] stronginto` : Provides a list of types to which attacks of the specified type do 2x damage.
@@ -161,6 +163,7 @@ For example:
 
 - `!dex ability [ability]` : Provides general info about a particular ability.
 - `!dex move [move]` : Provides general info about a particular move.
+- `!dex nature [nature]`: Provides info about the effect of a particular Pokémon nature.
 
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png)Additional Features
 
