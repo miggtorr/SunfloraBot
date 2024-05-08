@@ -509,6 +509,9 @@ client.on('message', (channel, user, message, self) => {
             case "nature":
                 pokeNature(args);
                 break;
+            case "natures":
+                pokeNature(args);
+                break;
             default: 
                 client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
                 break;
@@ -1101,6 +1104,11 @@ function pokeNature(args){
         return;
     };
 
+    if(args[1].toLowerCase() == `japanese`){
+        pokeNatureJapanese();
+        return;
+    };
+
     pokeCooldown = true;
     dex.getNatureByName(args[1].toLowerCase())
     .then((response) => {
@@ -1124,6 +1132,10 @@ function pokeNatureDescribe(){
     const hatesFlavor = pokeRemoveQuotesAndCapitalize(pokeapiObj.hates_flavor.name);
 
     client.say(channel, `🧘 Nature: ${name}. ⬆️ Raised Stat: ${raisedStat}. ⬇️ Lowered Stat: ${loweredStat}. 🤤 Likes Flavor: ${likesFlavor}. 😖 Hates Flavor: ${hatesFlavor}`);
+}
+
+function pokeNatureJapanese(){
+    client.say(channel, `Pokémon Natures in Japanese: がんばりや (Hardy) ✨ さみしがり (Lonely) ✨ ゆうかん (Brave) ✨ いじっぱ (Adamant) ✨ やんちゃ(Naughty) ✨ ずぶとい (Bold)	 ✨ すなお (Docile) ✨ のんき(Relaxed) ✨ わんぱく	(Impish) ✨ のうてんき (Lax) ✨ おくびょう (Timid) ✨ せっかち	(Hasty) ✨ まじめ (Serious) ✨ ようき (Jolly) ✨ むじゃき (Naïve) ✨ ひかえめ	(Modest) ✨ おっとり(Mild) ✨ れいせい	(Quiet) ✨ てれや (Bashful) ✨ うっかりや (Rash) ✨ おだやか	(Calm) ✨ おとなしい (Gentle) ✨ なまいき (Sassy) ✨ しんちょう (Careful) ✨ きまぐれ (Quirky) 🌻`)
 }
 
 function pokeRef(){
