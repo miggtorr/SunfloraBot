@@ -1,5 +1,5 @@
 [
-    bulbasaur
+bulbasaur
 ivysaur
 venusaur
 charmander
@@ -982,18 +982,18 @@ clodsire
 farigiraf
 dudunsparce
 kingambit
-great tusk
-scream tail
-brute bonnet
-flutter mane
-slither wing
-sandy shocks
-iron treads
-iron bundle
-iron hands
-iron jugulis
-iron moth
-iron thorns
+greattusk
+screamtail
+brutebonnet
+fluttermane
+slitherwing
+sandyshocks
+irontreads
+ironbundle
+ironhands
+ironjugulis
+ironmoth
+ironthorns
 frigibax
 arctibax
 baxcalibur
@@ -1003,8 +1003,25 @@ wo-chien
 chien-pao
 ting-lu
 chi-yu
-roaring moon
-iron valiant
+roaringmoon
+ironvaliant
 koraidon
 miraidon
+walkingwake
+ironleaves
+dipplin
+poltchageist
+sinistcha
+okidogi
+munkidori
+fezandipiti
+ogerpon
+archaludon
+hydrapple
+gougingfire
+ragingbolt
+ironboulder
+ironcrown
+terapagos
+pecharunt
 ]

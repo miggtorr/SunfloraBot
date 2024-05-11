@@ -1,4 +1,4 @@
-//version 0.7
+//version 0.8
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 require('dotenv').config();
@@ -85,6 +85,17 @@ var WTPWinningPlayersArr = [];
 var WTPScores = {};
 var numBones = 0;
 
+//Yearly Counter
+var YearlyCounter = {};
+var yearShinyRolls;
+var yearShinyRollShinies;
+var yearQuizGames;
+var yearQuizCorrectAnswers;
+var yearQuizIncorrectAnswers;
+var yearFunFacts;
+var yearEnises;
+var yearDexLookups;
+
 //Initialization
 QuizReadHighScores('quizScores.json');
 readRollerFile();
@@ -96,7 +107,7 @@ readWTPQuestions();
 whosThatPokemonReadScores();
 readOrreNames();
 readBones();
-// initializePokedex();
+YearlyCounterRead();
 
 let rl = readline.createInterface(process.stdin, process.stdout);
 
@@ -137,10 +148,11 @@ client.on('message', (channel, user, message, self) => {
     // console.log(command);
 
     if(command == '!test' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        client.say(channel, `${channelname} Success!`)
+        // client.say(channel, `${channelname} Success!`);
+        yearlyReset();
     }
     if(command == '!test2' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        
+        yearlyCounterWrite();
     }
     
     if(command == '!disconnect' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
@@ -373,6 +385,7 @@ client.on('message', (channel, user, message, self) => {
             var root = message.substring(0, message.length - 4);
             console.log(root);
             client.say(channel, `${root.toLowerCase().replace(/^./, root[0].toUpperCase())}enis.`);
+            yearlyIncrementEnises();
         }
     };
 
@@ -437,13 +450,13 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel,`${name} no longer has an Orre name.`)
     }
 
-    // if(giveBoneArray.includes(command)){
-    //     giveBone(user.username);
-    // }
+    if(giveBoneArray.includes(command)){
+        giveBone(user.username);
+    }
 
-    // if(takeBoneArray.includes(command)){
-    //     takeBone(user.username);
-    // }
+    if(takeBoneArray.includes(command)){
+        takeBone(user.username);
+    }
 
     if(sayBoneArray.includes(command)){
         sayBoneCount();
@@ -469,7 +482,7 @@ client.on('message', (channel, user, message, self) => {
         energyGuess();
     }
 
-    if(command == `!randomnumber` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+    if(command == `!randomnumber`){
 
         // randomNumber("386");
 
@@ -482,9 +495,13 @@ client.on('message', (channel, user, message, self) => {
         }
     }
 
+    if(command == `!randompokemon`){
+        randomPokemon();
+    }
+
     if(command == `!dex`){
         if(pokeCooldown){
-            client.say(channel, `Sorry ${user.username}, the !dex command has a ${pokeCooldownTime/1000} second cooldown!`);
+            client.say(channel, `Sorry ${user.username}, the !dex command has a ${(pokeCooldownTime/1000).toFixed(2)} second cooldown!`);
             return;
         }
         if(args.length < 1){
@@ -580,7 +597,7 @@ function pokePokemon(args){
             if(args[2] == "stats"){
                 pokeStats();
             }
-            if(args[2] == "normal"){
+            if(args[2] == "normal" || args[2] == "regular"){
                 client.say(channel, `Here is what ${args[1].charAt(0).toUpperCase() + args[1].slice(1)}'s normal color scheme looks like: ${pokeapiObj['sprites']['other']["official-artwork"]['front_default']}`);
             }
             if(args[2] == "shiny"){
@@ -656,6 +673,7 @@ function pokePokemon(args){
         }
 
         console.log(pokeapiObj);
+        yearlyIncrementDexLookups();
         pokeCooldownReset();
     }).catch((error) => {
         // client.say(channel,`Hmm... I couldn't find info on "${args[1]}". Sorry!`);
@@ -800,12 +818,14 @@ function pokeType(args){
         } else {
             client.say(channel, `${args[1]} type options: stronginto, weakinto, weakto, resists, nodamage, immunefrom.`);
         }
+        yearlyIncrementDexLookups();
         pokeCooldownReset();
         
         })
         .catch((error) => {
         client.say(channel, `Hmm... sorry, I didn't really understand. 🙏`);
         console.log('There was an ERROR: ', error);
+        yearlyIncrementDexLookups();
         pokeCooldownReset();
         });
     } else {
@@ -880,6 +900,7 @@ function pokeMove(args){
     .then((response) => {
         pokeapiObj = response;
         pokeMoveDescribe();
+        yearlyIncrementDexLookups();
         pokeCooldownReset();
     })
     .catch((error) => {
@@ -1053,6 +1074,7 @@ function pokeAbility(args){
     .then((response) => {
         pokeapiObj = response;
         pokeAbilityDescribe();
+        yearlyIncrementDexLookups();
         pokeCooldownReset();
     })
     .catch((error) => {
@@ -1114,6 +1136,7 @@ function pokeNature(args){
     .then((response) => {
         pokeapiObj = response;
         pokeNatureDescribe();
+        yearlyIncrementDexLookups();
         pokeCooldownReset();
     })
     .catch((error) => {
@@ -1174,12 +1197,15 @@ function ShinyRoll(chatuser) {
         switch (roll) {
             case 8192 :
                 sayString = `NO WAY, @${chatuser}! You rolled a 8192 on roll ${shinyRollCounter}! That's a shiny! Congrats! You get VIP on the channel!`;
+                yearlyIncrementShinyRollShinies();
                 break;
             case 8193 :
                 sayString = `OH MYLANTA, @${chatuser}! You rolled a 8193 on roll ${shinyRollCounter}!? THATS AN OVERODDS SHINY! This is so epic!`;
+                yearlyIncrementShinyRollShinies();
                 break;
             case 4096 :
                 sayString = `NO WAY, @${chatuser}! You rolled a 4096 on roll ${shinyRollCounter}! That's a shiny from Gen VI onward! You get to nickname one of Taylor's full-odds shinies!`;
+                yearlyIncrementShinyRollShinies();
                 break;
             case 666 :
                 sayString = `@${chatuser} rolled a ${roll}. YIKES! That's a scary number. Alas! No shiny this time, this is so sad. There have been ${shinyRollCounter} shiny rolls.`;
@@ -1198,8 +1224,9 @@ function ShinyRoll(chatuser) {
             default :
             sayString = `@${chatuser} rolled a ${roll}. 🌻 No shiny this time, this is so sad. There have been ${shinyRollCounter} shiny rolls. 🌻`
         };
-        
-        client.say(channel, `${sayString}`); 
+
+        client.say(channel, `${sayString}`);
+        yearlyIncrementShinyRolls(); 
     } 
 };
 
@@ -1275,6 +1302,7 @@ function writeAllDataToFile(){
     writeRollerFile();
     writeOrreNames();
     writeBones();
+    yearlyCounterWrite();
 }
 
 function disconnectFunction(){
@@ -1317,7 +1345,7 @@ function funFact(tag) {
 
     if(tag){  
         var taggedfacts = []
-        for(i=0;i < facts.length ;i++){
+        for(let i=0;i < facts.length ;i++){
             if(facts[i].tags.includes(tag.toLowerCase())){
                 taggedfacts.push(facts[i].fact);
             }
@@ -1328,11 +1356,13 @@ function funFact(tag) {
             var fact = JSON.stringify(taggedfacts[0]);
             fact = fact.substring(1,fact.length -1); //remove double quotes
             client.say(channel, `🌻 Fun Fact 🌻 ${fact}`);
+            yearlyIncrementFunFacts();
         } else if (taggedfacts.length > 1){
             factindex = Math.floor(Math.random() * taggedfacts.length);
             var fact = JSON.stringify(taggedfacts[factindex]);
             fact = fact.substring(1,fact.length -1); //remove double quotes
             client.say(channel, `🌻 Fun Fact 🌻 ${fact}`);
+            yearlyIncrementFunFacts();
         }
     }else{
         while(factindex == factnum){
@@ -1342,6 +1372,7 @@ function funFact(tag) {
         var fact = JSON.stringify(facts[factindex].fact);
         fact = fact.substring(1,fact.length -1); //remove double quotes
         client.say(channel, `🌻 Fun Fact 🌻 ${fact}`);
+        yearlyIncrementFunFacts();
     }
 }
 
@@ -1385,6 +1416,7 @@ function QuizGameInit(){
 function QuizGameQuit(){
     client.say(channel, `Thanks for playing, @${quizPlayer}!!! 🌻 Use '!myscore' to check your total quiz points!`);
     QuizGameCompileScores();
+    yearlyIncrementQuizGames();
     currentQuizState = QuizState.Idle;
 }
 
@@ -1408,8 +1440,10 @@ async function QuizGameStart(numOfQs){
             if(response == array.indexOf(0)){
                 client.say(channel, `@${quizPlayer} ✨ Correct! ✨`);
                 score++;
+                yearlyIncrementCorrectAnswers();
             } else {
                 client.say(channel, `Oof! Sorry, @${quizPlayer}. 🫤 That was incorrect.`);
+                yearlyIncrementIncorrectAnswers();
             };
             await new Promise(r => setTimeout(r, 1100));
             
@@ -1561,31 +1595,31 @@ async function QuizReadHighScores(filename) {
 
 function QuizGameCompileScores(){
     if(!quizHighScores[quizPlayer]){
-        temp = {[quizPlayer]:0};
+        var temp = {[quizPlayer]:0};
         quizHighScores = {...quizHighScores, ...temp};
     };
-    record = quizHighScores[quizPlayer];
+    var record = quizHighScores[quizPlayer];
     // console.log("old record " + record)
     record = record + playerScore;
     // console.log("new record" + record);
-    temp = {[quizPlayer]:record};
-    quizHighScores = {...quizHighScores, ...temp};
-    temp = [];
+    var temp2 = {[quizPlayer]:record};
+    quizHighScores = {...quizHighScores, ...temp2};
+    temp2 = [];
     // temp = Array.from(quizHighScores);
     for(var i in quizHighScores)
-    temp.push([i, quizHighScores [i]]);
+    temp2.push([i, quizHighScores [i]]);
     // console.log(JSON.stringify(quizHighScores));
     // console.log(temp);
-    temp = QuizGameScoresSort(temp)
+    temp2 = QuizGameScoresSort(temp2)
     console.log("Sorted Scores");
-    console.log(temp);
-    temp = Object.fromEntries(temp);
-    quizHighScores = temp;
+    console.log(temp2);
+    temp2 = Object.fromEntries(temp2);
+    quizHighScores = temp2;
     QuizGameWriteScores();
 }
 
 function QuizGameScoresSort(data){
-    temp = data.sort((a,b) => b[1]-a[1]);
+    var temp = data.sort((a,b) => b[1]-a[1]);
     return temp;
 }
 
@@ -1606,7 +1640,7 @@ function QuizGameWriteScores(){
 
 function QuizGameMyScore(player){
     if(quizHighScores[player]){
-        myScore =  quizHighScores[player];
+        const myScore =  quizHighScores[player];
         client.say(channel, `@${player}'s lifetime quiz points: ${myScore}.`);
     } else {
         client.say(channel, `@${player}'s lifetime quiz points: 0.`);
@@ -1615,11 +1649,11 @@ function QuizGameMyScore(player){
 
 function QuizGameMyRank(player){
     if(quizHighScores[player]){
-        myScore =  quizHighScores[player];
-        temp = [];
+        const myScore =  quizHighScores[player];
+        var temp = [];
         for(var i in quizHighScores)
         temp.push([i, quizHighScores [i]]);
-        rank = temp.findIndex(element=> element[0] == player) + 1;
+        const rank = temp.findIndex(element=> element[0] == player) + 1;
         client.say(channel, `@${player} is ranked ${rank} at the Quiz Game with ${myScore} Quiz Points!`);
     } else {
         client.say(channel, `@${player} is unranked at 0 points.`);
@@ -1629,13 +1663,13 @@ function QuizGameMyRank(player){
 function QuizGameLeaderboard(){
     let temp = Object.keys(quizHighScores).length;
 
-    max = 3;
+    const max = 3;
     if(temp < max){
         max = temp;
     }
 
-    leaders = [];
-    for(i=0;(i < max);i++){
+    var leaders = [];
+    for(let i=0;(i < max);i++){
 
         leaders.push(Object.entries(quizHighScores)[i]);
     }
@@ -1721,7 +1755,7 @@ function QuizGameListenMainMenu(channel, user, message, self){
 async function readPokemonList() {
     try {
       const contents = await fsPromises.readFile('pokemonnames.txt', 'utf-8');
-  
+      
       mon = contents.split(/\r?\n/);
   
       console.log(mon.length); // 👉️ ['One', 'Two', 'Three', 'Four']
@@ -1777,7 +1811,7 @@ function whosThatPokemonCloseGuessesReveal(){
             client.say(channel, `The answer was ${WTPAnswer}! OOF! No one got it right! 😔 Better luck next time!`)
         } else {
             client.say(channel, `The answer was ${WTPAnswer}! Congrats to the winners: ${WTPWinningPlayers}! Check your score with '!wtpscore'.`);
-            for(i=0;i<WTPWinningPlayersArr.length;i++){
+            for(let i=0;i<WTPWinningPlayersArr.length;i++){
                 whosThatPokemonCompileScores(WTPWinningPlayersArr[i][0]);
             };
             whosThatPokemonWriteScores();
@@ -1806,12 +1840,12 @@ function whosThatPokemonRegisterGuess(player, pokemon){
     } else {
         if (mon.includes(pokemon)) {
             const guess = pokemon.split(" ");
-            for (var i = 0; i < guess.length; i++) {
+            for (let i = 0; i < guess.length; i++) {
                 guess[i] = guess[i].charAt(0).toUpperCase() + guess[i].slice(1);
             };
             const formattedGuess = guess.join(" ");
             console.log(formattedGuess);
-            temp = {[player]:formattedGuess};
+            var temp = {[player]:formattedGuess};
             WTPGuesses = {...WTPGuesses,...temp};
             console.log(WTPGuesses);
     
@@ -1821,7 +1855,7 @@ function whosThatPokemonRegisterGuess(player, pokemon){
         } else {
             console.log(pokemon);
     
-            client.say(channel, `Sorry, @${player}, I can't understand your guess. Please make sure you're spelling the Pokémon's name correctly. Alphanumeric characters, spaces, and hyphens only; no accents (e.g., 'ho-oh', 'flabebe', 'mrmime', 'nidoranf', 'roaring moon').`)
+            client.say(channel, `Sorry, @${player}, I can't understand your guess ${pokemon}. Please make sure you're spelling the Pokémon's name correctly. Alphanumeric characters, spaces, and hyphens only; no accents (e.g., 'ho-oh', 'flabebe', 'mrmime', 'nidoranf', 'roaring moon').`)
         }
     }  
 }
@@ -1832,8 +1866,8 @@ function whosThatPokemonCompileGuesses(){
     if(Object.keys(WTPGuesses).length > 0){
         WTPWinningPlayersArr = Object.entries(WTPGuesses).filter((value) => value[1] == WTPAnswer);
         console.log(`winningPlayersArr: ${WTPWinningPlayersArr}`);
-        temp = [];
-        for (i=0;i<WTPWinningPlayersArr.length;i++){
+        var temp = [];
+        for (let i=0;i<WTPWinningPlayersArr.length;i++){
             temp.push(WTPWinningPlayersArr[i][0]);
         }
         WTPWinningPlayers = temp.toString()
@@ -1847,26 +1881,26 @@ function whosThatPokemonCompileGuesses(){
 
 function whosThatPokemonCompileScores(player){
     if(!WTPScores[player]){
-        temp = {[player]:0};
+        var temp = {[player]:0};
         WTPScores = {...WTPScores, ...temp};
     };
-    record = WTPScores[player];
+    var record = WTPScores[player];
     // console.log("old record " + record)
     record = record + 1;
     // console.log("new record" + record);
-    temp = {[player]:record};
-    WTPScores = {...WTPScores, ...temp};
-    temp = [];
+    var temp2 = {[player]:record};
+    WTPScores = {...WTPScores, ...temp2};
+    temp2 = [];
     // temp = Array.from(quizHighScores);
     for(var i in WTPScores)
-    temp.push([i, WTPScores [i]]);
+    temp2.push([i, WTPScores [i]]);
     // console.log(JSON.stringify(quizHighScores));
     // console.log(temp);
-    temp = QuizGameScoresSort(temp)
+    temp2 = QuizGameScoresSort(temp2)
     console.log("Sorted Scores");
-    console.log(temp);
-    temp = Object.fromEntries(temp);
-    WTPScores = temp;
+    console.log(temp2);
+    temp2 = Object.fromEntries(temp2);
+    WTPScores = temp2;
     
 }
 
@@ -1887,7 +1921,7 @@ function whosThatPokemonWriteScores(){
 
 function whoseThatPokemonMyScore(player){
     if(WTPScores[player]){
-        myScore =  WTPScores[player];
+        const myScore =  WTPScores[player];
         client.say(channel, `@${player}'s lifetime Who's That Pokémon points: ${myScore}.`);
     } else {
         client.say(channel, `@${player}'s lifetime Who's That Pokémon points: 0.`);
@@ -1897,13 +1931,13 @@ function whoseThatPokemonMyScore(player){
 function whosThatPokemonLeaderboard(){
     let temp = Object.keys(WTPScores).length;
 
-    max = 3;
+    const max = 3;
     if(temp < max){
         max = temp;
     }
 
-    leaders = [];
-    for(i=0;(i < max);i++){
+    var leaders = [];
+    for(let i=0;(i < max);i++){
 
         leaders.push(Object.entries(WTPScores)[i]);
     }
@@ -1931,7 +1965,7 @@ async function interpretOrreNames(){
     try {
         const contents = await fsPromises.readFile('orreNames.txt', 'utf-8');
     
-        names = contents.split(/\r?\n/);
+        const names = contents.split(/\r?\n/);
         console.log(names);
 
         allOrreNamesObj.unused.push(names);
@@ -2156,12 +2190,7 @@ function shuffleBones(){
 
 //Poké API Stuff
 
-// async function initializePokedex(){
-//         let status = await import('./say.js');
-//         status.hi(); // Hello!
-//         status.bye(); // Bye!
-//         status.default(); // Module loaded (export default)!
-// }
+
 
 //Height Command
 
@@ -2217,10 +2246,115 @@ function energyGuess(){
     client.say(channel, `I guess ${energies[randnumb]}! 🌻`);
 }
 
+//Yearly Counter
+
+async function YearlyCounterRead(){
+    try {
+        const contents = await fsPromises.readFile("yearlyCounter.json", 'utf-8');
+        YearlyCounter = JSON.parse(contents);
+
+        yearShinyRolls = YearlyCounter.shinyRolls;
+        yearShinyRollShinies = YearlyCounter.shinyRollShinies;
+        yearQuizGames = YearlyCounter.quizGames;
+        yearQuizCorrectAnswers = YearlyCounter.quizCorrectAnswers;
+        yearQuizIncorrectAnswers = YearlyCounter.quizIncorrectAnswers;
+        yearFunFacts = YearlyCounter.funFacts;
+        yearEnises = YearlyCounter.enises;
+        yearDexLookups = YearlyCounter.dexLookups;
+
+        console.log(`Yearly totals read!`);
+        console.log(YearlyCounter);
+    
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+function yearlyCounterSay(){
+    client.say(channel, `🌻 SunfloraBot 🌻 A Year in Review 🌻 : There have been ${yearShinyRollShinies} Shiny Roll Shinies out of ${yearShinyRolls} Shiny Rolls! ✨ There have been ${yearQuizGames} Quiz Games with ${yearQuizCorrectAnswers} Correct Quiz Answers and ${yearQuizIncorrectAnswers} Incorrect Quiz Answers! 📚`);
+    client.say(channel, `I've provided ${yearFunFacts} Fun Facts! 🔍 I've replied to Monica or Savvy with '-enis' ${yearEnises} times. 🍆 There have been ${yearDexLookups} Dex Lookups using the PokéAPI! 📇 WHAT A GREAT YEAR! 🌻`);
+}
+
+function yearlyReset(){
+    YearlyCounter.shinyRolls = 0;
+    YearlyCounter.shinyRollShinies = 0;
+    YearlyCounter.quizGames = 0;
+    YearlyCounter.quizCorrectAnswers = 0;
+    YearlyCounter.quizIncorrectAnswers = 0;
+    YearlyCounter.funFacts = 0;
+    YearlyCounter.enises = 0;
+    YearlyCounter.dexLookups = 0;
+
+    yearShinyRolls = YearlyCounter.shinyRolls;
+    yearShinyRollShinies = YearlyCounter.shinyRollShinies;
+    yearQuizGames = YearlyCounter.quizGames;
+    yearQuizCorrectAnswers = YearlyCounter.quizCorrectAnswers;
+    yearQuizIncorrectAnswers = YearlyCounter.quizIncorrectAnswers;
+    yearFunFacts = YearlyCounter.funFacts;
+    yearEnises = YearlyCounter.enises;
+    yearDexLookups = YearlyCounter.dexLookups;
+}
+
+function yearlyIncrementShinyRolls(){
+    yearShinyRolls++;
+}
+function yearlyIncrementShinyRollShinies(){
+    yearShinyRollShinies++;
+}
+function yearlyIncrementQuizGames(){
+    yearQuizGames++;
+}
+function yearlyIncrementCorrectAnswers(){
+    yearQuizCorrectAnswers++;
+}
+function yearlyIncrementIncorrectAnswers(){
+    yearQuizIncorrectAnswers++;
+}
+function yearlyIncrementFunFacts(){
+    yearFunFacts++;
+    console.log(yearFunFacts);
+}
+function yearlyIncrementEnises(){   
+    yearEnises++;
+}
+function yearlyIncrementDexLookups(){
+    yearDexLookups++;
+}
+
+function yearlyCounterWrite(){
+    YearlyCounter.shinyRolls = yearShinyRolls;
+    YearlyCounter.shinyRollShinies = yearShinyRollShinies;
+    YearlyCounter.quizGames = yearQuizGames;
+    YearlyCounter.quizCorrectAnswers = yearQuizCorrectAnswers;
+    YearlyCounter.quizIncorrectAnswers = yearQuizIncorrectAnswers;
+    YearlyCounter.funFacts = yearFunFacts;
+    YearlyCounter.enises = yearEnises;
+    YearlyCounter.dexLookups = yearDexLookups;
+
+    require('fs').writeFile('yearlyCounter.json',
+
+    JSON.stringify(YearlyCounter),
+
+    function (err) {
+        if (err) {
+            console.error('Crap happens');
+        }
+        console.log('Yearly counter saved.');
+    });
+}
+
 function randomNumber(max){
     const numb = parseInt(max);
     const randnumb = Math.floor(Math.random() * numb);
     client.say(channel, `Random number: ${randnumb}! 🌻`);
+}
+
+function randomPokemon(){
+    const numb = mon.length - 2;
+    const randnumb = Math.floor(Math.random() * numb) + 1;
+    var randomMon = mon[randnumb];
+    var randomMon = randomMon.charAt(0).toUpperCase() + randomMon.slice(1);
+    client.say(channel, `Random pokemon: ${randomMon}! 🌻`);
 }
 
 
