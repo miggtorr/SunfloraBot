@@ -148,11 +148,11 @@ client.on('message', (channel, user, message, self) => {
     // console.log(command);
 
     if(command == '!test' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        // client.say(channel, `${channelname} Success!`);
-        yearlyReset();
+        client.say(channel, `${channelname} Success!`);
+
     }
     if(command == '!test2' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-        yearlyCounterWrite();
+
     }
     
     if(command == '!disconnect' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
@@ -487,7 +487,8 @@ client.on('message', (channel, user, message, self) => {
         // randomNumber("386");
 
         if(args == ''){
-            client.say(channel, `Please specify a maximum value! 🌻`)
+            client.say(channel, `Please specify a maximum value! 🌻`);
+            return;
         }
 
         if(!isNaN(args) && args != ''){
@@ -498,6 +499,17 @@ client.on('message', (channel, user, message, self) => {
     if(command == `!randompokemon`){
         randomPokemon();
     }
+
+    if(command == `!yearinreview` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
+        if(args[0] == `reset`){
+            // yearlyReset();
+            client.say(channel, `I've reset all the the year in review couunters!`)
+            return;
+        }
+        yearlyCounterSay();
+    }
+
+    
 
     if(command == `!dex`){
         if(pokeCooldown){
