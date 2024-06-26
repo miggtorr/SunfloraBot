@@ -34,6 +34,7 @@ var shinyRollCounter = 0;
 var facts = [];
 const rollchannel = "talesoftaylor";
 const dex = new Pokedex();
+var gregsterSpoke = false;
 
 //Dex vars
 var pokeapiObj = {};
@@ -152,7 +153,7 @@ client.on('message', (channel, user, message, self) => {
 
     }
     if(command == '!test2' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
-
+     
     }
     
     if(command == '!disconnect' && (user.mod || user.username == channelname || user.username == `miggtorr`)){
@@ -170,11 +171,6 @@ client.on('message', (channel, user, message, self) => {
 
     if (command == `!discord`){
         client.say(channel, `🌟 Discord 🌟 https://discord.gg/c4GmFmg`);
-    }
-
-
-    if(command == '!bestlegendary'){
-        client.say(channel, `@${user.username}, did you know that Sunflora is the best legendary?`);
     }
 
     if(command == '!numberofnoses'){
@@ -351,6 +347,19 @@ client.on('message', (channel, user, message, self) => {
         client.say(channel, `@${channel.substring(1,channel.length)}, did you remember to tweet out that you're live? 😉`)
     }
 
+    if(user.username == `gregster022` && gregsterSpoke == false){
+        gregsterSpoke = true;
+        setTimeout(() => {
+            client.say(channel, `Hi, Gregster! talesofPog`);
+        }, 1000);
+    }
+
+    if(command == "!lurk"){
+        setTimeout(() => {
+            client.say(channel, `Enjoy your lurk, ${user.username}! 🌻`);
+        }, 1500);
+    }
+
     if(command == "!reroll" && (user.mod || user.username == channelname || user.username == `miggtorr`)) {
         var name = args.toString().toLowerCase();
         
@@ -498,6 +507,10 @@ client.on('message', (channel, user, message, self) => {
 
     if(command == `!randompokemon`){
         randomPokemon();
+    }
+
+    if(command == `!stadium2team`){
+        stadium2Team();
     }
 
     if(command == `!yearinreview` && (user.mod || user.username == channelname || user.username == `miggtorr`)){
@@ -2369,6 +2382,28 @@ function randomPokemon(){
     client.say(channel, `Random pokemon: ${randomMon}! 🌻`);
 }
 
+function stadium2Team(){
+    const legalKantoMon = mon.slice(1,151);
+    const legalJohtoMon = mon.slice(153,250);
+    var stadmon = [...legalKantoMon, ...legalJohtoMon];
+    var partymon = [];
+
+    for (let i = 0; i < 6; i++) {
+        let randnumb = Math.floor(Math.random() * stadmon.length);
+        let currentmon = stadmon[randnumb];
+        currentmon = currentmon.charAt(0).toUpperCase() + currentmon.slice(1);
+
+        if(i==5){
+            partymon.push(` and ${currentmon}`);
+        } else {
+            partymon.push(` ${currentmon}`);
+        }
+    }
+
+    client.say(channel, `Your random Pokémon Stadium 2 Rental Team is: 🌻${partymon}! 🌻`);
+
+}
+
 
 
 //Console Commands
@@ -2411,6 +2446,12 @@ rl.on('line', (input) =>
             rolledUsers = [];
             writeRollerFile();
             client.say(channel, "New shiny rolls available for everyone! 🌻");
+            break;
+        case `pog` :
+            client.say(channel, `talesofPog`);
+            break;
+        case `play` :
+            client.say(channel, `!play`);
             break;
         default:
             break;
