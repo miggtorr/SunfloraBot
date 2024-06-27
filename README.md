@@ -78,7 +78,7 @@ For example:
 #### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Game-related commands
 - `!quitquiz` : Force quits the active quiz that a user is playing.
 - `!rescore` : Forces SunfloraBot to re-read the quizscores.json file. Used after manually editing the file in an IDE or text editor. 
-- `!wtf` : Activates the *Who's That Pokemon!?* Game.
+- `!wtp` : Activates the *Who's That Pokemon!?* Game.
 
 #### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Orre Name-related commands
 - `!orre [username]` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to the username provided. If no username is provided, the user will assign themselves an Orre name. **NOTE**: If used by a non-mod, will only ever assign an Orre name to the user, no matter the arguments.
@@ -112,6 +112,8 @@ For example:
 - `!bestshiny` : SunfloraBot will tell you the best shiny.
 
 - `!orre` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to that user.
+
+- `!`
 
 #### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Quiz commands
 
@@ -170,6 +172,8 @@ For example:
 - SunfloraBot will say a Fun Fact every 20 mins.
 
 - If `monipandas` or `atreelessplain` write a message ending with `-ussy`, SunfloraBot will echo it back, ending it with `-enis` instead.
+
+- SunfloraBot will say hello to `gregster022` once per stream.
 
 ### ![SunfloraSmall](https://archives.bulbagarden.net/media/upload/e/e3/Ani192MS.png) Terminal Commands
 The following commands can be used directly from the terminal:
