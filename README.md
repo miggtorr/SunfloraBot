@@ -113,7 +113,7 @@ For example:
 
 - `!orre` : Generates a random Orre-name based on the names of trainers in Mt. Battle and assigns it quasi-permanently to that user.
 
-- `!`
+- `!stadium2team` :  Generates a random Pokémon Stadium 2 rental team.
 
 #### ![Sunkern](https://archives.bulbagarden.net/media/upload/b/b1/Ani191OD.png)Quiz commands
 
